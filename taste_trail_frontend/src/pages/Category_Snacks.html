@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacks Category Page</title>
+    <link rel="stylesheet" href="Category.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="Category_responsive.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/snacks_ico.png" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <div class="mainnav">
+            <div class="container flex">
+            <div class="logo flex">
+                <!-- <img src="img/snacks_ico.png" alt=""> -->
+                <h1><a href="homepage.html">Taste<span>Trail</span></a></h1>
+            </div>
+            <ul class="navlist flex">
+                <li><a href="/">Categories</a></li>
+                <li><a href="Category_Holiday.html">Holiday & Festives</a></li>
+                <li><a href="/">Contact Us</a></li>
+            </ul>
+            
+            <div class="searchbar flex">
+                <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden="">
+                <label for="checkbox" class="toggle">
+                    <div class="toggle__circle"></div>
+                </label>
+                <i class='bx bx-search-alt-2' id="searchopen"></i>
+                <div class="navonoff">
+                    <input type="checkbox" id="checkbox2">
+                    <label for="checkbox2" class="toggle2">
+                        <div class="bar bar--top"></div>
+                        <div class="bar bar--middle"></div>
+                        <div class="bar bar--bottom"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="searchinput">
+                <input type="text" placeholder="Search Here...">
+                <i class='bx bx-minus' id="removesearch"></i>
+            </div>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="headerimg">
+            <div class="container">
+                <div class="headerinfo flex">
+                    <h2 class="headertitle">Snacks and Appetizers</h2>
+                    <p class="headerpera">Elevate your snacking experience with our tasty and easy-to-make snacks.
+                        Find the perfect snack recipes for any occasion.</p>
+                    <a href="" class="headerbtn"></a>
+                </div>
+            </div>
+        </section>
+        <!-- featured recipes -->
+        <div class="featuredrecipe container flex">
+            <div class="featuredtitles flex">
+                <div class="titleicon">
+                    <img src="img/snacks_ico.png" alt="">
+                </div>
+                <h2>Featured Recipes</h2>
+                <p> Discover a world of flavorful bites crafted to satisfy your cravings and
+                    elevate your snack game, ensuring every moment is a tasty adventure:</p>
+            </div>
+        </div>
+        <!-- recipes in row1 -->
+        <section class="threecards container flex">
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/momo.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Chicken Momo</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                    </div>
+                    <p>A popular Asian delicacy with minced chicken encased in a thin, steamed dumpling wrapper,
+                        that serves perferctness in every bite.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>45 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/Onion_pakoda.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Onion Pakoda</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                    </div>
+                    <p> Sliced onions dipped in seasoned gram flour batter and fried to golden perfection making a
+                        delicious and satisfying snack.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>20 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/Paanipuri.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Pani puri</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                    </div>
+                    <p> Bite-sized crispy puris are filled with a mixture of spicy, tangy tamarind water,
+                        mashed potatoes, chickpeas, for delightful experience!</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>30 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+
+        </section>
+        <!-- recipes in row2 -->
+        <section class="threecards container flex">
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/bara.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Bara</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                    </div>
+                    <p>A savory lentil-based pancake fried to golden perfection with its
+                        crispy exterior and soft, flavorful interior</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>15 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/jeri_swari.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Sweet</label>
+                    <h3>Jeri Swari</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                    </div>
+                    <p>A popular sweet featuring deep-fried dough swirls soaked in syrup,
+                        offering a delightful mix of sweetness and texture.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>25 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/laphing.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Laphing</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                    </div>
+                    <p>Made from mung bean starch, it is typically served cold with spicy sauce,
+                        offering a refreshing and flavorful culinary experience.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>20 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+
+        </section>
+        <!-- explore quick recipes -->
+        <section class="explorerecipe container flex">
+            <h2>Explore Popular Quick recipes:</h2>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/piroaloo.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Piro Aloo</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                    </div>
+                    <p>A spicy and tangy dish where potatoes are cooked with a flavorful
+                        blend of spices and aromatic seasoning.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>10 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/chatpate.JPG" alt="">
+                    <span><i class='bx bxs-heart'></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Chatpate</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                    </div>
+                    <p>Known for its bold and tangy flavors, this savory mixture includes crunchy
+                        ingredients creating a delightful snack.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>15 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+            <div class="tcard">
+                <div class="tcardimg">
+                    <img src="/img/laphing.jpg" alt="">
+                    <span><i class='bx bxs-heart'></i></i></span>
+                </div>
+                <div class="tcardinfo flex">
+                    <label class="tlabel">Savory</label>
+                    <h3>Laphing</h3>
+                    <div class="star-rating">
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bxs-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                        <span><i class='bx bx-star'></i></span>
+                    </div>
+                    <p>Made from mung bean starch, it is typically served cold with spicy sauce,
+                        offering a refreshing and flavorful culinary experience.</p>
+                    <ul class="flex">
+                        <li><i class='bx bx-timer'>20 Mins</i></li>
+                    </ul>
+                    <a href="/" class="tcardbtn">Read More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="container flex">
+            <div class="footer flex">
+                <div class="footerlogo">
+                    <h2>Taste Trail</h2>
+                    <p>We provide a platform for customers to share their
+                        culinary creations and discover easy, delicious recipes,
+                        fostering a vibrant community of food enthusiasts.</p>
+                </div>
+                <div class="footernav">
+                    <h3>Recipes</h3>
+                    <ul class="flex">
+                        <li><a href="Category_Breakfast.html">Breakfast</a></li>
+                        <li><a href="Category_Lunch.html">Lunch</a></li>
+                        <li><a href="Category_Dinner.html">Dinner</a></li>
+                        <li><a href="Category_Snacks.html">Snacks</a></li>
+                        <li><a href="Category_Dessert.html">Dessert</a></li>
+                    </div>
+                    <div class="footernav">
+                    </ul>
+                    <h3>Legal</h3>
+                    <ul class="flex">
+                        <li><a href="/">Privacy Policy</a></li>
+                        <li><a href="/">Terms and Conditions</a></li>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Category.js"></script>
+</body>
+</html>

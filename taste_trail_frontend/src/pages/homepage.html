@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Website</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="img/snacks_ico.png" type="image/x-icon">
+</head>
+
+<body>
+<!-- Header Section -->
+<header>
+    <div class="mainnav">
+        <div class="container flex">
+            <div class="logo flex">
+                <!-- <img src="img/snacks_ico.png" alt=""> -->
+                <h1><a href="homepage.html">Taste <span>Trail</span></a></h1>
+            </div>
+            <ul class="navlist flex">
+                <li><a href="/">Categories</a></li>
+                <li><a href="Category_Holiday.html">Holiday & Festives</a></li>
+                <li><a href="/">Contact Us</a></li>
+            </ul>
+            <div class="searchbar flex">
+                <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden="">
+                <label for="checkbox" class="toggle">
+                    <div class="toggle__circle"></div>
+                </label>
+                <i class='bx bx-search-alt-2' id="searchopen"></i>
+                <div class="navonoff">
+                    <input type="checkbox" id="checkbox2">
+                    <label for="checkbox2" class="toggle2">
+                        <div class="bar bar--top"></div>
+                        <div class="bar bar--middle"></div>
+                        <div class="bar bar--bottom"></div>
+                    </label>
+                </div>
+            </div>
+            <div class="searchinput">
+                <input type="text" placeholder="Search Here...">
+                <i class='bx bx-minus' id="removesearch"></i>
+            </div>
+            <!-- Login and Register buttons within a form -->
+            <form>
+                <button type="button" onclick="location.href='LoginRegister.html'">Login/Registration</button>
+
+            </form>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Taste Trail Section -->
+    <!-- <div class="container category-section taste-trail"> -->
+        <div class="content flex">
+            <div class="category-image">
+                <img src="img/Main.png" alt="Delicious Food" width="100%">
+            </div>
+            <div class="category-details">
+                <h1>Taste Trail</h1>
+                <p>Explore a world of delightful flavors and culinary adventures.</p>
+                <p>Join Taste Trail to discover mouth-watering recipes that will tantalize your taste buds.</p>
+                <a href="LoginRegister.html" class="explore-btn1">Explore</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Other Category Sections (e.g., Breakfast, Lunch, Snacks, Dinner) -->
+    <!-- Breakfast Section -->
+<div class="container category-section">
+  <div class="content flex">
+      <div class="category-image">
+          <img src="img/Breakfast.png" alt="Breakfast" width="100%">
+      </div>
+      <div class="category-details">
+          <h1>Breakfast</h1>
+          <p>Kickstart your day with a tasty and nutritious breakfast. Explore different recipes to add variety to your mornings – from hearty oatmeal to flavorful omelets. Enjoy a delicious start to your day!.</p>
+          <a href="Category_Breakfast.html" class="explore-btn">Explore</a>
+      </div>
+  </div>
+</div>
+
+<!-- Lunch Section -->
+<div class="container category-section alternate">
+  <div class="content flex">
+      <div class="category-details">
+          <h1>Lunch</h1>
+          <p>Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience.</p>
+          <a href="Category_Lunch.html" class="explore-btn">Explore</a>
+      </div>
+      <div class="category-image">
+          <img src="img/Lunch.png" alt="Lunch" width="100%">
+      </div>
+  </div>
+</div>
+
+<!-- Snacks Section -->
+<div class="container category-section">
+  <div class="content flex">
+      <div class="category-image">
+          <img src="img/Snacks.png" alt="Snacks" width="80%">
+      </div>
+      <div class="category-details">
+          <h1>Snacks</h1>
+          <p>Elevate your snacking experience with our enticing and effortlessly crafted snacks. Uncover the ideal recipes for any occasion, ensuring that each bite is a perfect blend of taste and simplicity.</p>
+          <a href="Category_Snacks.html" class="explore-btn">Explore</a>
+      </div>
+  </div>
+</div>
+
+<!-- Dinner Section -->
+<div class="container category-section alternate">
+  <div class="content flex">
+      <div class="category-details">
+          <h1>Dinner</h1>
+          <p>Explore our dinner recipes to create delicious and satisfying meals for the end of your day. Discover a variety of dinner options for every taste.</p>
+          <a href="Category_Dinner.html" class="explore-btn">Explore</a>
+      </div>
+      <div class="category-image">
+          <img src="/img/Dinner.png" alt="Dinner" width="78%">
+      </div>
+  </div>
+</div>
+
+<!-- Dessert Section -->
+<div class="container category-section alternate">
+  <div class="content flex">
+      <div class="category-details">
+          <h1>Dessert</h1>
+          <p>Indulge your sweet cravings with an extravagant dessert sampler that promises a symphony of flavors and textures. This opulent platter features an array of delights, each carefully crafted to satisfy the most discerning palate.</p>
+          <a href="Category_Dessert.html" class="explore-btn">Explore</a>
+      </div>
+      <div class="category-image">
+          <img src="img/Dessert.png" alt="Dessert" width="78%">
+      </div>
+  </div>
+</div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container flex">
+            <div class="footer flex">
+                <div class="footerlogo">
+                    <h2>Taste Trail</h2>
+                    <p>We provide a platform for customers to share their culinary creations and discover easy, delicious recipes, fostering a vibrant community of food enthusiasts.</p>
+                </div>
+                <div class="footernav">
+                    <h3>Recipes</h3>
+                    <ul class="flex">
+                        <li><a href="Category_Breakfast.html">Breakfast</a></li>
+                        <li><a href="Category_Lunch.html">Lunch</a></li>
+                        <li><a href="Category_Snacks.html">Dinner</a></li>
+                        <li><a href="Category_Dinner.html">Breakfast</a></li>
+                        <li><a href="Category_Dessert.html">Dessert</a></li>
+                        <li><a href="Category_Holiday.html">Holiday & Festive Specials</a></li>
+                    </ul>
+                </div>
+                <div class="footernav">
+                    <h3>Legal</h3>
+                    <ul class="flex">
+                        <li><a href="/">Privacy Policy</a></li>
+                        <li><a href="/">Terms and Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Section -->
+    <script>
+        
+        // Toggle 'no-scroll' class on body to control scrolling behavior
+        document.addEventListener('DOMContentLoaded', function () {
+            const body = document.body;
+
+            window.addEventListener('scroll', function () {
+                if (!body.classList.contains('no-scroll')) {
+                    body.classList.add('no-scroll');
+                }
+            });
+        });
+    </script>
+
+    <script src="homepage.js"></script>
+</body>
+
+</html>
