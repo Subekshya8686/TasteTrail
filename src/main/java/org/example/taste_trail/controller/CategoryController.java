@@ -1,10 +1,10 @@
 package org.example.taste_trail.controller;
 
-import com.online.test_trail.dto.request.CategoryRequest;
-import com.online.test_trail.entity.CategoryEntity;
-import com.online.test_trail.helper.ApiResponse;
-import com.online.test_trail.service.CategoryService;
 import lombok.RequiredArgsConstructor;
+import org.example.taste_trail.dto.request.CategoryRequest;
+import org.example.taste_trail.entity.CategoryEntity;
+import org.example.taste_trail.helper.ApiResponse;
+import org.example.taste_trail.service.impl.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

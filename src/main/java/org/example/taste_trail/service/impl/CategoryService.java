@@ -1,7 +1,7 @@
 package org.example.taste_trail.service.impl;
 
-import com.online.test_trail.dto.request.CategoryRequest;
-import com.online.test_trail.entity.CategoryEntity;
+import org.example.taste_trail.dto.request.CategoryRequest;
+import org.example.taste_trail.entity.CategoryEntity;
 
 import java.util.List;
 
