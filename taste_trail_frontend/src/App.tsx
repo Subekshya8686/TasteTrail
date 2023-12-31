@@ -1,8 +1,10 @@
+// import React from "react";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Homepage from "./pages1/homepage.tsx";
 import Header from "./components/header.tsx";
 import Footer from "./components/footer.tsx";
 import Upload from "./pages1/upload.tsx";
+import LoginRegister from "./pages/LoginRegister.tsx";
 const router  =createBrowserRouter(
     [
         {
@@ -20,6 +22,10 @@ const router  =createBrowserRouter(
         {
             path:"/upload",
             element:<Upload/>
+        },
+        {
+            path :"/login",
+            element: <LoginRegister/>
         }
     ]
 )
@@ -34,4 +40,4 @@ function App() {
 }
 
 export default App
- 
+
