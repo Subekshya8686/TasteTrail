@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoginRegister.css';
+import './css/LoginRegister.css';
 
 const LoginRegister: React.FC = () => {
     const navigate = useNavigate();
@@ -38,7 +38,7 @@ const LoginRegister: React.FC = () => {
             <div className="container">
                 <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit}>
                     <h1>
-                        <a href="homepage.html">Taste<span>Trail</span></a>
+                        <a href="../pages/homepage.html">Taste<span>Trail</span></a>
                     </h1>
                     {formType === 'login' && <h2 className="title">Login</h2>}
                     {formType === 'register' && <h2 className="title">Register</h2>}
