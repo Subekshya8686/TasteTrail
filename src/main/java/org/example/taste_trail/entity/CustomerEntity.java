@@ -1,9 +1,10 @@
 package org.example.taste_trail.entity;
 
-import com.online.test_trail.dto.request.CustomerRequest;
+//import com.online.test_trail.dto.request.CustomerRequest;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.taste_trail.dto.request.CustomerRequest;
 
 @Data
 @Table

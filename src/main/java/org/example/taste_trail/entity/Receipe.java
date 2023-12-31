@@ -1,9 +1,10 @@
-package org.example.taste_trail.entity;
-//package com.example.springbootbackend.model;
+//package org.example.taste_trail.entity;
+////package com.example.springbootbackend.model;
 //
 //import com.fasterxml.jackson.annotation.JsonIgnore;
+//import jakarta.persistence.*;
 //
-//import javax.persistence.*;
+////import javax.persistence.*;
 //import java.io.Serializable;
 //import java.time.LocalDateTime;
 //import java.util.ArrayList;
@@ -37,7 +38,7 @@ package org.example.taste_trail.entity;
 //    private Account account;
 //
 //    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "recipe")
-//    private List<Ingredient> ingredients = new ArrayList<>();
+//    private List<IngredientEntity> ingredients = new ArrayList<>();
 //
 //    @OneToMany(cascade = CascadeType.REMOVE, fetch = FetchType.LAZY, orphanRemoval = true, mappedBy = "recipe")
 //    private List<Direction> directions = new ArrayList<>();
