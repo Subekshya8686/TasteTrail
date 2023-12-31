@@ -1,0 +1,71 @@
+.dark {
+    --bg-dark: #262c35;
+    background-color: var(--bg-dark);
+    color: #fff;
+}
+
+.dark .mainnav {
+    background-color: var(--bg-dark);
+}
+
+.dark .logo h1 {
+    color: #fff;
+}
+
+.dark .searchbar i {
+    color: #eaeaea;
+}
+
+.dark .headercard {
+    background-color: var(--bg-dark);
+    box-shadow: 0 0 5px #999;
+}
+
+.dark .headercard h3 {
+    color: #a5a5a7;
+}
+
+.dark .tcard {
+    box-shadow: 0 0 5px #999;
+}
+
+.dark .tcardinfo h2 {
+    color: #a5a5a7;
+}
+
+.dark .tcardinfo p {
+    color: #777;
+}
+
+.dark .tcardbtn:hover {
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.dark .catecard {
+    box-shadow: 0 0 5px #999;
+}
+
+.dark .catecard:hover {
+    box-shadow: 0 0 15px #999;
+}
+
+.dark .featuredtitles h1 {
+    color: #fff;
+}
+
+.dark .featuredtitles p {
+    color: #666;
+}
+
+/* Dark Mode Login and Register Button Styles */
+.dark .mainnav button {
+    background-color: #2a9d8f;
+    /* Green color for dark mode */
+    color: #fff;
+}
+
+.dark .taste-trail h1,
+.dark .taste-trail p {
+    color: #fff;
+    /* White color for text in dark mode */
+}

@@ -1,15 +1,43 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import LoginRegister from "./pages/LoginRegister.tsx";
+// import React from "react";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Homepage from "./pages1/homepage.tsx";
+import Header from "./components/header.tsx";
+import Footer from "./components/footer.tsx";
+import Upload from "./pages1/upload.tsx";
+import LoginRegister from "./pages1/LoginRegister.tsx";
+const router  =createBrowserRouter(
+    [
+        {
+            path:"/",
+            element:<Homepage/>
+        },
+        {
+            path:"/header",
+            element:<Header/>
+        },
+        {
+            path:"/footer",
+            element:<Footer/>
+        },
+        {
+            path:"/upload",
+            element:<Upload/>
+        },
+        {
+            path :"/login",
+            element: <LoginRegister/>
+        }
+    ]
+)
 
-const App: React.FC = () => {
+function App() {
+
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<LoginRegister />} />
-            </Routes>
-        </Router>
-    );
-};
+        <>
+            <RouterProvider router={router} />
+        </>
+    )
+}
 
-export default App;
+export default App
+
