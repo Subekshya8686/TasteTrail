@@ -4,7 +4,7 @@ import Homepage from "./pages1/homepage.tsx";
 import Header from "./components/header.tsx";
 import Footer from "./components/footer.tsx";
 import Upload from "./pages1/upload.tsx";
-import LoginRegister from "./pages/LoginRegister.tsx";
+import LoginRegister from "./pages1/LoginRegister.tsx";
 const router  =createBrowserRouter(
     [
         {
