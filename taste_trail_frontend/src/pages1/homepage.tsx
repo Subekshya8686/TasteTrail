@@ -3,7 +3,6 @@ import './css/darkmode.css';
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 function Homepage(){
-
     return (
         <>
         <header>
@@ -28,7 +27,7 @@ function Homepage(){
             <div className="category-details">
                 <h1>Taste Trail</h1>
                 <p>Explore a world of delightful flavors and culinary adventures. <br/>Join Taste Trail to discover mouth-watering recipes that will tantalize your taste buds.</p>
-                <a href={"LoginRegister.html"} className="explore-btn1">Explore</a>
+                <a href={"LoginRegister.tsx"} className="explore-btn1">Explore</a>
             </div>
             <div className="category-image">
                 <img src={"Main.png"} alt="Delicious Food" width="100%"/>

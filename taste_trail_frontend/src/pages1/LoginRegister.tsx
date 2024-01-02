@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './css/LoginRegister.css';
+import './homepage.tsx';
 
 const LoginRegister: React.FC = () => {
     const navigate = useNavigate();
@@ -30,15 +31,17 @@ const LoginRegister: React.FC = () => {
         }
     };
 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+
     return (
         <div className="flex-container">
             <div className="container-wrapper" id="container1">
-                <img src="src/img/Food.jpg" height="80%" width="100%" alt="Description of the image" />
+                <img src="Food.jpg" height="80%" width="100%" alt="Description of the image" />
             </div>
             <div className="container">
                 <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit}>
                     <h1>
-                        <a href="../pages/homepage.html">Taste<span>Trail</span></a>
+                        <a href="/h">Taste<span>Trail</span></a>
                     </h1>
                     {formType === 'login' && <h2 className="title">Login</h2>}
                     {formType === 'register' && <h2 className="title">Register</h2>}
@@ -167,7 +170,7 @@ const LoginRegister: React.FC = () => {
                     {formType === 'login' && (
                         <div className="remember-forgot">
                             <label>
-                                <input type="checkbox" />Remember me
+                                <input type="checkbox"/>Remember me
                             </label>
                             <a href="#">Forgot Password?</a>
                         </div>
