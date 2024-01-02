@@ -1,6 +1,9 @@
 package org.example.taste_trail.repository;
 
-import com.project.recipe.model.UsersModel;
+
+import org.example.taste_trail.entity.UsersModel;
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
@@ -8,5 +11,4 @@ import java.util.Optional;
 public interface UsersRepository extends JpaRepository<UsersModel, Integer> {
 
     Optional<UsersModel> findByLoginAndPassword(String login, String password);
-
 }

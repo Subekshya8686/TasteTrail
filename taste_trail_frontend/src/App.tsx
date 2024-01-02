@@ -22,7 +22,7 @@ const router  =createBrowserRouter(
         },
 
         {
-            path:"/",
+            path:"/h",
             element:<Homepage/>
         },
         {
@@ -38,7 +38,7 @@ const router  =createBrowserRouter(
             element:<Upload/>
         },
         {
-            path :"/login",
+            path :"/",
             element: <LoginRegister/>
         }
 
