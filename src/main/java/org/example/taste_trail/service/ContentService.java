@@ -4,14 +4,15 @@ import org.example.taste_trail.dto.ContentDto;
 import org.example.taste_trail.entity.ContentEntity;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ContentService {
 
-    Long save(ContentDto contentDto);
+    ContentEntity save(ContentDto contentDto);
 
-    List<ContentEntity> getAll();
+    List<ContentEntity> getAllContent();
 
-    ContentEntity getById(Long id);
+    Optional<ContentEntity> getContentById(Long id);
 
-    void deleteById(Long id);
+    void deleteContentById(Long id);
 }

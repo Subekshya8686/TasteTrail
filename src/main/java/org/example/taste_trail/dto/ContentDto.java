@@ -1,6 +1,10 @@
 package org.example.taste_trail.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -9,11 +13,14 @@ import lombok.*;
 public class ContentDto {
 
     private Long contentId;
-    private String recipeName;
+    private String recipeTitle;
+    private MultipartFile recipePhotoFile;
     private String recipeDescription;
-    private int prepTime;
-    private String ingredients;
-    private int serving;
-    private String recipeSteps;
-    private String image;
+    private int recipeQuantityNumber;
+    private String recipeQuantityType;
+    private int preparationTimeHours;
+    private int preparationTimeMinutes;
+    private String categoryType;
+    private String stepDescription;
+    private String[] usedIngredients;
 }
