@@ -1,14 +1,15 @@
 body {
     width: 100%;
     height: auto;
-    background-color: #f8e6d0;
+    background-color: #ffffff;
     transition: 0.4s ease;
     scroll-behavior: smooth;
     color: #000000;
     align-items: center;
     display: flex;
     justify-content: center;
-    background-image: url('bg.png');  /* Adjusted path */
+    /*background-image: url('bg.png');  !* Adjusted path *!*/
+    overflow: auto;
 }
 
 .container1 {

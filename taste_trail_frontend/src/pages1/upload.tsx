@@ -239,6 +239,7 @@ const upload: React.FC = () => {
     return (
         <>
             <Header/>
+            {/*<img src={'bg.png'}/>*/}
 
         <div className="container1">
             <form id="recipeForm">
