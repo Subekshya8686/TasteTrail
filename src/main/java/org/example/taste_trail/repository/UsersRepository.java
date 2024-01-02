@@ -1,6 +1,9 @@
 package org.example.taste_trail.repository;
 
+
 import org.example.taste_trail.entity.UsersModel;
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
