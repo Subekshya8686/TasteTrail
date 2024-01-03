@@ -22,7 +22,7 @@ const router  =createBrowserRouter(
         },
 
         {
-            path:"/homepage",
+
             element:<Homepage/>
         },
         {
