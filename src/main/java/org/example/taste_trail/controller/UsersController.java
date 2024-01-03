@@ -2,8 +2,7 @@ package org.example.taste_trail.controller;
 
 //import com.project.recipe.model.UsersModel;
 //import com.project.recipe.service.UsersService;
-import org.apache.catalina.User;
-import org.example.taste_trail.entity.UsersModel;
+import org.example.taste_trail.entity.usersModel;
 //import org.example.taste_trail.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,22 +12,22 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UsersController {
-    private final UsersService usersService;
+    private final usersService usersService;
 
-    public UsersController(UsersService usersService) {
+    public UsersController(usersService usersService) {
         this.usersService = usersService;
     }
 
     @GetMapping("/register")
     public  String getRegisterPage(Model model ){
-        model.addAttribute("registerRequest",new UsersModel());
+        model.addAttribute("registerRequest",new usersModel());
         return "register_page";
 
     }
     @GetMapping("/login")
     public  String getLoginPage(Model model)
     {
-        model.addAttribute("loginRequest",new UsersModel());
+        model.addAttribute("loginRequest",new usersModel());
         return "login_page";
 
     }
@@ -49,15 +48,15 @@ public class UsersController {
     }
 
     @PostMapping("/register")
-    public String register(@ModelAttribute UsersModel usersModel){
+    public String register(@ModelAttribute usersModel usersModel){
         System.out.println("register request: "+ usersModel);
-        UsersModel registeredUser = usersService.registerUser(usersModel.getLogin(), usersModel.getPassword(), usersModel.getEmail(),usersModel.getDob(),usersModel.getF_name(), usersModel.getL_name(), usersModel.getGender());
-         return registeredUser==null ? "error_page": "redirect:/login";
+        org.example.taste_trail.entity.usersModel registeredUser = usersService.registerUser(usersModel.getUsername(), usersModel.getPassword(), usersModel.getEmail(), usersModel.getfirstName(), usersModel.getlastName());
+        return registeredUser==null ? "error_page": "redirect:/login";
     }
     @PostMapping("/login")
-    public String login(@ModelAttribute UsersModel usersModel){
+    public String login(@ModelAttribute usersModel usersModel){
         System.out.println("login request: "+ usersModel);
-        UsersModel authenticated = usersService.authenticate(usersModel.getLogin(), usersModel.getPassword());
+        org.example.taste_trail.entity.usersModel authenticated = usersService.authenticate(usersModel.getUsername(), usersModel.getPassword());
         if(authenticated !=null){
             return "redirect:/profile";
 
