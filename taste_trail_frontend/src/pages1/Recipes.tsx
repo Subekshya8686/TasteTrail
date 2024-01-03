@@ -1,10 +1,81 @@
 import './css/Recipes.css';
+<<<<<<< HEAD
+// import {FaCircleUser} from "react-icons/fa6";
+=======
 import {FaCircleUser} from "react-icons/fa6";
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
 import {FaHeart} from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+<<<<<<< HEAD
+import Header from "../components/header.tsx";
+import Footer from "../components/footer.tsx";
+import {useEffect} from "react";
+
+
+function Recipes() {
+    useEffect(() => {
+        const printButton = document.querySelector('.print');
+        printButton?.addEventListener('click', generateRecipePage);
+
+        function generateRecipePage() {
+            // Extract recipe details from HTML
+            const recipeNameElement = document.querySelector('.recipe_description h1');
+            const descriptionElement = document.querySelector('.recipe_description p');
+            const ingredientsListElements = document.querySelectorAll('.ingredients table tr td');
+            const recipeInstructionsElement = document.querySelector('.recipe h3 + pre');
+
+            if (!recipeNameElement || !descriptionElement || !recipeInstructionsElement) {
+                return;
+            }
+
+            const recipeName = recipeNameElement.textContent || '';
+            const description = descriptionElement.textContent || '';
+            const ingredientsList = Array.from(ingredientsListElements).map(ingredient => ingredient.textContent || '');
+            const recipeInstructions = recipeInstructionsElement.textContent || '';
+
+            // Generate HTML content
+            const recipePageContent = `
+                <h1>${recipeName}</h1>
+<!--                <img$>-->
+                <p style="font-size: 20px;">${description}</p>
+                <h2>Ingredients:</h2>
+                <ul style="font-size: 20px;">
+                    ${ingredientsList.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
+                <h2>Instructions:</h2>
+                <pre style="font-size: 20px; font-family: 'Playfair', 'sans-serif'; white-space: pre-wrap;">${recipeInstructions}</pre>
+                <button onclick="window.print()" style="background-color: grey;
+                color: white;
+                width: 200px;
+                padding: 10px 20px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                margin-left: 80vh;
+                cursor: pointer;">Print</button>
+            `;
+
+            // Open a new tab with the generated HTML content
+            const recipePage = window.open();
+            recipePage?.document.write(recipePageContent);
+            recipePage?.document.close();
+        }
+
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            printButton?.removeEventListener('click', generateRecipePage);
+        };
+    }, []);
+
+    return(
+        <>
+            <Header/>
+
+=======
 
 
 function Recipes() {
@@ -45,11 +116,16 @@ function Recipes() {
                     </div>
                 </div>
             </header>
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
 
             <main>
             <section className="img_description">
                 <div className="recipeimg flex">
+<<<<<<< HEAD
+                    <div className="img"><img src="alooparatha.jpg" alt=""/></div>
+=======
                     <div className="img"><img src="../assets/img/alooparatha.jpg" alt=""/></div>
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
                     <div className="recipe_description">
                         <h1>Aloo Paratha</h1>
                         <h2>Description:</h2>
@@ -140,6 +216,9 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
         </main>
 
 
+<<<<<<< HEAD
+            <Footer/>
+=======
             <footer>
                 <div className="container flex">
                     <div className="footer flex">
@@ -169,6 +248,7 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
                     </div>
                 </div>
             </footer>
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
         </>
     );
 }
