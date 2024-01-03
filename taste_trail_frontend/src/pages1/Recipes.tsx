@@ -1,15 +1,10 @@
 import './css/Recipes.css';
-<<<<<<< HEAD
 // import {FaCircleUser} from "react-icons/fa6";
-=======
-import {FaCircleUser} from "react-icons/fa6";
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
 import {FaHeart} from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
-<<<<<<< HEAD
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 import {useEffect} from "react";
@@ -75,57 +70,11 @@ function Recipes() {
         <>
             <Header/>
 
-=======
-
-
-function Recipes() {
-    return(
-        <>
-            <header>
-                <div className="mainnav">
-                    <div className="container flex">
-                        <div className="logo flex">
-                            <h1><a href="/">Taste<span>Trail</span></a></h1>
-                        </div>
-                        <ul className="navlist flex">
-                            <li><a href="/">Categories</a></li>
-                            <li><a href="/">Holiday&Festive</a></li>
-                            <li><a href="/">Contact Us</a></li>
-                        </ul>
-
-                        <div className="searchbar flex">
-                            <a href="/" className="logingtn"><i><FaCircleUser size={'3rem'}/></i></a>
-                            <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden/>
-                            <label htmlFor="checkbox" className="toggle">
-                                <div className="toggle__circle"></div>
-                            </label>
-                            <i className='bx bx-search-alt-2' id="searchopen"></i>
-                            <div className="navonoff">
-                                <input type="checkbox" id="checkbox2"/>
-                                <label htmlFor="checkbox2" className="toggle2">
-                                    <div className="bar bar--top"></div>
-                                    <div className="bar bar--middle"></div>
-                                    <div className="bar bar--bottom"></div>
-                                </label>
-                            </div>
-                        </div>
-                        {/*<div className="searchinput">*/}
-                        {/*    <input type="text" placeholder="Search Here..."/>*/}
-                        {/*    <IoClose />*/}
-                        {/*</div>*/}
-                    </div>
-                </div>
-            </header>
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
-
             <main>
             <section className="img_description">
                 <div className="recipeimg flex">
-<<<<<<< HEAD
                     <div className="img"><img src="alooparatha.jpg" alt=""/></div>
-=======
-                    <div className="img"><img src="../assets/img/alooparatha.jpg" alt=""/></div>
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
+
                     <div className="recipe_description">
                         <h1>Aloo Paratha</h1>
                         <h2>Description:</h2>
@@ -215,40 +164,8 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
             </section>
         </main>
 
-
-<<<<<<< HEAD
             <Footer/>
-=======
-            <footer>
-                <div className="container flex">
-                    <div className="footer flex">
-                        <div className="footerlogo">
-                            <h2>Taste Trail</h2>
-                            <p>We provide a platform for customers to share their
-                                culinary creations and discover easy, delicious recipes,
-                                fostering a vibrant community of food enthusiasts.</p>
-                        </div>
-                        <div className="footernav">
-                            <h3>Recipes</h3>
-                            <ul className="flex">
-                                <li><a href="/">Breakfast</a></li>
-                                <li><a href="/">Lunch</a></li>
-                                <li><a href="/">Dinner</a></li>
-                                <li><a href="/">Snacks</a></li>
-                                <li><a href="/">Dessert</a></li>
-                            </ul>
-                        </div>
-                        <div className="footernav">
-                            <h3>Legal</h3>
-                            <ul className="flex">
-                                <li><a href="/">Privacy Policy</a></li>
-                                <li><a href="/">Terms and Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
+
         </>
     );
 }

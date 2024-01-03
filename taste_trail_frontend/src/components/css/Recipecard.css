@@ -21,7 +21,6 @@
     width: 1600px;
     height: auto;
     overflow: hidden;
-    /*background-color: black;*/
 }
 
 .tcard {
@@ -34,6 +33,7 @@
     padding: 20px;
     box-sizing: border-box;
     margin-bottom: 80px;
+    margin-top: 90px;
 }
 
 .tcardimg {
