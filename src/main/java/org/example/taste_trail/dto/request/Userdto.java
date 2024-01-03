@@ -3,7 +3,7 @@ package org.example.taste_trail.dto.request;
 import lombok.Data;
 
 @Data
-public class CustomerRequest {
+public class Userdto {
     Long userId;
 
     String firstName;

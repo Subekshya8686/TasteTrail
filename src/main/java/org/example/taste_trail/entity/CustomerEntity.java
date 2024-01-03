@@ -4,7 +4,7 @@ package org.example.taste_trail.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.taste_trail.dto.request.CustomerRequest;
+import org.example.taste_trail.dto.request.Userdto;
 
 @Data
 @Table
@@ -31,7 +31,7 @@ public class CustomerEntity {
 
     // Additional fields...
 
-    public CustomerEntity(CustomerRequest customerRequest){
+    public CustomerEntity(Userdto customerRequest){
         this.firstName = customerRequest.getFirstName();
         this.lastName = customerRequest.getLastName();
         this.email = customerRequest.getEmail();
