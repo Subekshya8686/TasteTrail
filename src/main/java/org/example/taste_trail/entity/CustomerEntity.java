@@ -1,9 +1,10 @@
 package org.example.taste_trail.entity;
 
-import com.online.test_trail.dto.request.CustomerRequest;
+//import com.online.test_trail.dto.request.CustomerRequest;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.example.taste_trail.dto.request.CustomerRequest;
 
 @Data
 @Table
@@ -13,25 +14,31 @@ public class CustomerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long userId;
 
-    String fullName;
+    private String firstName;
 
-    String phoneNumber;
+    private String lastName;
 
-    String address;
+    private String username;
 
-    String email;
+    private String email;
 
-    String profilePicture;
+    private String password; // Should be hashed
+
+    @Transient
+    private String confirmPassword; // Not persisted in the database
+
+    // Additional fields...
 
     public CustomerEntity(CustomerRequest customerRequest){
-        this.id = customerRequest.getId();
-        this.fullName = customerRequest.getFullName();
-        this.phoneNumber = customerRequest.getPhoneNumber();
-        this.address = customerRequest.getAddress();
+        this.firstName = customerRequest.getFirstName();
+        this.lastName = customerRequest.getLastName();
         this.email = customerRequest.getEmail();
+        this.username = customerRequest.getUsername();
+        this.password = customerRequest.getPassword(); // Hash the password
+        this.confirmPassword = customerRequest.getConfirmPassword();
+
+        // Set other fields if necessary
     }
-
-
 }

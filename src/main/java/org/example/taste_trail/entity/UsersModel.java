@@ -15,8 +15,6 @@ public class UsersModel {
     String password;
     String email;
 
-    String gender;
-    String dob;
     String f_name;
     String l_name;
 
@@ -53,22 +51,6 @@ public class UsersModel {
         this.email = email;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
     public String getF_name() {
         return f_name;
     }
@@ -90,12 +72,12 @@ public class UsersModel {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UsersModel that = (UsersModel) o;
-        return Objects.equals(id, that.id) && Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(email, that.email) && Objects.equals(gender, that.gender) && Objects.equals(dob, that.dob) && Objects.equals(f_name, that.f_name) && Objects.equals(l_name, that.l_name);
+        return Objects.equals(id, that.id) && Objects.equals(login, that.login) && Objects.equals(password, that.password) && Objects.equals(email, that.email) && Objects.equals(f_name, that.f_name) && Objects.equals(l_name, that.l_name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, login, password, email, gender, dob, f_name, l_name);
+        return Objects.hash(id, login, password, email, f_name, l_name);
     }
 
     @Override
@@ -104,8 +86,6 @@ public class UsersModel {
                 "id=" + id +
                 ", login='" + login + '\'' +
                 ", email='" + email + '\'' +
-                ", gender='" + gender + '\'' +
-                ", dob='" + dob + '\'' +
                 ", f_name='" + f_name + '\'' +
                 ", l_name='" + l_name + '\'' +
                 '}';

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+
+    "ionicons": "^7.2.2",
     "axios": "^1.6.2",
     "axios-mock-adapter": "^1.22.0",
     "react": "^18.2.0",

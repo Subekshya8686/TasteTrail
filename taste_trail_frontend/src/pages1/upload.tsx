@@ -1,6 +1,7 @@
 // RecipeUploadForm.tsx
 
 import React, {useEffect, useState} from 'react';
+// import { useForm } from 'react-hook-form';
 import './css/upload.css'
 import axios from "axios";
 import Header from "../components/header.tsx";
@@ -239,6 +240,7 @@ const upload: React.FC = () => {
     return (
         <>
             <Header/>
+            {/*<img src={'bg.png'}/>*/}
 
         <div className="container1">
             <form id="recipeForm">

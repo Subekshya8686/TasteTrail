@@ -1,8 +1,10 @@
 package org.example.taste_trail.controller;
 
-import com.project.recipe.model.UsersModel;
-import com.project.recipe.service.UsersService;
+//import com.project.recipe.model.UsersModel;
+//import com.project.recipe.service.UsersService;
 import org.apache.catalina.User;
+import org.example.taste_trail.entity.UsersModel;
+//import org.example.taste_trail.service.*;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

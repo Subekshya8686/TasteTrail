@@ -4,13 +4,17 @@ import lombok.Data;
 
 @Data
 public class CustomerRequest {
-    Long id;
+    Long userId;
 
-    String fullName;
+    String firstName;
 
-    String phoneNumber;
+    String lastName;
 
-    String address;
+    String username;
 
     String email;
+
+    String password;
+
+    String confirmPassword;
 }
