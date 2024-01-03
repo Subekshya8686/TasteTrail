@@ -16,6 +16,7 @@ interface Recipe {
 }
 
 const Category_snacks: React.FC = () => {
+
     // State to hold recipes
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
 
@@ -34,6 +35,7 @@ const Category_snacks: React.FC = () => {
         fetchRecipes();
     }, []); // Empty dependency array
                 // this effect runs once when the component mounts
+
 
     // Placeholder for data
     const section1Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) > 15);
@@ -91,6 +93,7 @@ const Category_snacks: React.FC = () => {
 
 
             <Footer/>
+
         </>
     );
 }

@@ -1,4 +1,5 @@
 import './css/Recipes.css';
+// import {FaCircleUser} from "react-icons/fa6";
 import {FaHeart} from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
@@ -72,8 +73,8 @@ function Recipes() {
             <main>
             <section className="img_description">
                 <div className="recipeimg flex">
-
                     <div className="img"><img src="alooparatha.jpg" alt=""/></div>
+
                     <div className="recipe_description">
                         <h1>Aloo Paratha</h1>
                         <h2>Description:</h2>
@@ -164,6 +165,7 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
         </main>
 
             <Footer/>
+
         </>
     );
 }
