@@ -1,0 +1,54 @@
+.userProfileContainer {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+}
+
+.profile-part {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    font-size: 24px;
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-bottom: 10px; /* Adjusted margin to separate profile picture from profile info */
+}
+
+.profile-info p{
+    justify-content: start;
+}
+
+.profile-info h2 {
+    margin: 0;
+}
+
+.favorites-section {
+    margin-top: 30px;
+    width: 100%; /* Ensure the section takes up the full width */
+}
+.favorites-section{
+    text-align: center;
+}
+
+.recipe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center; /* Center grid items horizontally */
+    box-shadow: #1a1a1a;
+}
+
+/* Add more styling as needed */
