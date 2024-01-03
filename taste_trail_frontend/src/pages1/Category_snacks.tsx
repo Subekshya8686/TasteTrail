@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+// import React from 'react';
+import Header from "../components/header.tsx";
+import Footer from "../components/footer.tsx";
+import RecipeCard from '../components/Recipecard.tsx';
+import './css/Category.css';
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+
+interface Recipe {
+    id: number;
+    recipeTitle: string;
+    categoryType: string;
+    recipePhoto: string;
+    recipeDescription: string;
+    preparationTimeMinutes: string;
+=======
 import React from 'react';
 import RecipeCard from '../components/Recipecard.tsx';
 import { FaCircleUser } from "react-icons/fa6";
@@ -12,10 +29,39 @@ interface Recipe {
     img: string;
     description: string;
     totalTime: string;
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
     // properties
 }
 
 const Category_snacks: React.FC = () => {
+<<<<<<< HEAD
+    // State to hold recipes
+    const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+
+    // Use useEffect to fetch data when component mounts
+    useEffect(() => {
+        const fetchRecipes = async () => {
+            try {
+                const categoryType = "snacks"; // Change categoryType based on the page
+                const response = await axios.get<Recipe[]>(`/api/recipes?categoryType=${categoryType}`);
+                setRecipesData(response.data);
+            } catch (error) {
+                console.error('Error fetching recipes:', error);
+            }
+        };
+
+        fetchRecipes();
+    }, []); // Empty dependency array
+                // this effect runs once when the component mounts
+
+    // Placeholder for data
+    const section1Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) > 15);
+    const section2Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) <= 15);
+
+    return (
+        <>
+            <Header/>
+=======
     const { data: recipes } = useQuery<Recipe[]>('GET_RECIPES', async () => {
         const response = await axios.get<Recipe[]>('/api/recipes');  // Replace with API endpoint
         return response.data;
@@ -66,6 +112,7 @@ const Category_snacks: React.FC = () => {
                 </div>
             </header>
 
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
 
             <main>
                 <section className="headerimg">
@@ -82,7 +129,11 @@ const Category_snacks: React.FC = () => {
                 <div className="featuredrecipe container flex">
                     <div className="featuredtitles flex">
                         <div className="titleicon">
+<<<<<<< HEAD
+                            <img src="snacks_ico.png" alt="snack_ico"/>
+=======
                             <img src="../assets/img/snacks_ico.png" alt="snack_ico"/>
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
                         </div>
                         <h2>Featured Recipes</h2>
                         <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
@@ -113,6 +164,9 @@ const Category_snacks: React.FC = () => {
                 </div>
             </main>
 
+<<<<<<< HEAD
+            <Footer/>
+=======
 
             <footer>
                 <div className="container flex">
@@ -143,6 +197,7 @@ const Category_snacks: React.FC = () => {
                     </div>
                 </div>
             </footer>
+>>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
         </>
     );
 }
