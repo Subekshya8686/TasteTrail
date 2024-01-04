@@ -4,7 +4,7 @@ package org.example.taste_trail.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.taste_trail.dto.request.CustomerRequest;
+import org.example.taste_trail.dto.request.Userdto;
 
 @Data
 @Table
@@ -26,19 +26,27 @@ public class CustomerEntity {
 
     private String password; // Should be hashed
 
-    @Transient
-    private String confirmPassword; // Not persisted in the database
+//    @Transient
+//    private String confirmPassword; // Not persisted in the database
 
     // Additional fields...
 
-    public CustomerEntity(CustomerRequest customerRequest){
-        this.firstName = customerRequest.getFirstName();
-        this.lastName = customerRequest.getLastName();
-        this.email = customerRequest.getEmail();
-        this.username = customerRequest.getUsername();
-        this.password = customerRequest.getPassword(); // Hash the password
-        this.confirmPassword = customerRequest.getConfirmPassword();
+//    public CustomerEntity(CustomerRequest customerRequest) {
+//
+        @Transient
+        private String confirmPassword; // Not persisted in the database
 
-        // Set other fields if necessary
+        // Additional fields...
+
+    public CustomerEntity(Userdto customerRequest) {
+            this.firstName = customerRequest.getFirstName();
+            this.lastName = customerRequest.getLastName();
+            this.email = customerRequest.getEmail();
+            this.username = customerRequest.getUsername();
+            this.password = customerRequest.getPassword(); // Hash the password
+            this.confirmPassword = customerRequest.getConfirmPassword();
+
+            // Set other fields if necessary
+        }
     }
-}
+

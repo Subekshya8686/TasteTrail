@@ -19,6 +19,8 @@
     font-size: 24px;
     width: 150px;
     height: 150px;
+    width: 100px;
+    height: 100px;
     background-color: #ddd;
     display: flex;
     justify-content: center;

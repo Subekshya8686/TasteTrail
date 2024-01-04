@@ -1,55 +1,79 @@
 import './css/Recipes.css';
-import {FaCircleUser} from "react-icons/fa6";
 import {FaHeart} from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalfAlt } from "react-icons/fa";
 import { FaRegStar } from "react-icons/fa";
+import Header from "../components/header.tsx";
+import Footer from "../components/footer.tsx";
+import {useEffect} from "react";
 
 
 function Recipes() {
+    useEffect(() => {
+        const printButton = document.querySelector('.print');
+        printButton?.addEventListener('click', generateRecipePage);
+
+        function generateRecipePage() {
+            // Extract recipe details from HTML
+            const recipeNameElement = document.querySelector('.recipe_description h1');
+            const descriptionElement = document.querySelector('.recipe_description p');
+            const ingredientsListElements = document.querySelectorAll('.ingredients table tr td');
+            const recipeInstructionsElement = document.querySelector('.recipe h3 + pre');
+
+            if (!recipeNameElement || !descriptionElement || !recipeInstructionsElement) {
+                return;
+            }
+
+            const recipeName = recipeNameElement.textContent || '';
+            const description = descriptionElement.textContent || '';
+            const ingredientsList = Array.from(ingredientsListElements).map(ingredient => ingredient.textContent || '');
+            const recipeInstructions = recipeInstructionsElement.textContent || '';
+
+            // Generate HTML content
+            const recipePageContent = `
+                <h1>${recipeName}</h1>
+<!--                <img$>-->
+                <p style="font-size: 20px;">${description}</p>
+                <h2>Ingredients:</h2>
+                <ul style="font-size: 20px;">
+                    ${ingredientsList.map(ingredient => `<li>${ingredient}</li>`).join('')}
+                </ul>
+                <h2>Instructions:</h2>
+                <pre style="font-size: 20px; font-family: 'Playfair', 'sans-serif'; white-space: pre-wrap;">${recipeInstructions}</pre>
+                <button onclick="window.print()" style="background-color: grey;
+                color: white;
+                width: 200px;
+                padding: 10px 20px;
+                text-align: center;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                margin-left: 80vh;
+                cursor: pointer;">Print</button>
+            `;
+
+            // Open a new tab with the generated HTML content
+            const recipePage = window.open();
+            recipePage?.document.write(recipePageContent);
+            recipePage?.document.close();
+        }
+
+        // Cleanup the event listener when the component is unmounted
+        return () => {
+            printButton?.removeEventListener('click', generateRecipePage);
+        };
+    }, []);
+
     return(
         <>
-            <header>
-                <div className="mainnav">
-                    <div className="container flex">
-                        <div className="logo flex">
-                            <h1><a href="/">Taste<span>Trail</span></a></h1>
-                        </div>
-                        <ul className="navlist flex">
-                            <li><a href="/">Categories</a></li>
-                            <li><a href="/">Holiday&Festive</a></li>
-                            <li><a href="/">Contact Us</a></li>
-                        </ul>
-
-                        <div className="searchbar flex">
-                            <a href="/" className="logingtn"><i><FaCircleUser size={'3rem'}/></i></a>
-                            <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden/>
-                            <label htmlFor="checkbox" className="toggle">
-                                <div className="toggle__circle"></div>
-                            </label>
-                            <i className='bx bx-search-alt-2' id="searchopen"></i>
-                            <div className="navonoff">
-                                <input type="checkbox" id="checkbox2"/>
-                                <label htmlFor="checkbox2" className="toggle2">
-                                    <div className="bar bar--top"></div>
-                                    <div className="bar bar--middle"></div>
-                                    <div className="bar bar--bottom"></div>
-                                </label>
-                            </div>
-                        </div>
-                        {/*<div className="searchinput">*/}
-                        {/*    <input type="text" placeholder="Search Here..."/>*/}
-                        {/*    <IoClose />*/}
-                        {/*</div>*/}
-                    </div>
-                </div>
-            </header>
+            <Header/>
 
             <main>
             <section className="img_description">
                 <div className="recipeimg flex">
-                    <div className="img"><img src="../assets/img/alooparatha.jpg" alt=""/></div>
+                    <div className="img"><img src="alooparatha.jpg" alt=""/></div>
+
                     <div className="recipe_description">
                         <h1>Aloo Paratha</h1>
                         <h2>Description:</h2>
@@ -138,37 +162,8 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
 
             </section>
         </main>
+            <Footer/>
 
-
-            <footer>
-                <div className="container flex">
-                    <div className="footer flex">
-                        <div className="footerlogo">
-                            <h2>Taste Trail</h2>
-                            <p>We provide a platform for customers to share their
-                                culinary creations and discover easy, delicious recipes,
-                                fostering a vibrant community of food enthusiasts.</p>
-                        </div>
-                        <div className="footernav">
-                            <h3>Recipes</h3>
-                            <ul className="flex">
-                                <li><a href="/">Breakfast</a></li>
-                                <li><a href="/">Lunch</a></li>
-                                <li><a href="/">Dinner</a></li>
-                                <li><a href="/">Snacks</a></li>
-                                <li><a href="/">Dessert</a></li>
-                            </ul>
-                        </div>
-                        <div className="footernav">
-                            <h3>Legal</h3>
-                            <ul className="flex">
-                                <li><a href="/">Privacy Policy</a></li>
-                                <li><a href="/">Terms and Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </>
     );
 }
