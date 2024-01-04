@@ -44,7 +44,6 @@ const Category_snacks: React.FC = () => {
     return (
         <>
             <Header/>
-
             <main>
                 <section className="headerimg">
                     <div className="container">
@@ -60,6 +59,7 @@ const Category_snacks: React.FC = () => {
                 <div className="featuredrecipe container flex">
                     <div className="featuredtitles flex">
                         <div className="titleicon">
+
                             <img src="snacks_ico.png" alt="snack_ico"/>
                         </div>
                         <h2>Featured Recipes</h2>

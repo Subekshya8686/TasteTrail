@@ -6,6 +6,18 @@ import Footer from "../components/footer.tsx";
 import RecipeCard from '../components/Recipecard.tsx';
 
 
+
+
+
+
+//MOCK DATA
+
+
+
+
+
+
+
 interface Recipe {
     id: number;
     recipeTitle: string,

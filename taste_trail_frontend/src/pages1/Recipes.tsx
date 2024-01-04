@@ -1,5 +1,4 @@
 import './css/Recipes.css';
-// import {FaCircleUser} from "react-icons/fa6";
 import {FaHeart} from "react-icons/fa";
 import { FaPrint } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
@@ -163,7 +162,6 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
 
             </section>
         </main>
-
             <Footer/>
 
         </>

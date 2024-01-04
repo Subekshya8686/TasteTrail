@@ -26,19 +26,27 @@ public class CustomerEntity {
 
     private String password; // Should be hashed
 
-    @Transient
-    private String confirmPassword; // Not persisted in the database
+//    @Transient
+//    private String confirmPassword; // Not persisted in the database
 
     // Additional fields...
 
-    public CustomerEntity(Userdto customerRequest){
-        this.firstName = customerRequest.getFirstName();
-        this.lastName = customerRequest.getLastName();
-        this.email = customerRequest.getEmail();
-        this.username = customerRequest.getUsername();
-        this.password = customerRequest.getPassword(); // Hash the password
-        this.confirmPassword = customerRequest.getConfirmPassword();
+//    public CustomerEntity(CustomerRequest customerRequest) {
+//
+        @Transient
+        private String confirmPassword; // Not persisted in the database
 
-        // Set other fields if necessary
+        // Additional fields...
+
+    public CustomerEntity(Userdto customerRequest) {
+            this.firstName = customerRequest.getFirstName();
+            this.lastName = customerRequest.getLastName();
+            this.email = customerRequest.getEmail();
+            this.username = customerRequest.getUsername();
+            this.password = customerRequest.getPassword(); // Hash the password
+            this.confirmPassword = customerRequest.getConfirmPassword();
+
+            // Set other fields if necessary
+        }
     }
-}
+

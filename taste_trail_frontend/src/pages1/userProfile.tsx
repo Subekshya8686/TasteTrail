@@ -151,6 +151,7 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
                     </div>
                 </div>
             </div>
+
             <Footer />
         </>
     );
