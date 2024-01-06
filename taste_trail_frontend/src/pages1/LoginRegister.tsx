@@ -15,6 +15,8 @@ const LoginRegister: React.FC = () => {
         confirmPassword: '',
     });
 
+    const [showTerms, setShowTerms] = useState(false);
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -31,7 +33,11 @@ const LoginRegister: React.FC = () => {
         }
     };
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+    const handleTermsAgreement = () => {
+        // Close the terms and conditions popup
+        setShowTerms(false);
+    };
+
 
     return (
         <div className="flex-container">
@@ -180,6 +186,29 @@ const LoginRegister: React.FC = () => {
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
 
+                    {/* Checkbox for Terms and Conditions */}
+                    {formType === 'register' && (
+                        <div className="form-group">
+                            <label>
+                                I have read and agree to the terms and conditions.
+                                <input
+                                    type="checkbox"
+                                    id="agreeCheckbox"
+                                    onChange={() => setShowTerms(!showTerms)}
+                                />{' '}
+                            </label>
+                        </div>
+                    )}
+
+                    {/* OK Button - Initially disabled */}
+                    {showTerms && (
+                        <div>
+                            <button type="button" onClick={handleTermsAgreement} disabled={!showTerms}>
+                                OK
+                            </button>
+                        </div>
+                    )}
+
                     <p>
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
                         <span onClick={() => setFormType(formType === 'login' ? 'register' : 'login')}>
@@ -187,6 +216,14 @@ const LoginRegister: React.FC = () => {
                         </span>
                     </p>
                 </form>
+
+                {/* Terms and Conditions Popup */}
+                {showTerms && (
+                    <div className="terms-popup">
+                        {/* Include your terms and conditions text here */}
+                        <p>[Your terms and conditions content]</p>
+                    </div>
+                )}
             </div>
         </div>
     );

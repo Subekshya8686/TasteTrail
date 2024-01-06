@@ -180,6 +180,8 @@ const upload: React.FC = () => {
         try {
             const recipeData = gatherRecipeData();
 
+            console.log(recipeData)
+
             // Replace the URL with your actual backend API endpoint
             const backendEndpoint = 'https://jsonplaceholder.typicode.com/posts';
 
