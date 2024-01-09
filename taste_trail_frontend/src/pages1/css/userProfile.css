@@ -17,6 +17,8 @@
 
 .profile-picture {
     font-size: 24px;
+    width: 150px;
+    height: 150px;
     width: 100px;
     height: 100px;
     background-color: #ddd;
@@ -25,6 +27,7 @@
     align-items: center;
     border-radius: 50%;
     margin-bottom: 10px; /* Adjusted margin to separate profile picture from profile info */
+
 }
 
 .profile-info p{

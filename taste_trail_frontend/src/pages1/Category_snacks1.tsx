@@ -1,9 +1,22 @@
 import React from 'react';
-import RecipeCard from '../components/Recipecard.tsx';
-// import { FaCircleUser } from "react-icons/fa6";
-import "./Category1.css";
+// import "./Category1.css";
+import './css/Category.css';
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
+import RecipeCard from '../components/Recipecard.tsx';
+
+
+
+
+
+
+//MOCK DATA
+
+
+
+
+
+
 
 interface Recipe {
     id: number;
@@ -21,7 +34,7 @@ const Category_snacks1: React.FC = () => {
             id: 1,
             recipeTitle: 'Chicken Momo',
             categoryType: 'snacks',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '10 Mins',
@@ -30,7 +43,7 @@ const Category_snacks1: React.FC = () => {
             id: 2,
             recipeTitle: 'Chicken Momo',
             categoryType: 'snacks',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '45 Mins',
@@ -39,7 +52,7 @@ const Category_snacks1: React.FC = () => {
             id: 3,
             recipeTitle: 'Chicken Momo',
             categoryType: 'snacks',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '15 Mins',
@@ -48,7 +61,7 @@ const Category_snacks1: React.FC = () => {
             id: 4,
             recipeTitle: 'Chicken Momo',
             categoryType: 'snacks',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '25 Mins',
@@ -57,7 +70,7 @@ const Category_snacks1: React.FC = () => {
             id: 5,
             recipeTitle: 'Chicken Momo',
             categoryType: 'breakfast',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '15 Mins',
@@ -66,7 +79,7 @@ const Category_snacks1: React.FC = () => {
             id: 6,
             recipeTitle: 'Chicken Momo',
             categoryType: 'snacks',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '45 Mins',
@@ -75,7 +88,7 @@ const Category_snacks1: React.FC = () => {
             id: 7,
             recipeTitle: 'Chicken Momo',
             categoryType: 'breakfast',
-            recipePhoto: '../assets/img/momo.jpg',
+            recipePhoto: 'momo.jpg',
             recipeDescription: 'A beloved dish of flatbread stuffed with spiced mashed potatoes,\n' +
                 'rolled out, and cooked until golden brown.',
             preparationTimeMinutes: '40 Mins',
@@ -125,8 +138,8 @@ const Category_snacks1: React.FC = () => {
 
                 {/* Section 2: Recipes with duration <= 15 minutes */}
                 <div className="quickrecipe-title flex">
-                    <h2>Quick Fixes, Endless Flavor:</h2>
-                    <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
+                    <h2>Quick Fixes, Endless Flavor</h2>
+                    <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection:</p>
                 </div>
                 <div className={'main-cards'}>
                 <section className="explorerecipe container flex">

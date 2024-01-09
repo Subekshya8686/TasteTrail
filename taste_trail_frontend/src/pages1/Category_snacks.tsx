@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-// import React from 'react';
+import './css/Category.css';
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 import RecipeCard from '../components/Recipecard.tsx';
-import './css/Category.css';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 
@@ -14,27 +12,11 @@ interface Recipe {
     recipePhoto: string;
     recipeDescription: string;
     preparationTimeMinutes: string;
-=======
-import React from 'react';
-import RecipeCard from '../components/Recipecard.tsx';
-import { FaCircleUser } from "react-icons/fa6";
-import { useQuery } from 'react-query';
-import axios from 'axios';
-import './css/Category.css';
 
-interface Recipe {
-    id: number;
-    title: string;
-    category: string;
-    img: string;
-    description: string;
-    totalTime: string;
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
-    // properties
 }
 
 const Category_snacks: React.FC = () => {
-<<<<<<< HEAD
+
     // State to hold recipes
     const [recipesData, setRecipesData] = useState<Recipe[]>([]);
 
@@ -54,6 +36,7 @@ const Category_snacks: React.FC = () => {
     }, []); // Empty dependency array
                 // this effect runs once when the component mounts
 
+
     // Placeholder for data
     const section1Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) > 15);
     const section2Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) <= 15);
@@ -61,59 +44,6 @@ const Category_snacks: React.FC = () => {
     return (
         <>
             <Header/>
-=======
-    const { data: recipes } = useQuery<Recipe[]>('GET_RECIPES', async () => {
-        const response = await axios.get<Recipe[]>('/api/recipes');  // Replace with API endpoint
-        return response.data;
-    });
-
-    // Placeholder for data
-    const recipesData: Recipe[] = recipes?.data || [];
-
-// To Filter recipes for Section 1 and Section 2
-    const section1Recipes = recipesData.filter(recipe => parseInt(recipe.totalTime) > 15);
-    const section2Recipes = recipesData.filter(recipe => parseInt(recipe.totalTime) <= 15);
-
-    return (
-        <>
-            <header>
-                <div className="mainnav">
-                    <div className="container flex">
-                        <div className="logo flex">
-                            <h1><a href="/">Taste<span>Trail</span></a></h1>
-                        </div>
-                        <ul className="navlist flex">
-                            <li><a href="/">Categories</a></li>
-                            <li><a href="/">Holiday&Festive</a></li>
-                            <li><a href="/">Contact Us</a></li>
-                        </ul>
-
-                        <div className="searchbar flex">
-                            <a href="/" className="logingtn"><i><FaCircleUser size={'3rem'}/></i></a>
-                            <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden/>
-                            <label htmlFor="checkbox" className="toggle">
-                                <div className="toggle__circle"></div>
-                            </label>
-                            <i className='bx bx-search-alt-2' id="searchopen"></i>
-                            <div className="navonoff">
-                                <input type="checkbox" id="checkbox2"/>
-                                <label htmlFor="checkbox2" className="toggle2">
-                                    <div className="bar bar--top"></div>
-                                    <div className="bar bar--middle"></div>
-                                    <div className="bar bar--bottom"></div>
-                                </label>
-                            </div>
-                        </div>
-                        {/*<div className="searchinput">*/}
-                        {/*    <input type="text" placeholder="Search Here..."/>*/}
-                        {/*    <IoClose />*/}
-                        {/*</div>*/}
-                    </div>
-                </div>
-            </header>
-
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
-
             <main>
                 <section className="headerimg">
                     <div className="container">
@@ -129,11 +59,8 @@ const Category_snacks: React.FC = () => {
                 <div className="featuredrecipe container flex">
                     <div className="featuredtitles flex">
                         <div className="titleicon">
-<<<<<<< HEAD
+
                             <img src="snacks_ico.png" alt="snack_ico"/>
-=======
-                            <img src="../assets/img/snacks_ico.png" alt="snack_ico"/>
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
                         </div>
                         <h2>Featured Recipes</h2>
                         <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
@@ -164,40 +91,9 @@ const Category_snacks: React.FC = () => {
                 </div>
             </main>
 
-<<<<<<< HEAD
-            <Footer/>
-=======
 
-            <footer>
-                <div className="container flex">
-                    <div className="footer flex">
-                        <div className="footerlogo">
-                            <h2>Taste Trail</h2>
-                            <p>We provide a platform for customers to share their
-                                culinary creations and discover easy, delicious recipes,
-                                fostering a vibrant community of food enthusiasts.</p>
-                        </div>
-                        <div className="footernav">
-                            <h3>Recipes</h3>
-                            <ul className="flex">
-                                <li><a href="/">Breakfast</a></li>
-                                <li><a href="/">Lunch</a></li>
-                                <li><a href="/">Dinner</a></li>
-                                <li><a href="/">Snacks</a></li>
-                                <li><a href="/">Dessert</a></li>
-                            </ul>
-                        </div>
-                        <div className="footernav">
-                            <h3>Legal</h3>
-                            <ul className="flex">
-                                <li><a href="/">Privacy Policy</a></li>
-                                <li><a href="/">Terms and Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </footer>
->>>>>>> 12d277df5dc86843d0c5fe063c6c36ccffd87d8f
+            <Footer/>
+
         </>
     );
 }
