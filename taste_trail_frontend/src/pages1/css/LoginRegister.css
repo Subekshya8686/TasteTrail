@@ -2,20 +2,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 /*!*!* Variables *!*!*/
-/*:root {*/
-/*    --grey: #F4F2FF;*/
-/*    --dark-grey: #B7B7B7;*/
-/*    --green: #23AE00;*/
-/*    --light-green: #BDFFAC;*/
-/*    --red: #323131;*/
-/*    --light-red: #FFD2D2;*/
-/*    --blue: #277FFE;*/
-/*    --light-blue: #B6C6FF;*/
-/*    --dark-blue: #1368e3;*/
-/*    --bs: #AECFFF;*/
-/*    --text: #9B9B9B;*/
-/*    --btnhover-color: #1a1a1a;*/
-/*}*/
+:root {
+    --grey: #F4F2FF;
+    --dark-grey: #B7B7B7;
+    --green: #23AE00;
+    --light-green: #BDFFAC;
+    --red: #323131;
+    --light-red: #FFD2D2;
+    --blue: #277FFE;
+    --light-blue: #B6C6FF;
+    --dark-blue: #1368e3;
+    --bs: #AECFFF;
+    --text: #9B9B9B;
+    --btnhover-color: #1a1a1a;
+}
 
 /*!* Reset Styles *!*/
 /** {*/
