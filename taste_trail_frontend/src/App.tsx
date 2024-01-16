@@ -48,7 +48,7 @@ const router  =createBrowserRouter(
         {
             path :"/user-profile",
             element: <UserProfile userId="123"/>
-        },
+        }
 
 
     ]

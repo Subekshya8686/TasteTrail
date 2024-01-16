@@ -113,7 +113,7 @@ function Recipes() {
                 <div className="ingredients">
                     <table>
                         <th>Ingredients:</th>
-                        <tr><td>SERVINGS CALCULATOR: 10 :</td></tr>
+                        <tr><td>SERVINGS CALCULATOR:</td></tr>
                         <tr><td>2 cups whole wheat flour</td></tr>
                         <tr><td>Water (as needed for kneading)</td></tr>
                         <tr><td>Salt per preference</td></tr>
