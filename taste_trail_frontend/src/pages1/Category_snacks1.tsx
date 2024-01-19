@@ -5,6 +5,21 @@ import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 import RecipeCard from '../components/Recipecard.tsx';
 
+<<<<<<< HEAD
+=======
+
+
+
+
+
+//MOCK DATA
+
+
+
+
+
+
+>>>>>>> 6021b32746244cfd9e50d19deadfa980a01d432e
 
 interface Recipe {
     id: number;
