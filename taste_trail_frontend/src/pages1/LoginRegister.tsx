@@ -226,13 +226,18 @@ const LoginRegister: React.FC = () => {
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
 
+
                     <p>
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
                         <span onClick={() => setFormType(formType === 'login' ? 'register' : 'login')}>
                             {formType === 'login' ? ' Sign Up' : ' Sign In'}
                         </span>
                     </p>
+
+
                 </form>
+
+
             </div>
         </div>
         </>

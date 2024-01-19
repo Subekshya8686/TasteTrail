@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Taste_Trail.iml" filepath="$PROJECT_DIR$/.idea/Taste_Trail.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/TasteTrail.iml" filepath="$PROJECT_DIR$/.idea/TasteTrail.iml" />
+>>>>>>> 6021b32746244cfd9e50d19deadfa980a01d432e
     </modules>
   </component>
 </project>
