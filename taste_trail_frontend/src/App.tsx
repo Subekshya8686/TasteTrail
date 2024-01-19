@@ -9,6 +9,7 @@ import Category_snacks from "./pages1/Category_snacks.tsx";
 import Recipes from "./pages1/Recipes.tsx";
 import UserProfile from "./pages1/userProfile.tsx";
 import Category_snacks1 from "./pages1/Category_snacks1.tsx";
+import {QueryClient, QueryClientProvider} from "react-query";
 
 const router  =createBrowserRouter(
     [
@@ -54,11 +55,16 @@ const router  =createBrowserRouter(
     ]
 )
 
+
+const queryClient= new QueryClient()
+
 function App() {
 
     return (
         <>
+            <QueryClientProvider client={queryClient}>
             <RouterProvider router={router} />
+            </QueryClientProvider>
         </>
     )
 }
