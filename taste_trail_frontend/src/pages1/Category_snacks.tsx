@@ -4,6 +4,7 @@ import Footer from "../components/footer.tsx";
 import RecipeCard from '../components/Recipecard.tsx';
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import {useQuery} from "react-query";
 
 interface Recipe {
     id: number;
@@ -17,29 +18,36 @@ interface Recipe {
 
 const Category_snacks: React.FC = () => {
 
-    // State to hold recipes
-    const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+    const {data:snacksCat}=useQuery({
+        queryKey:["SNACKS_CAT"],
+        queryFn:()=>{
+            return axios.get("http://localhost:8080/content/byCategory/snacks")
+        }
+    })
 
-    // Use useEffect to fetch data when component mounts
-    useEffect(() => {
-        const fetchRecipes = async () => {
-            try {
-                const categoryType = "snacks"; // Change categoryType based on the page
-                const response = await axios.get<Recipe[]>(`/api/recipes?categoryType=${categoryType}`);
-                setRecipesData(response.data);
-            } catch (error) {
-                console.error('Error fetching recipes:', error);
-            }
-        };
-
-        fetchRecipes();
-    }, []); // Empty dependency array
-                // this effect runs once when the component mounts
-
-
-    // Placeholder for data
-    const section1Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) > 15);
-    const section2Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) <= 15);
+    // // State to hold recipes
+    // const [recipesData, setRecipesData] = useState<Recipe[]>([]);
+    //
+    // // Use useEffect to fetch data when component mounts
+    // useEffect(() => {
+    //     const fetchRecipes = async () => {
+    //         try {
+    //             const categoryType = "snacks"; // Change categoryType based on the page
+    //             const response = await axios.get<Recipe[]>(`/api/recipes?categoryType=${categoryType}`);
+    //             setRecipesData(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching recipes:', error);
+    //         }
+    //     };
+    //
+    //     fetchRecipes();
+    // }, []); // Empty dependency array
+    //             // this effect runs once when the component mounts
+    //
+    //
+    // // Placeholder for data
+    // const section1Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) > 15);
+    // const section2Recipes = recipesData.filter(recipe => parseInt(recipe.preparationTimeMinutes) <= 15);
 
     return (
         <>
@@ -55,40 +63,62 @@ const Category_snacks: React.FC = () => {
                         </div>
                     </div>
                 </section>
-                {/*featured recipes*/}
-                <div className="featuredrecipe container flex">
-                    <div className="featuredtitles flex">
-                        <div className="titleicon">
 
-                            <img src="snacks_ico.png" alt="snack_ico"/>
-                        </div>
-                        <h2>Featured Recipes</h2>
-                        <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
-                            Elevate Your Snack game, Ensuring Every Moment is a Tasty Adventure:</p>
-                    </div>
-                </div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>title</th>
+                        <th>image</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {snacksCat?.data?.map(i=>(
+                        <tr>
+                            <td>{i?.recipeTitle}</td>
+                            <td>{i?.recipePhoto}</td>
+                            <td>
+                                <button>add to favourite</button>
+                            </td>
+                        </tr>
+                    ))}
 
-                {/* Section 1: All recipes */}
-                <div className={'main-cards'}>
-                    <section className="threecards container flex">
-                        {section1Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
-                        ))}
-                    </section>
-                </div>
+                    </tbody>
+                </table>
+                {/*/!*featured recipes*!/*/}
+                {/*<div className="featuredrecipe container flex">*/}
+                {/*    <div className="featuredtitles flex">*/}
+                {/*        <div className="titleicon">*/}
 
-                {/* Section 2: Recipes with duration <= 15 minutes */}
-                <div className="quickrecipe-title flex">
-                    <h2>Quick Fixes, Endless Flavor</h2>
-                    <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection:</p>
-                </div>
-                <div className={'main-cards'}>
-                <section className="explorerecipe container flex">
-                        {section2Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
-                        ))}
-                </section>
-                </div>
+                {/*            <img src="snacks_ico.png" alt="snack_ico"/>*/}
+                {/*        </div>*/}
+                {/*        <h2>Featured Recipes</h2>*/}
+                {/*        <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and*/}
+                {/*            Elevate Your Snack game, Ensuring Every Moment is a Tasty Adventure:</p>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+
+                {/*/!* Section 1: All recipes *!/*/}
+                {/*<div className={'main-cards'}>*/}
+                {/*    <section className="threecards container flex">*/}
+                {/*        {section1Recipes.map((recipe) => (*/}
+                {/*            <RecipeCard key={recipe.id} recipe={recipe} />*/}
+                {/*        ))}*/}
+                {/*    </section>*/}
+                {/*</div>*/}
+
+                {/*/!* Section 2: Recipes with duration <= 15 minutes *!/*/}
+                {/*<div className="quickrecipe-title flex">*/}
+                {/*    <h2>Quick Fixes, Endless Flavor</h2>*/}
+                {/*    <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection:</p>*/}
+                {/*</div>*/}
+                {/*<div className={'main-cards'}>*/}
+                {/*<section className="explorerecipe container flex">*/}
+                {/*        {section2Recipes.map((recipe) => (*/}
+                {/*            <RecipeCard key={recipe.id} recipe={recipe} />*/}
+                {/*        ))}*/}
+                {/*</section>*/}
+                {/*</div>*/}
             </main>
 
 

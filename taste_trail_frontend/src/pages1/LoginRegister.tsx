@@ -15,7 +15,6 @@ const LoginRegister: React.FC = () => {
         confirmPassword: '',
     });
 
-    const [showTerms, setShowTerms] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,11 +30,6 @@ const LoginRegister: React.FC = () => {
             // Redirect to another page if needed
             navigate('/dashboard');
         }
-    };
-
-    const handleTermsAgreement = () => {
-        // Close the terms and conditions popup
-        setShowTerms(false);
     };
 
 
@@ -186,28 +180,6 @@ const LoginRegister: React.FC = () => {
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
 
-                    {/* Checkbox for Terms and Conditions */}
-                    {formType === 'register' && (
-                        <div className="form-group">
-                            <label>
-                                I have read and agree to the terms and conditions.
-                                <input
-                                    type="checkbox"
-                                    id="agreeCheckbox"
-                                    onChange={() => setShowTerms(!showTerms)}
-                                />{' '}
-                            </label>
-                        </div>
-                    )}
-
-                    {/* OK Button - Initially disabled */}
-                    {showTerms && (
-                        <div>
-                            <button type="button" onClick={handleTermsAgreement} disabled={!showTerms}>
-                                OK
-                            </button>
-                        </div>
-                    )}
 
                     <p>
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
@@ -215,15 +187,11 @@ const LoginRegister: React.FC = () => {
                             {formType === 'login' ? ' Sign Up' : ' Sign In'}
                         </span>
                     </p>
+
+
                 </form>
 
-                {/* Terms and Conditions Popup */}
-                {showTerms && (
-                    <div className="terms-popup">
-                        {/* Include your terms and conditions text here */}
-                        <p>[Your terms and conditions content]</p>
-                    </div>
-                )}
+
             </div>
         </div>
     );
