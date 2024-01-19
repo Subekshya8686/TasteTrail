@@ -10,6 +10,9 @@ import Recipes from "./pages1/Recipes.tsx";
 // import React from "react";
 import UserProfile from "./pages1/userProfile.tsx";
 import Category_snacks1 from "./pages1/Category_snacks1.tsx";
+import AdminPanel from "./pages1/AdminPanel.tsx";
+// import RecipeList from "./components/RecipeList.tsx";
+// import Recipecard from "./components/Recipecard.tsx";
 
 const router  =createBrowserRouter(
     [
@@ -17,6 +20,7 @@ const router  =createBrowserRouter(
             path:"/category_snacks",
             element:<Category_snacks/>
         },
+
         {
             path:"/recipes",
             element:<Recipes/>
@@ -26,32 +30,52 @@ const router  =createBrowserRouter(
 
             element:<Homepage/>
         },
+
         {
             path:"/header",
             element:<Header/>
         },
+
         {
             path:"/footer",
             element:<Footer/>
         },
+
         {
             path:"/upload",
             element:<Upload/>
         },
+
         {
             path :"/",
             element: <LoginRegister/>
         },
+
         {
             path:"/category_snacks1",
             element:<Category_snacks1/>
         },
+
         {
             path :"/user-profile",
             element: <UserProfile userId="123"/>
         },
 
+        // {
+        //     path :"recipelist",
+        //     element: <RecipeList recipes={}/>
+        // },
+        
+        {
+            path :"/admin",
+            element: <AdminPanel/>
+        },
 
+        {
+            // Dynamic route for Recipes page with recipe ID as a parameter
+            path: '/recipes/:id',
+            element: <Recipes />,
+        },
     ]
 )
 

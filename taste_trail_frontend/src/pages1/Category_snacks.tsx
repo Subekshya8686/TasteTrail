@@ -12,7 +12,6 @@ interface Recipe {
     recipePhoto: string;
     recipeDescription: string;
     preparationTimeMinutes: string;
-
 }
 
 const Category_snacks: React.FC = () => {
@@ -27,6 +26,7 @@ const Category_snacks: React.FC = () => {
                 const categoryType = "snacks"; // Change categoryType based on the page
                 const response = await axios.get<Recipe[]>(`/api/recipes?categoryType=${categoryType}`);
                 setRecipesData(response.data);
+                console.log('data fetched');
             } catch (error) {
                 console.error('Error fetching recipes:', error);
             }

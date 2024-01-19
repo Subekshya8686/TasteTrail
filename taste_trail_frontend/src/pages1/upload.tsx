@@ -181,7 +181,7 @@ const upload: React.FC = () => {
             const recipeData = gatherRecipeData();
 
             // Replace the URL with your actual backend API endpoint
-            const backendEndpoint = 'https://jsonplaceholder.typicode.com/posts';
+            const backendEndpoint = 'https://localhost:8080/content/save';
 
             const response = await axios.post(backendEndpoint, recipeData);
 

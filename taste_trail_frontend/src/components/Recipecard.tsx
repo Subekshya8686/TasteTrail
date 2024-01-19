@@ -2,15 +2,16 @@ import { FC } from 'react';
 import './css/Recipecard.css'
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
+import { Link } from 'react-router-dom';
 
 interface RecipeCardProps {
     recipe: {
+        id: number;
         recipePhoto: string;
         recipeTitle: string;
         categoryType: string;
         recipeDescription: string;
         preparationTimeMinutes: string;
-
         // Add other properties based on your actual data structure
     };
 }
@@ -33,9 +34,10 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
                         <i><MdOutlineTimer size={'1.2rem'} />{recipe.preparationTimeMinutes}</i>
                     </li>
                 </ul>
-                <a href="/" className="tcardbtn">
+                {/*can keep recipetitle or id*/}
+                <Link to={`/recipes/${recipe.recipeTitle}`} className="tcardbtn">
                     Read More
-                </a>
+                </Link>
             </div>
         </div>
     );
