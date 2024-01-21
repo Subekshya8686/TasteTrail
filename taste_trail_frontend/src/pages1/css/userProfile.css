@@ -46,12 +46,5 @@
     text-align: center;
 }
 
-.recipe-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    justify-content: center; /* Center grid items horizontally */
-    box-shadow: #1a1a1a;
-}
 
 /* Add more styling as needed */

@@ -15,6 +15,7 @@ const LoginRegister: React.FC = () => {
         confirmPassword: '',
     });
 
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
@@ -31,7 +32,6 @@ const LoginRegister: React.FC = () => {
         }
     };
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 
     return (
         <div className="flex-container">
@@ -180,13 +180,18 @@ const LoginRegister: React.FC = () => {
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
 
+
                     <p>
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
                         <span onClick={() => setFormType(formType === 'login' ? 'register' : 'login')}>
                             {formType === 'login' ? ' Sign Up' : ' Sign In'}
                         </span>
                     </p>
+
+
                 </form>
+
+
             </div>
         </div>
     );
