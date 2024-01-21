@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './css/LoginRegister.css';
 import './homepage.tsx';
 import {useMutation} from "react-query";
@@ -7,71 +7,59 @@ import axios from "axios";
 import {useForm} from "react-hook-form";
 
 const LoginRegister: React.FC = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const [formType, setFormType] = useState<'login' | 'register' | ''>('login');
-    // const [formState, setFormState] = useState({
-    //     firstName: '',
-    //     lastName: '',
-    //     username: '',
-    //     email: '',
-    //     password: '',
-    //     confirmPassword: '',
-    // });
+    const [rememberMe, setRememberMe] = useState<boolean>(false); // Declare rememberMe as a boolean
 
     const {register,
         handleSubmit,
-        formState
+        // formState
     }= useForm();
-
-    // const handleSubmit = (e: React.FormEvent) => {
-    //     e.preventDefault();
-    //
-    //     if (formType === 'login') {
-    //         // Perform login logic based on formState
-    //         console.log('Login Form submitted:', formState);
-    //         // session storage
-    //         sessionStorage.setItem('username', formState.username);
-    //         sessionStorage.setItem('password', formState.password);
-    //
-    //     } else if (formType === 'register') {
-    //         // Perform registration logic based on formState
-    //         console.log('Register Form submitted:', formState);
-    //         onSubmit(formState);
-    //
-    //     }
-    // };
-
-    // <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-
 
     const saveData = useMutation({
         mutationKey:"SAVEDATA",
         mutationFn:(requestData: any)=>{
             console.log(requestData)
-            return axios.post("http://localhost:8080/users/save", requestData, {withCredentials: true})
+            return axios.post("http://localhost:8080/users/save",
+                requestData, {withCredentials: true})
     },
+        onSuccess: () => {
+            // Redirect to the login form after successful registration
+            setFormType('login');},
     });
 
 
     const loginUser = useMutation({
         mutationKey:"LOGINUSER",
-        mutationFn:(LoginData: any)=>{
+        mutationFn:async (LoginData: any) => {
             console.log(LoginData)
-            return axios.post("http://localhost:8080/authenticate", LoginData, {withCredentials: true})
+            await axios.post("http://localhost:8080/authenticate",
+                LoginData, {withCredentials: true})
+        },
+        onSuccess: (_, variables) => {
+            if (rememberMe) {
+                // Save login credentials to sessionStorage after successful login only if "Remember me" is checked
+                sessionStorage.setItem('username', variables.username);
+                sessionStorage.setItem('password', variables.password);
+            }
         },
     });
 
 
     const onSubmit=(values:any)=>{
-        saveData.mutate(values)
+        // saveData.mutate(values)
+        if (formType === 'register') {
+            saveData.mutate(values);
+        } else {
+            loginUser.mutate(values);
+        }
     }
     const handleLogin =(values:any)=>{
         loginUser.mutate(values)
+        navigate('/homepage');
     }
 
-
-
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     return (
         <>
         <div className="flex-container">
@@ -216,7 +204,11 @@ const LoginRegister: React.FC = () => {
                     {formType === 'login' && (
                         <div className="remember-forgot">
                             <label>
-                                <input type="checkbox"/>Remember me
+                                <input
+                                    type="checkbox"
+                                    checked={rememberMe}
+                                    onChange={() => setRememberMe(!rememberMe)}
+                                />Remember me
                             </label>
                             <a href="#">Forgot Password?</a>
                         </div>
