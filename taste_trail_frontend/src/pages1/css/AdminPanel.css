@@ -233,47 +233,22 @@ button:hover {
     flex-direction: column;
     gap: 15px;
     padding: 5px;
+    margin-left: 100px;
 }
 
-.tlabel {
+.recipelist .tlabel {
     color: brown;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .recipelist-info h2 {
-    font-size: 20px;
+    font-size: 22px;
     color: #222;
     text-align: center;
     text-transform: capitalize;
-    /*font-family: var(--font-family);*/
+    font-family: var(--font-family);
 }
-
-.recipelist-info ul {
-    gap: 12px;
-}
-
-.recipelist-info ul li {
-    font-size: 12px;
-}
-
-.recipelist-info ul li i {
-    margin-right: 5px;
-    color: rgb(0, 0, 0);
-}
-
-.edit-delete {
-    display: grid;
-    margin-right: 50px;
-    right: 0;
-    position: fixed;
-}
-
-.edit-delete button {
-    width: 70px;
-    height: 50px;
-}
-
 
 /*userlist*/
 
@@ -291,16 +266,26 @@ button:hover {
 }
 
 .userlist-card span {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-left: 50px;
     margin-top: 10px;
+    margin-right: 100px;
 }
 
 .userlist-info {
     position: relative;
-    margin-top: 10px;
-    gap: 15px;
+    margin-top: 5px;
+    gap: 10px;
     padding: 5px;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.userlist-info h2 {
+    font-size: 22px;
+    color: #222;
+    text-align: center;
+    font-family: var(--font-family);
 }
 
 .user-name {
@@ -339,4 +324,23 @@ button:hover {
 
 .commentlist-info p {
     overflow: hidden;
+}
+
+.commentlist-card span {
+    font-size: 4rem;
+}
+
+
+/*for edit delete buttons*/
+
+.edit-delete {
+    display: grid;
+    margin-right: 50px;
+    right: 0;
+    position: absolute;
+}
+
+.edit-delete button {
+    width: 70px;
+    height: 50px;
 }

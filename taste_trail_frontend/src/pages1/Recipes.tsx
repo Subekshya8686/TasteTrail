@@ -1,14 +1,6 @@
 import './css/Recipes.css';
-<<<<<<< HEAD
 // import {FaCircleUser} from "react-icons/fa6";
 import {FaHeart, FaMinus, FaPlus, FaPrint} from "react-icons/fa";
-=======
-import {FaHeart} from "react-icons/fa";
-import { FaPrint } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
-import { FaStarHalfAlt } from "react-icons/fa";
-import { FaRegStar } from "react-icons/fa";
->>>>>>> 6021b32746244cfd9e50d19deadfa980a01d432e
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 import {useEffect, useState} from "react";
@@ -59,8 +51,7 @@ function Recipes() {
           font-size: 16px;
           margin: 4px 2px;
           margin-left: 80vh;
-          cursor: pointer;">Print</button>
-      `;
+          cursor: pointer;">Print</button>`;
 
             // Open a new tab with the generated HTML content
             const recipePage = window.open();
@@ -112,9 +103,7 @@ function Recipes() {
 
             <main>
             <section className="img_description">
-<<<<<<< HEAD
                 <RecipeImg recipe={mockRecipeData}/>
-=======
                 <div className="recipeimg flex">
                     <div className="img"><img src="alooparatha.jpg" alt=""/></div>
 
@@ -126,7 +115,6 @@ function Recipes() {
                         </p>
                     </div>
                 </div>
->>>>>>> 6021b32746244cfd9e50d19deadfa980a01d432e
             </section>
 
             <section className="rating-time flex">
@@ -208,10 +196,6 @@ Serve the Aloo Parathas hot with yogurt, pickles, or any chutney of your choice.
             </section>
 
         </main>
-<<<<<<< HEAD
-
-=======
->>>>>>> 6021b32746244cfd9e50d19deadfa980a01d432e
             <Footer/>
 
         </>
