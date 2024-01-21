@@ -69,29 +69,35 @@ section {
     /* background-color: #003049; */
 }
 
-h1 {
-    font-size: 100px;
+.recipe_description h1 {
+    font-size: 50px;
+    margin-right: 63vh;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
-h2 {
+.recipe_description h2 {
     margin-top: 5vh;
     text-align: left;
     font-family: "Playfair Display",'sans-serif';
     text-decoration: none;
     color: black;
     font-size: 30px;
+    font-weight: 550;
+    margin-bottom: 0;
 }
 
 p {
-    font-size: 17px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 1px;
+    font-size: 20px;
+    font-family: "Playfair Display",'sans-serif';
     color: black;
 }
 
 .rating-time {
     color: black;
     justify-content: center;
-    margin-bottom: 8vh;
+    margin-bottom: 5vh;
 }
 
 .rating-time table span i {
@@ -114,18 +120,17 @@ p {
 }
 
 table {
-    width: 70%;
+    width: 1000px;
+    height: 50px;
     border-collapse: collapse;
 }
 
 th, td {
-    border: 2px solid #ffffff;
-    padding: 10px;
-    text-align: left;
-}
-
-th, td {
-    background-color: rgba(241, 156, 107, 0.748);
+    border: 3px solid #ffffff;
+    padding: 12px;
+    text-align: center;
+    background-color: rgba(234, 214, 193, 0.75);
+    border-radius: 15px;
 }
 
 .ingredients td {
@@ -134,6 +139,7 @@ th, td {
 
 .print-fav-btn {
     margin-top: 8vh;
+    margin-bottom: 8vh;
 }
 
 .print-fav {
@@ -202,6 +208,14 @@ th, td {
     text-align: left;
 }
 
+.ingredients button {
+    background-color: black;
+    width: 57px;
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .recipe {
     border: 2px solid #ddd;
     padding: 20px;
@@ -221,12 +235,63 @@ h2 {
 
 pre {
     white-space: pre-wrap;
-    font-family: 'Playfair', 'sans-serif';
+    font-family: 'Playfair Display', 'sans-serif';
 }
 
 .recipe-content {
     padding: 10px;
     border: 1px solid #ccc;
+}
+
+/*rate-comment*/
+
+.recipe-rate-comment {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+}
+
+.rating-section p {
+    margin-right: 10px;
+}
+
+.rating-section span {
+    cursor: pointer;
+    font-size: 2rem;
+    margin-right: 5px;
+    color: grey;
+}
+
+.rating-section span.active {
+    color: orange;
+}
+
+
+.comment-section {
+    margin-top: 10px;
+}
+
+.comment-section p {
+    margin-bottom: 5px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.comment-section button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #2a9d8f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 /*footer*/
