@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="01a5b141-dc63-4b66-b86d-0f60b54cbb31" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/TasteTrail.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Admin/ContentCreate.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Admin/ContentList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Dashboard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Home.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Login.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/TermsAndConditions.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/TermsAndConditions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/contentCreate.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
@@ -668,14 +681,13 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/dto/ContentDto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/dto/request/CategoryRequest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/dto/request/CustomerRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/dto/request/Userdto.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/dto/response/GlobalApiResponse.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/CategoryEntity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/ContentEntity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/CustomerEntity.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/EmailVerificationToken.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/Receipe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/usersModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/entity/UsersModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/exception/CustomExceptionHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/exception/ResourceNotFoundException.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/helper/ApiResponse.java" beforeDir="false" />
@@ -694,8 +706,24 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/service/impl/CategoryService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/service/impl/ContentServiceImpl.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/service/impl/CustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/taste_trail/service/impl/usersService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/components/Profiler.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/components/Profiler.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Category_snacks.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Category_snacks.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Category_snacks1.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Category_snacks1.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/LoginRegister.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/LoginRegister.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Recipes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/Recipes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/Category.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/Category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/LoginRegister.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/LoginRegister.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/Recipes.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/Recipes.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/homepage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/upload.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/userProfile.css" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/css/userProfile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/homepage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/homepage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/upload.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/upload.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/userProfile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/taste_trail_frontend/src/pages1/userProfile.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -705,10 +733,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2abbnNXhxhv0DIpxFlQwWY9wbf7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -718,10 +749,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "pramudita",
+    "git-widget-placeholder": "Merging purnima",
     "last_opened_file_path": "C:/Users/User/IdeaProjects/TasteTrail",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
