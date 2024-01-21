@@ -1,72 +1,70 @@
-// ServingCalculator.tsx
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useQuery } from 'react-query';
+import axios from "axios";
+import {useState} from "react";
+import './css/ServingCalculator.css';
 
-interface ServingCalculatorProps {
-  recipeId: string;
-}
 
-const ServingCalculator: React.FC<ServingCalculatorProps> = ({ recipeId }) => {
-  const [servings, setServings] = useState<number>(1); // Start with 1 serving
-  const [initialIngredients, setInitialIngredients] = useState<string[]>([]);
+const ServingCalculator = () => {
+  interface Ingredient {
+    id: number;
+    ingredientName: string;
+    ingredientQuantity: number;
+    ingredientFraction: number;
+    ingredientUnit: string;
+  }
 
-  useEffect(() => {
-    // Fetch initial serving size and ingredients from the backend
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`YOUR_BACKEND_API_URL/recipe/${recipeId}`);
-        const { servings: fetchedServings, ingredients } = response.data;
+  const {data} = useQuery({
+    queryKey: "GET_DATA",
+    queryFn() {
+      return axios.get("http://localhost:8080/ingredients/getAll")
+    }
+  })
 
-        setServings(fetchedServings);
-        setInitialIngredients(ingredients);
-      } catch (error) {
-        console.error('Error fetching recipe details:', error);
-      }
-    };
+  const [servings, setServings] = useState(1); // Initialize servings state with 1
 
-    fetchData();
-  }, [recipeId]);
-
-  const adjustIngredients = () => {
-    const adjusted = initialIngredients.map((ingredient) => {
-      const quantity = parseFloat(ingredient.split(' ')[0]);
-      return `${(quantity * servings).toFixed(2)} ${ingredient.split(' ').slice(1).join(' ')}`;
-    });
-
-    return adjusted;
-  };
-
-  const handleServingsChange = (newServings: number) => {
-    setServings(newServings);
-  };
-
-  const increaseServings = () => {
-    handleServingsChange(servings + 1);
-  };
-
-  const decreaseServings = () => {
-    if (servings > 1) {
-      handleServingsChange(servings - 1);
+  const updateServings = (action: string) => {
+    if (action === '+' && servings < 20) {
+      setServings(servings + 1);
+    } else if (action === '-' && servings > 1) {
+      setServings(servings - 1);
     }
   };
 
-  return (
-      <div>
-        <div>
-          <h3>Servings:</h3>
-          <button onClick={decreaseServings}>-</button>
-          <span>{servings}</span>
-          <button onClick={increaseServings}>+</button>
-        </div>
+  // Function to format quantity based on its type
+  const formatQuantity = (quantity: number) => {
+    return Number.isInteger(quantity)
+        ? quantity * servings
+        : (quantity * servings).toFixed(2); // Adjust decimal places as needed
+  };
 
-        <div>
-          <h3>Adjusted Ingredient Quantities:</h3>
-          <ul>
-            {adjustIngredients().map((ingredient, index) => (
-                <li key={index}>{ingredient}</li>
-            ))}
-          </ul>
+  return (
+      <div className="serving-calculator">
+        <h1>Ingredient Table</h1>
+        <div className="class-serving">
+          <button onClick={() => updateServings('-')}>  -  </button>
+          <span>Servings: {servings}</span>
+          <button onClick={() => updateServings('+')}>  +  </button>
         </div>
+        <table className="ingredient-list">
+          <thead>
+          <tr>
+            <th>Quantity</th>
+            <th>Name</th>
+            <th>Fraction</th>
+            <th>Unit</th>
+          </tr>
+          </thead>
+          <tbody>
+          {data?.data?.map((ingredient: Ingredient) => (
+              <tr key={ingredient.id}>
+                <td>{formatQuantity(ingredient.ingredientQuantity)}</td>
+                <td>{ingredient.ingredientName}</td>
+                <td>{formatQuantity(ingredient.ingredientFraction)}</td>
+                <td>{ingredient.ingredientUnit}</td>
+              </tr>
+          ))}
+          </tbody>
+        </table>
       </div>
   );
 };
