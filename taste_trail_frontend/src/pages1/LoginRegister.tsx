@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from 'react';
+import {useNavigate} from 'react-router-dom';
 import './css/LoginRegister.css';
 import './homepage.tsx';
 import {useMutation} from "react-query";
@@ -69,7 +69,7 @@ const LoginRegister: React.FC = () => {
             <div className="container">
                 <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={formType === 'register' ? handleSubmit(onSubmit) : handleSubmit(handleLogin)}>
                     <h1>
-                        <a href="/h">Taste<span>Trail</span></a>
+                        <a href="/homepage"><label>Taste</label><span>Trail</span></a>
                     </h1>
                     {formType === 'login' && <h2 className="title">Login</h2>}
                     {formType === 'register' && <h2 className="title">Register</h2>}
@@ -77,14 +77,10 @@ const LoginRegister: React.FC = () => {
                     {formType === 'register' && (
                         <>
                             <div className="form-group">
-                                {/*<form onSubmit={handleSubmit(onSubmit)}>*/}
                                 <div className="input-group">
                                     <label htmlFor="firstName">First Name</label>
                                     <input
                                         type="text"
-                                        // id="firstName"
-                                        // value={formState.firstName}
-                                        // onChange={(e) => setFormState({ ...formState, firstName: e.target.value })}
                                         placeholder="First Name"
                                         required{...register("firstName")}
                                     />
@@ -93,9 +89,6 @@ const LoginRegister: React.FC = () => {
                                     <label htmlFor="lastName">Last Name</label>
                                     <input
                                         type="text"
-                                        // id="lastName"
-                                        // value={formState.lastName}
-                                        // onChange={(e) => setFormState({ ...formState, lastName: e.target.value })}
                                         placeholder="Last Name"
                                         required{...register("lastName")}
                                     />
@@ -104,9 +97,6 @@ const LoginRegister: React.FC = () => {
                                     <label htmlFor="email">Email</label>
                                     <input
                                         type="email"
-                                        // id="email"
-                                        // value={formState.email}
-                                        // onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                                         placeholder="Email address"
                                         required{...register("email")}
                                     />
@@ -115,9 +105,6 @@ const LoginRegister: React.FC = () => {
                                     <label htmlFor="username">Username</label>
                                     <input
                                         type="text"
-                                        // id="username"
-                                        // value={formState.username}
-                                        // onChange={(e) => setFormState({ ...formState, username: e.target.value })}
                                         placeholder="Username"
                                         required{...register("username")}
                                     />
@@ -127,9 +114,6 @@ const LoginRegister: React.FC = () => {
                                     <input
                                         type="password"
                                         pattern=".{6,}"
-                                        // id="password"
-                                        // value={formState.password}
-                                        // onChange={(e) => setFormState({ ...formState, password: e.target.value })}
                                         placeholder="Password"
                                         required{...register("password")}
                                     />
@@ -141,31 +125,13 @@ const LoginRegister: React.FC = () => {
                                     <input
                                         type="password"
                                         pattern=".{6,}"
-                                        // id="confirm-password"
-                                        // value={formState.confirmPassword}
-                                        // onChange={(e) => setFormState({ ...formState, confirmPassword: e.target.value })}
                                         placeholder="Confirm Password"
                                         required{...register("confirmPassword")}
                                     />
                                 </div>
                                 <span className="help-text">Both passwords must match</span>
-                                {/*</form>*/}
                             </div>
-                            {/*<div className="form-group">*/}
-                            {/*    */}
-                            {/*</div>*/}
-                            {/*<div className="form-group">*/}
-                            {/*    */}
-                            {/*</div>*/}
-                            {/*<div className="form-group">*/}
-                            {/*    */}
-                            {/*</div>*/}
-                            {/*<div className="form-group">*/}
-                            {/*    */}
-                            {/*</div>*/}
-                            {/*<div className="form-group">*/}
-                            {/*    */}
-                            {/*</div>*/}
+
 
                         </>
                     )}
@@ -173,14 +139,11 @@ const LoginRegister: React.FC = () => {
 
                     {formType !== 'register' && (
                         <div className="form-group">
-                            {/*<form onSubmit={handleSubmit(handleLogin)}>*/}
                             <div className="input-group">
                                 <label htmlFor="username">Username</label>
                                 <input
                                     type="text"
                                     id="username"
-                                    // value={formState.username}
-                                    // onChange={(e) => setFormState({ ...formState, username: e.target.value })}
                                     placeholder="Username"
                                     required{...register("username")}
                                 />
@@ -191,14 +154,11 @@ const LoginRegister: React.FC = () => {
                                     type="password"
                                     pattern=".{6,}"
                                     id="password"
-                                    // value={formState.password}
-                                    // onChange={(e) => setFormState({ ...formState, password: e.target.value })}
                                     placeholder="Password"
                                     required{...register("password")}
                                 />
                             </div>
                             <span className="help-text">At least 6 characters</span>
-                            {/*</form>*/}
                         </div>
                     )}
                     {formType === 'login' && (

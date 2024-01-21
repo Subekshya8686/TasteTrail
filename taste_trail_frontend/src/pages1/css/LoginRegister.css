@@ -82,10 +82,10 @@ body {
 }
 
 /*!*.title,*!*/
-.form-group h2 {
+.container h2 {
     text-align: center;
 }
-.form-group h1 {
+.container h1 {
     text-align: center;
 }
 
@@ -94,7 +94,7 @@ body {
     transition: 0.2s ease;
 }
 
-.container h1 a {
+.container h1 label {
     font-size: 36px;
     font-family: fantasy;
     text-transform: uppercase;
@@ -106,13 +106,16 @@ body {
     text-decoration: none;
 }
 
-.h1 span {
+.container h1 span {
     font-size: 36px;
     font-family: fantasy;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 2px;
     color: #2a9d8f;
+    cursor: pointer;
+    transition: 0.2s ease;
+    text-decoration: none;
 }
 
 /*!*!* Form Styles *!*!*/
