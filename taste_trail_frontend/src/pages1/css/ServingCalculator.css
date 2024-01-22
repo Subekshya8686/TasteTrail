@@ -7,8 +7,16 @@
 
 /* Styles for the heading */
 h1 {
-    font-size: 1.5em;
     margin-bottom: 10px; /* Adds spacing below the heading */
+    font-weight: normal;
+    /*font-size: 10px;*/
+    font-family: fantasy;
+    text-transform: uppercase;
+    color: #e76f51;
+    cursor: pointer;
+    transition: 0.2s ease;
+    letter-spacing: 2px;
+    text-decoration: none;
 }
 
 /* Styles for the serving buttons and display */
