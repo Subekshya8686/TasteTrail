@@ -79,7 +79,8 @@ header {
     background-size: cover;
     z-index: 1;
     transition: 0.3s ease;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
+    margin-top: 90px;
 }
 
 .headerimg .container {
@@ -123,6 +124,7 @@ header {
     padding-right: 22rem;
     color: #ffff;
     margin-left: 15vh;
+    justify-content: center;
 }
 
 /* featured recipe title */
@@ -211,3 +213,4 @@ header {
 }
 
 /*footer*/
+

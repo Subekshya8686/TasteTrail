@@ -54,7 +54,7 @@ function ContentCreate() {
             const formData = {...data, ingredientsList: ingredientsList?.join(",")};
             saveData.mutate(formData, {
                 onSuccess() {
-                    navigate("/admin/contentList")
+                    navigate("/admin/recipelist")
                 }
             });
         } catch (error) {
@@ -74,7 +74,7 @@ function ContentCreate() {
     return (
         <>
             <button onClick={() => {
-                navigate("/admin/contentList")
+                navigate("/admin")
             }}>Back To Content List
             </button>
 
