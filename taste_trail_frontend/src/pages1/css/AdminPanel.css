@@ -1,0 +1,346 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Handlee&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    /*overflow: hidden;*/
+}
+
+span {
+    color: #4d9270;
+    font-size: 31px;
+    font-weight: 800;
+}
+
+/* for navigation part */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110px;
+    padding: 0 100px;
+    background: rgba(255, 254, 254, 0.91);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo {
+    font-size: 2em;
+    user-select: none;
+    color: black;
+}
+
+.logo h2 a {
+    font-size: 28px;
+    font-family: fantasy;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #e76f51;
+    cursor: pointer;
+    transition: 0.2s ease;
+    letter-spacing: 2px;
+    margin-top: 100px;
+}
+
+.logo h2 a:hover{
+    color: #2a9d8f;
+}
+
+.logo h2 span {
+    color: #2a9d8f;
+}
+
+.logo h2 span:hover{
+    color: #e76f51;
+}
+
+
+.navigation a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    margin-left: 40px;
+    font-family: "Playfair Display", 'sans-serif';
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: black;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+.navigation a:hover:after {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.navigation a:hover {
+    color: #e76f51;;
+}
+
+/*login and upload buttons*/
+
+.btn a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: "Playfair Display", 'sans-serif';
+}
+
+.btn a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+/*for all buttons*/
+button {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid black;
+    outline: none;
+    cursor: pointer;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-left: 40px;
+    transition: .5s;
+    font-family: "Playfair Display", 'sans-serif';
+}
+
+button:hover {
+    background: #e76f51;
+    color: black;
+}
+
+/*main*/
+
+.container1 {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    height: 700px;
+    background: #f8f8f8;
+    border-radius: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    margin-top: 75px;
+    z-index: 1;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.container1::-webkit-scrollbar {
+    width: 12px;
+}
+
+.container1::-webkit-scrollbar-thumb {
+    background-color: #fcfcfc;
+    border-radius: 6px;
+}
+
+.container1::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+/*.container1 .recipelist{*/
+/*    display: none;*/
+/*}*/
+
+/*.container1 .userlist {*/
+/*    display: none;*/
+/*}*/
+
+/*.container1 .commentlist {*/
+/*    display: none;*/
+/*}*/
+
+/* recipelist */
+
+.recipelist-card {
+    position: relative;
+    width: 1350px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px grey;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.recipelist-img {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.recipelist-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.recipelist-card:hover .recipelist-img img {
+    transform: scale(1.1);
+}
+
+.recipelist-card span {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+.recipelist-info {
+    position: relative;
+    margin-top: 10px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 5px;
+    margin-left: 100px;
+}
+
+.recipelist .tlabel {
+    color: brown;
+    font-weight: 600;
+    font-size: 25px;
+}
+
+.recipelist-info h2 {
+    font-size: 22px;
+    color: #222;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: var(--font-family);
+}
+
+/*userlist*/
+
+.userlist-card {
+    position: relative;
+    width: 1350px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px grey;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.userlist-card span {
+    font-size: 4rem;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-right: 100px;
+}
+
+.userlist-info {
+    position: relative;
+    margin-top: 5px;
+    gap: 10px;
+    padding: 5px;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.userlist-info h2 {
+    font-size: 22px;
+    color: #222;
+    text-align: center;
+    font-family: var(--font-family);
+}
+
+.user-name {
+    color: brown;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+
+/*commentlist*/
+
+.commentlist-card {
+    position: relative;
+    width: 1350px;
+    height: auto;
+    overflow: hidden;
+    box-shadow: 0 0 10px grey;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.commentlist-card span {
+    font-size: 3rem;
+}
+
+.commentlist-info {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap: 15px;
+    padding: 5px;
+}
+
+.commentlist-info p {
+    overflow: hidden;
+}
+
+.commentlist-card span {
+    font-size: 4rem;
+}
+
+
+/*for edit delete buttons*/
+
+.edit-delete {
+    display: grid;
+    margin-right: 50px;
+    right: 0;
+    position: absolute;
+}
+
+.edit-delete button {
+    width: 70px;
+    height: 50px;
+}
