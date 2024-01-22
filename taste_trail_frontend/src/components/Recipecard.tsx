@@ -3,6 +3,7 @@ import './css/Recipecard.css'
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
 
+
 interface RecipeCardProps {
     recipe: {
         recipePhoto: string;

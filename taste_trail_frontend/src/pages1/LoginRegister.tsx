@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './css/LoginRegister.css';
 import './homepage.tsx';
 
+
 const LoginRegister: React.FC = () => {
     const navigate = useNavigate();
     const [formType, setFormType] = useState<'login' | 'register' | ''>('login');

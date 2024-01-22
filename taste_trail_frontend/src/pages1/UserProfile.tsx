@@ -1,21 +1,14 @@
+
+
 // UserProfile.tsx
 
 import React from 'react';
 import './css/userProfile.css';
 import Header from '../components/header.tsx';
 import Footer from '../components/footer.tsx';
-import Profiler from "../components/Profiler.tsx";
+import Profiler from "./Profiler.tsx";
 
 
-interface UserProfileProps {
-    userId: string;
-}
-
-// interface UserProfileData {
-//     userId: number;
-//     username: string;
-//     email: string;
-// }
 
 interface Recipe {
     id: number;
@@ -26,14 +19,7 @@ interface Recipe {
     img: string;
 }
 
-const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
-    // Static mock data for styling purposes
-    // const mockUserProfile: UserProfileData = {
-    //     userId: 123,
-    //     username: 'purnima_rana',
-    //     email: 'purnima.rana@example.com',
-    // };
-
+const UserProfile: React.FC = () => {
     // Static mock data for user's favorite recipes
     const mockUserFavorites: Recipe[] = [
         {
@@ -54,19 +40,11 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
         },
         // Add more favorite recipes as needed
     ];
-
-
-    // Function to generate the profile picture initials from the first and last names
-    // const getProfilePictureInitials = (firstName: string, lastName: string): string => {
-    //     const initials = `${firstName.charAt(0)}${lastName.charAt(0)}`;
-    //     return initials.toUpperCase();
-    // };
-
     // Filter recipes for Section 1 and Section 2
     return (
         <>
             <Header />
-            <Profiler userId={"123"}/>
+            <Profiler id={123}/>
 
                 <div className="favorites-section">
                     <h3>Your Favorites</h3>
@@ -89,3 +67,13 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
 };
 
 export default UserProfile;
+
+
+
+
+
+
+
+
+
+

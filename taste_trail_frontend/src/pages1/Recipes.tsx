@@ -9,6 +9,7 @@ import Footer from "../components/footer.tsx";
 import {useEffect} from "react";
 
 
+
 function Recipes() {
     useEffect(() => {
         const printButton = document.querySelector('.print');
