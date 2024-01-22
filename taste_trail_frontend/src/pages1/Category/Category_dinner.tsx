@@ -1,8 +1,8 @@
 import React from 'react';
-import RecipeCard from '../components/Recipecard.tsx';
-import './css/Category.css'
-import Header from "../components/header.tsx";
-import Footer from "../components/footer.tsx";
+import RecipeCard from '../../components/Recipecard.tsx';
+import '../css/Category.css'
+import Header from "../../components/header.tsx";
+import Footer from "../../components/footer.tsx";
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
