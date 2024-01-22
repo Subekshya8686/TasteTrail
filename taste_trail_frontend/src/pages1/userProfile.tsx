@@ -82,7 +82,6 @@ const UserProfile: React.FC<UserProfileProps> = ({ userId }) => {
                     </div>
                 </div>
 
-
             <Footer />
         </>
     );

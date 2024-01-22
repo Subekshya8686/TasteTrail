@@ -17,6 +17,7 @@ import Category_dessert from "./pages1/Category/Category_dessert.tsx";
 import Category_Holiday from "./pages1/Category/Category_Holiday.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
 
+
 const router = createBrowserRouter(
     [
         {
@@ -25,8 +26,9 @@ const router = createBrowserRouter(
         },
 
         {
-            path:"/",
+            path:"/homepage",
             element:<Homepage/>
+
         },
 
         {
@@ -110,14 +112,14 @@ const router = createBrowserRouter(
     ]
 )
 
-const querClient = new QueryClient();
+const queryClient = new QueryClient();
 
 function App() {
 
     return (
         <>
-            <QueryClientProvider client={querClient}>
-                <RouterProvider router={router}/>
+            <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
             </QueryClientProvider>
         </>
     )
