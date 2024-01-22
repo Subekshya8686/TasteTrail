@@ -1,8 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import './css/header.css'
+import {IoFilterSharp, IoSearchSharp} from "react-icons/io5";
+import {IoIosArrowDown} from "react-icons/io";
+import {useNavigate} from "react-router-dom";
+import '../pages1/css/darkmode.css'
+import {FaUserPlus} from "react-icons/fa6";
 
 // function Header(){
 const Header: React.FC = () => {
+
+    const navigate = useNavigate();
+
     const [isDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
     const [isLoggedIn] = useState<boolean>(false);
 
@@ -17,54 +25,40 @@ const Header: React.FC = () => {
 
         window.addEventListener('scroll', handleScroll);
 
-        const searchOn = document.querySelector('#searchopen') as HTMLElement;
-        const searchOff = document.querySelector('#removesearch') as HTMLElement;
-        const searchInput = document.querySelector('.searchinput') as HTMLElement;
-
-        searchInput.style.display = 'none';
-
-        searchOn.addEventListener('click', () => {
-            searchInput.style.display = searchInput.style.display === 'none' ? 'flex' : 'none';
-        });
-
-        searchOff.addEventListener('click', () => {
-            searchInput.style.display = searchInput.style.display === 'flex' ? 'none' : 'flex';
-        });
-
         const mainNav = document.querySelector('.mainnav') as HTMLElement;
 
-        window.addEventListener('scroll', () => {
-            if (document.documentElement.scrollTop > 2) {
-                mainNav.classList.add('sticky');
-            } else {
-                mainNav.classList.remove('sticky');
-            }
-        });
-
-        const darkModeToggle = document.querySelector('#checkbox') as HTMLInputElement;
-        const profileLogo = document.createElement('img');
-
-        if (isDarkMode) {
-            body.classList.add('dark');
-            darkModeToggle.checked = true;
+        if (mainNav) {
+            window.addEventListener('scroll', () => {
+                if (document.documentElement.scrollTop > 2) {
+                    mainNav.classList.add('sticky');
+                } else {
+                    mainNav.classList.remove('sticky');
+                }
+            });
         }
 
-        darkModeToggle.addEventListener('change', () => {
-            if (darkModeToggle.checked) {
-                body.classList.add('dark');
-                localStorage.setItem('darkMode', 'true');
-            } else {
-                body.classList.remove('dark');
-                localStorage.setItem('darkMode', 'false');
-            }
-        });
+        const darkModeToggle = document.querySelector('#checkbox') as HTMLInputElement;
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('change', () => {
+                if (darkModeToggle.checked) {
+                    body.classList.add('dark');
+                    localStorage.setItem('darkMode', 'true');
+                } else {
+                    body.classList.remove('dark');
+                    localStorage.setItem('darkMode', 'false');
+                }
+            });
+        }
 
         const navToggle = document.querySelector('#checkbox2') as HTMLInputElement;
         const navList = document.querySelector('.navlist') as HTMLElement;
 
-        navToggle.addEventListener('change', () => {
-            navList.style.right = navToggle.checked ? '-150px' : '-400px';
-        });
+        if (navToggle && navList) {
+            navToggle.addEventListener('change', () => {
+                navList.style.right = navToggle.checked ? '-150px' : '-400px';
+            });
+        }
 
         const loginLogo = document.querySelector('.navlist li:nth-child(3) a') as HTMLElement;
         const registerLogo = document.querySelector('.navlist li:nth-child(4) a') as HTMLElement;
@@ -72,18 +66,8 @@ const Header: React.FC = () => {
         if (isLoggedIn) {
             loginLogo.style.display = 'none';
             registerLogo.style.display = 'none';
-
-            // Set the path to your profile logo image
-            profileLogo.src = 'path/to/profile-logo.png';
-            profileLogo.alt = 'Profile Logo';
-
-            // Assuming you have a container for the profile logo
-            const profileLogoContainer = document.createElement('div');
-            profileLogoContainer.appendChild(profileLogo);
-            profileLogoContainer.classList.add('profile-logo-container');
-            document.querySelector('.mainnav .container')?.appendChild(profileLogoContainer);
         } else {
-            profileLogo.style.display = 'none';
+            // Optionally handle the case when the user is not logged in
         }
 
         return () => {
@@ -93,47 +77,50 @@ const Header: React.FC = () => {
 
     return (
         <header>
-            <div className="mainnav">
-                <div className="container flex">
-                    <div className="logo flex">
+            <div className="mainnav sticky">
+                <div className="container2 flex sticky">
+                    <div className="logo">
                         <h1>
-                            <a href="homepage.html">Taste <span>Trail</span></a>
+                            <a onClick={() => {
+                            navigate("/") }}>Taste<span>Trail</span></a>
                         </h1>
                     </div>
-                    <ul className="navlist flex">
-                        <li>
-                            <a href="/">Categories</a>
-                        </li>
-                        <li>
-                            <a href="Category_Holiday.html">Holiday & Festives</a>
-                        </li>
-                        <li>
-                            <a href="/">Contact Us</a>
-                        </li>
-                    </ul>
-
-                    <div className="searchbar flex">
-                        <i className="bx bx-search-alt-2" id="searchopen"></i>
-                        <div className="navonoff">
-                            <input type="checkbox" id="checkbox2" />
-                            <label htmlFor="checkbox2" className="toggle2">
-                                <div className="bar bar--top"></div>
-                                <div className="bar bar--middle"></div>
-                                <div className="bar bar--bottom"></div>
-                            </label>
+                    <div id="collection">
+                        <div id="Category"><a>Category<i><IoIosArrowDown /></i></a>
+                            <ul className="dropdown">
+                                <li><a onClick={() => {
+                                    navigate("/category_breakfast") }}>Breakfast</a></li>
+                                <li><a onClick={() => {
+                                    navigate("/category_lunch") }}>Lunch</a></li>
+                                <li><a onClick={() => {
+                                    navigate("/category_snacks") }}>Snacks</a></li>
+                                <li><a onClick={() => {
+                                    navigate("/category_dinner") }}>Dinner</a></li>
+                                <li><a onClick={() => {
+                                    navigate("/category_dessert") }}>Dessert</a></li>
+                            </ul>
                         </div>
                     </div>
-                    {/* Login and Register buttons within a form */}
-                    {/* Add this link to include Font Awesome icons */}
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-                    {/* Update your HTML */}
-                    <button id="registrationButton" type="button" onClick={() => registerUser()}>
-                        <i className="fas fa-user-plus"></i> Register
-                    </button>
-                    <div className="searchinput">
-                        <input type="text" placeholder="Search Here..." />
-                        <i className="bx bx-minus" id="removesearch"></i>
+                    <ul className="navlist flex">
+                        <li><a onClick={() => {
+                            navigate("/category_holiday") }}>Holiday&Festives</a></li>
+                    </ul>
+
+                    {/*SEARCH SECTION */}
+                    <div id="search">
+                        <i className="icon search"><IoSearchSharp size="2rem"/></i>
+                        <input type="text" id="input" name="searchBox" placeholder="Search here..." />
+                        <i><a><IoFilterSharp size="2rem" color="black"/></a>
+                            <li><a>Veg</a></li>
+                            <li><a>Non Veg</a></li>
+                        </i>
                     </div>
+
+                    <button id="registrationButton" type="button" onClick={() => {
+                        navigate("/loginregister") }}>
+                        <i className="fas fa-user-plus"><FaUserPlus size="1.3rem"/></i> Register
+                    </button>
+
                     <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden />
                     <label htmlFor="checkbox" className="toggle">
                         <div className="toggle__circle"></div>

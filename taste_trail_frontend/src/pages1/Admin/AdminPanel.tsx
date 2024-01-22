@@ -25,6 +25,10 @@ function AdminPanel() {
         <>
             <header>
                 <div className="logo">
+                    <h1>
+                        <a onClick={() => {
+                            navigate("/") }}>Taste<span>Trail</span></a>
+                    </h1>
                     <h2>
                         <a href="/">TASTE<span>TRAIL</span></a>
                     </h2>
