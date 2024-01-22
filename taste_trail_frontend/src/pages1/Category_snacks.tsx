@@ -1,8 +1,7 @@
 import './css/Category.css';
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
-import RecipeCard from '../components/Recipecard.tsx';
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import {useQuery} from "react-query";
 

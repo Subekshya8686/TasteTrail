@@ -1,5 +1,11 @@
 import './css/footer.css'
+import {useNavigate} from "react-router-dom";
+
+
 function Footer() {
+
+    const navigate = useNavigate();
+
     return (
         <footer>
             <div className="container flex">
@@ -7,27 +13,23 @@ function Footer() {
                     <div className="footerlogo">
                         <h2>Taste Trail</h2>
                         <p>
-                            We provide a platform for customers to share their culinary creations and discover easy,
-                            delicious recipes,
-                            fostering a vibrant community of food enthusiasts.
+                            Discover the essence of Nepali cuisine as TasteTrail invites you to savor a diverse
+                            array of recipes. Experience the heart of Nepal's culinary heritage at your fingertips.
                         </p>
                     </div>
                     <div className="footernav">
                         <h3>Recipes</h3>
                         <ul className="flex">
-                            <li><a href="Category_Breakfast.html">Breakfast</a></li>
-                            <li><a href="Category_Lunch.html">Lunch</a></li>
-                            <li><a href="Category_Snacks.html">Dinner</a></li>
-                            <li><a href="Category_Dinner.html">Breakfast</a></li>
-                            <li><a href="Category_Dessert.html">Dessert</a></li>
-                            <li><a href="Category_Holiday.html">Holiday & Festive Specials</a></li>
-                        </ul>
-                    </div>
-                    <div className="footernav">
-                        <h3>Legal</h3>
-                        <ul className="flex">
-                            <li><a href="/">Privacy Policy</a></li>
-                            <li><a href="/">Terms and Conditions</a></li>
+                            <li><a onClick={() => {
+                                navigate("/category_breakfast") }}>Breakfast</a></li>
+                            <li><a onClick={() => {
+                                navigate("/category_lunch") }}>Lunch</a></li>
+                            <li><a onClick={() => {
+                                navigate("/category_snacks") }}>Snacks</a></li>
+                            <li><a onClick={() => {
+                                navigate("/category_dinner") }}>Dinner</a></li>
+                            <li><a onClick={() => {
+                                navigate("/category_dessert") }}>Dessert</a></li>
                         </ul>
                     </div>
                 </div>
