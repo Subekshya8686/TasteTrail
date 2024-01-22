@@ -1,7 +1,7 @@
 import '../css/AdminPanel.css';
 import RecipeList from "./RecipeList.tsx";
 import UserList from "./UserList.tsx";
-import CommentList from "./CommentList.tsx";
+import CommentList from "../../pages/Admin/CommentList.tsx";
 import {useEffect, useState} from "react";
 import {FaCircleUser} from "react-icons/fa6";
 import {useNavigate} from "react-router-dom";
@@ -29,6 +29,9 @@ function AdminPanel() {
                         <a onClick={() => {
                             navigate("/") }}>Taste<span>Trail</span></a>
                     </h1>
+                    <h2>
+                        <a href="/">TASTE<span>TRAIL</span></a>
+                    </h2>
                 </div>
                 <nav className="navigation flex">
                     <a href="#">Dashboard</a>

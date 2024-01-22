@@ -63,7 +63,11 @@ const Category_lunch: React.FC = () => {
                 <section className="headerimg">
                     <div className="container">
                         <div className="headerinfo flex">
+<<<<<<< HEAD
                             <h2 className="headertitle">Lunch</h2>
+=======
+                            <h2 className="headertitle">Snacks and Appetizers</h2>
+>>>>>>> 961a8e030f009bc2ceb72c3bb9a365bdf3fb015d
                             <p className="headerpera">Elevate your meal experience with our tasty and easy-to-make snacks.
                                 Find the perfect recipes for any occasion.</p>
                             <a href="/" className="headerbtn"></a>
