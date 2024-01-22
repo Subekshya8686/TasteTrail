@@ -1,8 +1,8 @@
 import React from 'react';
-import RecipeCard from '../components/Recipecard.tsx';
-import './css/Category.css'
-import Header from "../components/header.tsx";
-import Footer from "../components/footer.tsx";
+import RecipeCard from '../../components/Recipecard.tsx';
+import '../css/Category.css'
+import Header from "../../components/header.tsx";
+import Footer from "../../components/footer.tsx";
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -16,17 +16,17 @@ interface Recipe {
     preparationTimeHours: string;
 }
 
-const Category_breakfast: React.FC = () => {
+const Category_dessert: React.FC = () => {
 
-    const {data:snacksBreakfast}=useQuery({
-        queryKey:["SNACKS_BREAKFAST"],
+    const {data:snacksDessert}=useQuery({
+        queryKey:["SNACKS_DESSERT"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/breakfast")
+            return axios.get("http://localhost:8080/content/byCategory/desserts")
         }
     })
 
     // Mapping data from the table structure to Recipe structure
-    const recipes: Recipe[] = snacksBreakfast?.data?.map((item: any) => ({
+    const recipes: Recipe[] = snacksDessert?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
         categoryType: item.categoryType,
@@ -43,7 +43,7 @@ const Category_breakfast: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 1
-        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'breakfast';
+        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'desserts';
     });
 
     const section2Recipes = recipes.filter((recipe) => {
@@ -51,7 +51,7 @@ const Category_breakfast: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 2
-        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'breakfast';
+        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'desserts';
     });
 
 
@@ -63,9 +63,9 @@ const Category_breakfast: React.FC = () => {
                 <section className="headerimg">
                     <div className="container">
                         <div className="headerinfo flex">
-                            <h2 className="headertitle">BreakFast</h2>
-                            <p className="headerpera">Elevate your morning experience with our tasty and easy-to-make snacks.
-                                Find the perfect recipes for any occasion.</p>
+                            <h2 className="headertitle">Desserts</h2>
+                            <p className="headerpera">Elevate your sweet experience with our tasty and easy-to-make snacks.
+                                Find the perfect dessert recipes for any occasion.</p>
                             <a href="/" className="headerbtn"></a>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const Category_breakfast: React.FC = () => {
                         </div>
                         <h2>Featured Recipes</h2>
                         <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
-                            Elevate Your Breakfast time, Ensuring Every Moment is a Tasty Adventure:</p>
+                            Elevate Your Dessert game, Ensuring Every Moment is a Tasty Adventure:</p>
                     </div>
                 </div>
 
@@ -113,4 +113,4 @@ const Category_breakfast: React.FC = () => {
     );
 }
 
-export default Category_breakfast;
+export default Category_dessert;

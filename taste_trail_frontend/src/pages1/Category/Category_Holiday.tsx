@@ -1,8 +1,8 @@
 import React from 'react';
-import RecipeCard from '../components/Recipecard.tsx';
-import './css/Category.css'
-import Header from "../components/header.tsx";
-import Footer from "../components/footer.tsx";
+import RecipeCard from '../../components/Recipecard.tsx';
+import '../css/Category.css'
+import Header from "../../components/header.tsx";
+import Footer from "../../components/footer.tsx";
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -16,17 +16,17 @@ interface Recipe {
     preparationTimeHours: string;
 }
 
-const Category_dessert: React.FC = () => {
+const Category_Holiday: React.FC = () => {
 
-    const {data:snacksDessert}=useQuery({
-        queryKey:["SNACKS_DESSERT"],
+    const {data:snacksHoliday}=useQuery({
+        queryKey:["SNACKS_HOLIDAY"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/desserts")
+            return axios.get("http://localhost:8080/content/byCategory/holiday&festives")
         }
     })
 
     // Mapping data from the table structure to Recipe structure
-    const recipes: Recipe[] = snacksDessert?.data?.map((item: any) => ({
+    const recipes: Recipe[] = snacksHoliday?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
         categoryType: item.categoryType,
@@ -43,7 +43,7 @@ const Category_dessert: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 1
-        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'desserts';
+        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'holiday&festives';
     });
 
     const section2Recipes = recipes.filter((recipe) => {
@@ -51,7 +51,7 @@ const Category_dessert: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 2
-        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'desserts';
+        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'holiday&festives';
     });
 
 
@@ -63,9 +63,9 @@ const Category_dessert: React.FC = () => {
                 <section className="headerimg">
                     <div className="container">
                         <div className="headerinfo flex">
-                            <h2 className="headertitle">Desserts</h2>
-                            <p className="headerpera">Elevate your sweet experience with our tasty and easy-to-make snacks.
-                                Find the perfect dessert recipes for any occasion.</p>
+                            <h2 className="headertitle">Holiday and Festives</h2>
+                            <p className="headerpera">Elevate your holiday experience with our tasty and easy-to-make snacks.
+                                Find the perfect recipes for any occasion.</p>
                             <a href="/" className="headerbtn"></a>
                         </div>
                     </div>
@@ -79,7 +79,7 @@ const Category_dessert: React.FC = () => {
                         </div>
                         <h2>Featured Recipes</h2>
                         <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
-                            Elevate Your Dessert game, Ensuring Every Moment is a Tasty Adventure:</p>
+                            Elevate Your Holiday&Festival season, Ensuring Every Moment is a Tasty Adventure:</p>
                     </div>
                 </div>
 
@@ -113,4 +113,4 @@ const Category_dessert: React.FC = () => {
     );
 }
 
-export default Category_dessert;
+export default Category_Holiday;

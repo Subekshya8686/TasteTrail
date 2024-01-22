@@ -1,8 +1,8 @@
 import React from 'react';
-import './css/Category.css'
-import RecipeCard from '../components/Recipecard.tsx';
-import Header from "../components/header.tsx";
-import Footer from "../components/footer.tsx";
+import RecipeCard from '../../components/Recipecard.tsx';
+import '../css/Category.css'
+import Header from "../../components/header.tsx";
+import Footer from "../../components/footer.tsx";
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -16,17 +16,17 @@ interface Recipe {
     preparationTimeHours: string;
 }
 
-const Category_snacks: React.FC = () => {
+const Category_lunch: React.FC = () => {
 
-    const {data:snacksCat}=useQuery({
-        queryKey:["SNACKS_CAT"],
+    const {data:snacksLunch}=useQuery({
+        queryKey:["SNACKS_LUNCH"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/snacks")
+            return axios.get("http://localhost:8080/content/byCategory/lunch")
         }
     })
 
     // Mapping data from the table structure to Recipe structure
-    const recipes: Recipe[] = snacksCat?.data?.map((item: any) => ({
+    const recipes: Recipe[] = snacksLunch?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
         categoryType: item.categoryType,
@@ -43,7 +43,7 @@ const Category_snacks: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 1
-        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'snacks';
+        return (hours > 0 || (hours === 0 && minutes > 15)) && recipe.categoryType === 'lunch';
     });
 
     const section2Recipes = recipes.filter((recipe) => {
@@ -51,7 +51,7 @@ const Category_snacks: React.FC = () => {
         const minutes = parseInt(recipe.preparationTimeMinutes);
 
         // Section 2
-        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'snacks';
+        return (hours === 0 && minutes <= 15) && recipe.categoryType === 'lunch';
     });
 
 
@@ -63,9 +63,13 @@ const Category_snacks: React.FC = () => {
                 <section className="headerimg">
                     <div className="container">
                         <div className="headerinfo flex">
+<<<<<<< HEAD
+                            <h2 className="headertitle">Lunch</h2>
+=======
                             <h2 className="headertitle">Snacks and Appetizers</h2>
-                            <p className="headerpera">Elevate your snacking experience with our tasty and easy-to-make snacks.
-                                Find the perfect snack recipes for any occasion.</p>
+>>>>>>> 961a8e030f009bc2ceb72c3bb9a365bdf3fb015d
+                            <p className="headerpera">Elevate your meal experience with our tasty and easy-to-make snacks.
+                                Find the perfect recipes for any occasion.</p>
                             <a href="/" className="headerbtn"></a>
                         </div>
                     </div>
@@ -79,7 +83,7 @@ const Category_snacks: React.FC = () => {
                         </div>
                         <h2>Featured Recipes</h2>
                         <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
-                            Elevate Your Snack game, Ensuring Every Moment is a Tasty Adventure:</p>
+                            Elevate Your Lunch time, Ensuring Every Moment is a Tasty Adventure:</p>
                     </div>
                 </div>
 
@@ -113,4 +117,4 @@ const Category_snacks: React.FC = () => {
     );
 }
 
-export default Category_snacks;
+export default Category_lunch;
