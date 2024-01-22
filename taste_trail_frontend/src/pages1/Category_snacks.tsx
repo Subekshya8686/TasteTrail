@@ -70,18 +70,6 @@ const Category_snacks: React.FC = () => {
                         </div>
                     </div>
                 </section>
-                {/*featured recipes*/}
-                <div className="featuredrecipe container flex">
-                    <div className="featuredtitles flex">
-                        <div className="titleicon">
-
-                            <img src="snacks_ico.png" alt="snack_ico"/>
-                        </div>
-                        <h2>Featured Recipes</h2>
-                        <p> Discover a World of Flavorful bites Crafted to Satisfy Your Cravings and
-                            Elevate Your Snack game, Ensuring Every Moment is a Tasty Adventure:</p>
-                    </div>
-                </div>
 
                 {/*featured recipes*/}
                 <div className="featuredrecipe container flex">
