@@ -9,7 +9,7 @@ interface RecipeImgProps {
     };
 }
 
-const RecipeImg: React.FC<RecipeImgProps> = ({ recipe }) => {
+const RecipeViewImg: React.FC<RecipeImgProps> = ({ recipe }) => {
     return (
             <div className="recipeimg flex">
                 <div className="img"><img src={recipe.recipePhoto} alt=""/></div>
@@ -23,4 +23,4 @@ const RecipeImg: React.FC<RecipeImgProps> = ({ recipe }) => {
     );
 };
 
-export default RecipeImg;
+export default RecipeViewImg;

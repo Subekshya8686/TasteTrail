@@ -49,7 +49,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
                     </li>
                 </ul>
                 {/*can keep recipetitle or id*/}
-                <Link to={`/recipes/${recipe.recipeTitle}`} className="tcardbtn">
+                <Link to={`/recipes/${recipe.recipeTitle}/${recipe.id}`} className="tcardbtn">
                     Read More
                 </Link>
             </div>

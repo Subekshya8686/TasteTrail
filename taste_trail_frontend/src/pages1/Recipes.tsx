@@ -4,7 +4,7 @@ import {FaHeart, FaMinus, FaPlus, FaPrint} from "react-icons/fa";
 import Header from "../components/header.tsx";
 import Footer from "../components/footer.tsx";
 import {useEffect, useState} from "react";
-import RecipeImg from "../components/RecipeImg.tsx";
+import RecipeViewImg from "../components/RecipeViewImg.tsx";
 import RecipeRate_time from "../components/RecipeRate_time.tsx";
 import Rate_comment from "../components/Rate_comment.tsx";
 
@@ -103,7 +103,7 @@ function Recipes() {
 
             <main>
             <section className="img_description">
-                <RecipeImg recipe={mockRecipeData}/>
+                <RecipeViewImg recipe={mockRecipeData}/>
                 <div className="recipeimg flex">
                     <div className="img"><img src="alooparatha.jpg" alt=""/></div>
 
