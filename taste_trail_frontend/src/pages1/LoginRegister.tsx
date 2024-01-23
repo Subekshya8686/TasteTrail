@@ -31,18 +31,10 @@ const LoginRegister: React.FC = () => {
 
     const loginUser = useMutation({
         mutationKey:"LOGINUSER",
-        mutationFn:async (LoginData: any) => {
-            console.log(LoginData)
-            await axios.post("http://localhost:8080/authenticate",
-                LoginData, {withCredentials: true})
-        },
-        onSuccess: (_, variables) => {
-            if (rememberMe) {
-                // Save login credentials to sessionStorage after successful login only if "Remember me" is checked
-                sessionStorage.setItem('username', variables.username);
-                sessionStorage.setItem('password', variables.password);
-            }
-        },
+        mutationFn: (LoginData: any) => {
+            return  axios.post("http://localhost:8080/authenticate",
+                LoginData)
+        }
     });
 
 
@@ -51,23 +43,26 @@ const LoginRegister: React.FC = () => {
         if (formType === 'register') {
             saveData.mutate(values);
         } else {
-            loginUser.mutate(values);
+            loginUser.mutate(values,{
+                onSuccess(data){
+                    console.log(data?.data?.data)
+                    localStorage.setItem("accessToken",data?.data?.data?.token);
+                    localStorage.setItem("userId",data?.data?.data?.userId);
+
+                    navigate("/homepage")
+                }
+            });
         }
     }
-    const handleLogin =(values:any)=>{
-        loginUser.mutate(values)
-        navigate('/homepage');
-    }
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     return (
         <>
         <div className="flex-container">
             <div className="container-wrapper" id="container1">
-                <img src="Food.jpg" height="80%" width="100%" alt="Description of the image" />
+                <img src={"Food.jpg"} height="80%" width="100%" alt="Description of the image" />
             </div>
             <div className="container">
-                <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={formType === 'register' ? handleSubmit(onSubmit) : handleSubmit(handleLogin)}>
+                <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit(onSubmit)}>
                     <h1>
                         <a href="/homepage"><label>Taste</label><span>Trail</span></a>
                     </h1>
