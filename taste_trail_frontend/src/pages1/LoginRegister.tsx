@@ -29,7 +29,7 @@ const LoginRegister: React.FC = () => {
             // Perform registration logic based on formState
             console.log('Register Form submitted:', formState);
             // Redirect to another page if needed
-            navigate('/dashboard');
+            // navigate('/dashboard');
         }
     };
 

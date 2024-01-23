@@ -14,28 +14,28 @@ const Slider = () => {
         {
             id: "lunch",
             title: "Lunch",
-            description: "Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience.",
+            description: "Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience",
             imgSrc: "Lunch.png",
             link: "Category_Lunch.html",
         },
         {
             id: "dinner",
             title: "Dinner",
-            description: "Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience.",
+            description: "Explore our dinner recipes to create delicious and satisfying meals for the end of your day. Discover a variety of dinner options for every taste.",
             imgSrc: "Dinner.png",
             link: "Category_Lunch.html",
         },
         {
             id: "snacks",
             title: "Snacks",
-            description: "Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience.",
+            description: "Elevate your snacking experience with our enticing and effortlessly crafted snacks. Uncover the ideal recipes for any occasion, ensuring that each bite is a perfect blend of taste and simplicity.",
             imgSrc: "Snacks.png",
             link: "Category_Lunch.html",
         },
         {
             id: "dessert",
             title: "Dessert",
-            description: "Savor a satisfying lunch from our diverse recipe collection, and discover new flavors to brighten up your midday break, making each meal a delightful and flavorful experience.",
+            description: "Indulge your sweet cravings with an extravagant dessert sampler that promises a symphony of flavors and textures. This opulent platter features an array of delights, each carefully crafted to satisfy the most discerning palate.",
             imgSrc: "Dessert.png",
             link: "Category_Lunch.html",
         },
@@ -66,8 +66,11 @@ const Slider = () => {
                     <a href={link} className="explore-btn">Explore</a>
                 </div>
             </div>
+
+            <div className="Slider-btn" style={{}}>
             <button onClick={prevSlide} style={{margin:"20px",backgroundColor:"#2a9d8f"}}>< IoIosArrowBack/></button>
             <button onClick={nextSlide} style={{backgroundColor:"#2a9d8f"}}>< IoIosArrowForward/></button>
+            </div>
         </div>
     );
 };
