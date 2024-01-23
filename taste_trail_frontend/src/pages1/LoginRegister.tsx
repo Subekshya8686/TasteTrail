@@ -59,7 +59,7 @@ const LoginRegister: React.FC = () => {
         <>
         <div className="flex-container">
             <div className="container-wrapper" id="container1">
-                <img src="Food.jpg" height="80%" width="100%" alt="Description of the image" />
+                <img src={"Food.jpg"} height="80%" width="100%" alt="Description of the image" />
             </div>
             <div className="container">
                 <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit(onSubmit)}>

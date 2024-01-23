@@ -1,7 +1,7 @@
 import { useQuery } from 'react-query';
 import axios from "axios";
 import {useState} from "react";
-import './css/ServingCalculator.css';
+import '../pages1/css/ServingCalculator.css';
 
 
 const ServingCalculator = () => {
