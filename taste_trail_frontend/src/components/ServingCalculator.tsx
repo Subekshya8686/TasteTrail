@@ -1,7 +1,8 @@
-import { useQuery } from 'react-query';
+import {useQuery} from 'react-query';
 import axios from "axios";
 import {useState} from "react";
-import './css/ServingCalculator.css';
+import '../pages1/css/ServingCalculator.css';
+import Fraction from "fraction.js";
 
 
 const ServingCalculator = () => {
@@ -31,11 +32,22 @@ const ServingCalculator = () => {
   };
 
   // Function to format quantity based on its type
-  const formatQuantity = (quantity: number) => {
-    return Number.isInteger(quantity)
-        ? quantity * servings
-        : (quantity * servings).toFixed(2); // Adjust decimal places as needed
+  // const formatQuantity = (quantity: number) => {
+  //   return Number.isInteger(quantity)
+  //       ? quantity * servings
+  //       : (quantity * servings).toFixed(2); // Adjust decimal places as needed
+  // };
+  //
+  // Function to format quantity based on its type
+  const formatQuantity = (quantity: number, isFraction: boolean = false) => {
+     // Adjust decimal places as needed
+    return isFraction
+        ? new Fraction(quantity * servings).toFraction(true)  // Use fraction.js to convert to fraction
+        : Number.isInteger(quantity)
+            ? quantity * servings
+            : (quantity * servings).toFixed(2);
   };
+
 
   return (
       <div className="serving-calculator">
@@ -48,8 +60,8 @@ const ServingCalculator = () => {
         <table className="ingredient-list">
           <thead>
           <tr>
-            <th>Quantity</th>
             <th>Name</th>
+            <th>Quantity</th>
             <th>Fraction</th>
             <th>Unit</th>
           </tr>
@@ -57,8 +69,8 @@ const ServingCalculator = () => {
           <tbody>
           {data?.data?.map((ingredient: Ingredient) => (
               <tr key={ingredient.id}>
-                <td>{formatQuantity(ingredient.ingredientQuantity)}</td>
                 <td>{ingredient.ingredientName}</td>
+                <td>{formatQuantity(ingredient.ingredientQuantity)}</td>
                 <td>{formatQuantity(ingredient.ingredientFraction)}</td>
                 <td>{ingredient.ingredientUnit}</td>
               </tr>
@@ -70,3 +82,5 @@ const ServingCalculator = () => {
 };
 
 export default ServingCalculator;
+
+

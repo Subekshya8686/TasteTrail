@@ -15,6 +15,7 @@ import Category_dinner from "./pages1/Category/Category_dinner.tsx";
 import Category_lunch from "./pages1/Category/Category_lunch.tsx";
 import ContentCreate from "./pages1/Admin/ContentCreate.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
+import ServingCalculator from "./components/ServingCalculator.tsx";
 
 
 const router = createBrowserRouter(
@@ -60,7 +61,7 @@ const router = createBrowserRouter(
         },
 
         {
-            path: "/loginRegister",
+            path: "/",
             element: <LoginRegister/>
         },
 
@@ -104,10 +105,10 @@ const router = createBrowserRouter(
             element: <AdminPanel/>
         },
 
-        // {
-        //     path: "/termsandconditions",
-        //     element: <TermsAndConditions/>
-        // },
+        {
+            path: "/serving",
+            element: <ServingCalculator/>
+        },
     ]
 )
 

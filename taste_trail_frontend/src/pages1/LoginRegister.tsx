@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './css/LoginRegister.css';
 import './homepage.tsx';
@@ -17,6 +17,16 @@ const LoginRegister: React.FC = () => {
         // formState
     }= useForm();
 
+    useEffect(() => {
+        // Check for token in local storage when component mounts
+        const storedToken = localStorage.getItem('accessToken');
+
+        if (storedToken) {
+            // Token found, navigate to homepage
+            navigate('/homepage');
+        }
+    }, []);
+
     const saveData = useMutation({
         mutationKey:"SAVEDATA",
         mutationFn:(requestData: any)=>{
@@ -32,18 +42,10 @@ const LoginRegister: React.FC = () => {
 
     const loginUser = useMutation({
         mutationKey:"LOGINUSER",
-        mutationFn:async (LoginData: any) => {
-            console.log(LoginData)
-            await axios.post("http://localhost:8080/authenticate",
-                LoginData, {withCredentials: true})
-        },
-        onSuccess: (_, variables) => {
-            if (rememberMe) {
-                // Save login credentials to sessionStorage after successful login only if "Remember me" is checked
-                sessionStorage.setItem('username', variables.username);
-                sessionStorage.setItem('password', variables.password);
-            }
-        },
+        mutationFn: (LoginData: any) => {
+            return  axios.post("http://localhost:8080/authenticate",
+                LoginData)
+        }
     });
 
 <<<<<<< HEAD
@@ -64,24 +66,31 @@ const LoginRegister: React.FC = () => {
         if (formType === 'register') {
             saveData.mutate(values);
         } else {
+<<<<<<< HEAD
             loginUser.mutate(values);
 >>>>>>> 3f96920e8ea431769dc30d3c37d66d3aefbc0e3e
+=======
+            loginUser.mutate(values,{
+                onSuccess(data){
+                    console.log(data?.data?.data)
+                    localStorage.setItem("accessToken",data?.data?.data?.token);
+                    localStorage.setItem("userId",data?.data?.data?.userId);
+
+                    navigate("/homepage")
+                }
+            });
+>>>>>>> f3bc636a2d928110bdaa2fb438ce9e3cf045a00e
         }
     }
-    const handleLogin =(values:any)=>{
-        loginUser.mutate(values)
-        navigate('/homepage');
-    }
 
-    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     return (
         <>
         <div className="flex-container">
             <div className="container-wrapper" id="container1">
-                <img src="Food.jpg" height="80%" width="100%" alt="Description of the image" />
+                <img src={"Food.jpg"} height="80%" width="100%" alt="Description of the image" />
             </div>
             <div className="container">
-                <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={formType === 'register' ? handleSubmit(onSubmit) : handleSubmit(handleLogin)}>
+                <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit(onSubmit)}>
                     <h1>
                         <a href="/homepage"><label>Taste</label><span>Trail</span></a>
                     </h1>
