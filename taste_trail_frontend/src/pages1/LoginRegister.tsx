@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './css/LoginRegister.css';
 import './homepage.tsx';
@@ -15,6 +15,16 @@ const LoginRegister: React.FC = () => {
         handleSubmit,
         // formState
     }= useForm();
+
+    useEffect(() => {
+        // Check for token in local storage when component mounts
+        const storedToken = localStorage.getItem('accessToken');
+
+        if (storedToken) {
+            // Token found, navigate to homepage
+            navigate('/homepage');
+        }
+    }, []);
 
     const saveData = useMutation({
         mutationKey:"SAVEDATA",

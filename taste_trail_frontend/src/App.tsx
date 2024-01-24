@@ -16,6 +16,7 @@ import Category_breakfast from "./pages1/Category/Category_breakfast.tsx";
 import Category_dessert from "./pages1/Category/Category_dessert.tsx";
 import Category_Holiday from "./pages1/Category/Category_Holiday.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
+import ServingCalculator from "./components/ServingCalculator.tsx";
 
 
 const router = createBrowserRouter(
@@ -105,10 +106,10 @@ const router = createBrowserRouter(
             element: <AdminPanel/>
         },
 
-        // {
-        //     path: "/termsandconditions",
-        //     element: <TermsAndConditions/>
-        // },
+        {
+            path: "/serving",
+            element: <ServingCalculator/>
+        },
     ]
 )
 
