@@ -132,6 +132,7 @@ function Recipes() {
             <section className="ingredients-recipe flex">
                 <div className="ingredients">
                     <table>
+
                         <thead>
                         <tr>
                             <th>Ingredients:</th>
