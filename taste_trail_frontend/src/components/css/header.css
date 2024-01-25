@@ -395,6 +395,19 @@ button#registrationButton{
     right: 50px;
 }
 
+/*.profile-initials {*/
+/*    display: inline-block;*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    line-height: 40px;*/
+/*    border-radius: 50%;*/
+/*    background-color: var(--main-color);*/
+/*    color: white;*/
+/*    text-align: center;*/
+/*    font-weight: bold;*/
+/*    font-size: 1rem;*/
+/*}*/
+
 /*#search i a:hover li {*/
 /*    display: block;*/
 /*}*/

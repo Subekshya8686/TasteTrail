@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './css/TermsAndConditions.css'
 
+
 const TermsAndConditions: React.FC = () => {
     const [agree, setAgree] = useState(false);
 

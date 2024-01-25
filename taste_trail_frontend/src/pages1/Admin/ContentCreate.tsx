@@ -33,7 +33,7 @@ function ContentCreate() {
 
     const saveData = useMutation((requestData: any) => {
             return axios.post('http://localhost:8080/content/save', requestData)});
-    ;
+
     // {headers: {Authorization: "Bearer " + localStorage.getItem("accessToken")}});
 
     const addToIngredientList = () => {

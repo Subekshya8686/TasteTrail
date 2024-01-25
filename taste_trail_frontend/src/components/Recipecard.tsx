@@ -4,6 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
 import {useNavigate} from "react-router-dom";
 
+
 interface RecipeCardProps {
     recipe: {
         id: number;

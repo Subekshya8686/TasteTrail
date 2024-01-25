@@ -5,23 +5,28 @@ import Footer from "./components/footer.tsx";
 import LoginRegister from "./pages1/LoginRegister.tsx";
 import Category_snacks from "./pages1/Category/Category_snacks.tsx";
 import Recipes from "./pages1/Recipes.tsx";
-import UserProfile from "./pages1/userProfile.tsx"
-import AdminPanel from "./pages1/Admin/AdminPanel.tsx";
 import {QueryClient, QueryClientProvider} from "react-query";
-import ContentCreate from "./pages1/Admin/ContentCreate.tsx";
-// import ContentList from "./pages1/Admin/ContentList.tsx";
-import Category_lunch from "./pages1/Category/Category_lunch.tsx";
-import Category_dinner from "./pages1/Category/Category_dinner.tsx";
-import Category_breakfast from "./pages1/Category/Category_breakfast.tsx";
-import Category_dessert from "./pages1/Category/Category_dessert.tsx";
+import AdminPanel from "./pages1/Admin/AdminPanel.tsx";
+import UserProfile from "./pages1/UserProfile.tsx";
 import Category_Holiday from "./pages1/Category/Category_Holiday.tsx";
+import Category_dessert from "./pages1/Category/Category_dessert.tsx";
+import Category_breakfast from "./pages1/Category/Category_breakfast.tsx";
+import Category_dinner from "./pages1/Category/Category_dinner.tsx";
+import Category_lunch from "./pages1/Category/Category_lunch.tsx";
+import ContentCreate from "./pages1/Admin/ContentCreate.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
+import ServingCalculator from "./components/ServingCalculator.tsx";
 
 
 const router = createBrowserRouter(
     [
         {
-            path:"/homepage",
+            path: "/recipes",
+            element: <Recipes/>
+        },
+
+        {
+            path:"/",
             element:<Homepage/>
 
         },
@@ -52,7 +57,7 @@ const router = createBrowserRouter(
         },
 
         {
-            path: "/loginRegister",
+            path: "/login",
             element: <LoginRegister/>
         },
 
@@ -98,7 +103,7 @@ const router = createBrowserRouter(
 
         {
             path: "/user-profile",
-            element: <UserProfile userId="123"/>
+            element: <UserProfile/>
         },
 
         {
@@ -106,10 +111,10 @@ const router = createBrowserRouter(
             element: <AdminPanel/>
         },
 
-        // {
-        //     path: "/termsandconditions",
-        //     element: <TermsAndConditions/>
-        // },
+        {
+            path: "/serving",
+            element: <ServingCalculator/>
+        },
     ]
 )
 

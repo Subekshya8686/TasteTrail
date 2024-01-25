@@ -63,6 +63,7 @@ body {
     margin: 0;
     justify-content: space-between;
 
+
 /*#container1 img {*/
 /*    max-width: 100%; !* Set maximum width for the image *!*/
 /*    !*height: auto; !* Maintain aspect ratio *!*!*/
@@ -94,6 +95,7 @@ body {
     text-align: center; /* Center align content */
     align-items: center;
 }
+
 
 /*!*!* Typography *!*!*/
 /*.title {*/
@@ -160,6 +162,7 @@ body {
     text-decoration: none;
 }
 
+
 /*!* Form Styles *!*/
 /*.form-group {*/
 /*    margin-bottom: 2px;*/
@@ -185,6 +188,7 @@ body {
     display: inline-block;
     margin-bottom: 6px;
 }
+
 
 .form-group label {
     color: #1a1a1a;
@@ -215,6 +219,7 @@ body {
     position: relative;
     text-align: left; /* Align input fields to the left */
 }
+
 
 
 .input-group input {
