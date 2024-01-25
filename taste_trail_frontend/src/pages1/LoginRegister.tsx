@@ -60,7 +60,7 @@ const LoginRegister: React.FC = () => {
                     localStorage.setItem("accessToken",data?.data?.data?.token);
                     localStorage.setItem("userId",data?.data?.data?.userId);
 
-                    navigate("/homepage")
+                    // navigate("/homepa")
                 }
             });
         }
