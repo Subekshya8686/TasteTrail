@@ -6,6 +6,7 @@ import {useMutation} from "react-query";
 import axios from "axios";
 import {useForm} from "react-hook-form";
 
+
 const LoginRegister: React.FC = () => {
     const navigate = useNavigate();
     const [formType, setFormType] = useState<'login' | 'register' | ''>('login');

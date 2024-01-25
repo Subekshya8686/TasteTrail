@@ -1,315 +1,315 @@
-body {
-    width: 100%;
-    height: auto;
-    background-color: #ffffff;
-    transition: 0.4s ease;
-    scroll-behavior: smooth;
-    color: #000000;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    /*background-image: url('bg.png');  !* Adjusted path *!*/
-    overflow: auto;
-}
+/*body {*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*    background-color: #ffffff;*/
+/*    transition: 0.4s ease;*/
+/*    scroll-behavior: smooth;*/
+/*    color: #000000;*/
+/*    align-items: center;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    !*background-image: url('bg.png');  !* Adjusted path *!*!*/
+/*    overflow: auto;*/
+/*}*/
 
-.form-container {
-    width: 800px;
-    margin: 50px auto;
-    background-color: rgba(245, 245, 245, 0.100); /* Adjust the alpha value for transparency */
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(252, 205, 127, 0.5); /* Adjust the color and spread for the box shadow */
-    backdrop-filter: blur(10px); /* Adds a blur effect (adjust the value as needed) */
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-h2 {
-    color: #000000;
-    font-family: 'Leaves and Ground', serif;
-    font-size: 50px;
-    margin-bottom: 10px;
-    text-align: start;
-}
-h3 {
-    color: #000000;
-    font-family: 'PlayFair Display','sans-serif';
-    font-size: 20px;
-}
-
-label {
-    margin-top: 10px;
-    font-weight: bold;
-    font-family: 'PlayFair Display','sans-serif';
-    color: #000000;
-}
-
-div#step-3{
-    height: auto;
-}
-
-p{
-    color: #605f5f;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    text-align: left;
-}
-
-input,
-select,
-textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f5f5f5;
-    color: #000000;
-}
-
-input#recipeTitle{
-    border-radius: 10px;
-    height: 40px;
-    border-color: #494747;
-}
-
-select#recipeQuantityType{
-    width: fit-content;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    margin-right: 20px;
-}
-
-input#recipeQuantityNumber{
-    width: 110px;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    margin-right: 20px;
-}
-
-input#preparationTimeHours{
-    width: 80px;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    margin-right: 10px;
-}
-input#preparationTimeMinutes{
-    width: 80px;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    margin-right: 10px;
-}
-select#categoryType{
-    width: 160px;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    margin-right: 10px;
-
-}
-
-input#ingredientQuantity{
-    width: 90px;
-    border-radius: 10px;
-    border-color: #494747;
-    display: inline-block;
-    /*margin-left: 10px;*/
-    margin-right: 10px;
-}
-select#ingredientFraction{
-    width: 80px;
-    border-radius: 10px;
-    border-color: rgb(72, 71, 71);
-    display: inline-block;
-    margin-right: 10px;
-}
-select#ingredientUnit,#ingredientName{
-    border-radius: 10px;
-    border-color: rgb(72, 71, 71);
-}
-
-.quantity-input {
-    display: flex;
-}
-
-.ingredient-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.ingredient-details {
-    flex-grow: 1;
-    margin-right: 10px;
-}
-
-.icon {
-    cursor: pointer;
-    margin-left: 5px;
-}
+/*.form-container {*/
+/*    width: 800px;*/
+/*    margin: 50px auto;*/
+/*    background-color: rgba(245, 245, 245, 0.100); !* Adjust the alpha value for transparency *!*/
+/*    padding: 30px;*/
+/*    border-radius: 8px;*/
+/*    box-shadow: 0 0 10px rgba(252, 205, 127, 0.5); !* Adjust the color and spread for the box shadow *!*/
+/*    backdrop-filter: blur(10px); !* Adds a blur effect (adjust the value as needed) *!*/
+/*}*/
 
 
-.upload-container {
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 10px;
-}
+/*form {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*}*/
 
-.upload-container input[type="file"] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-}
+/*h2 {*/
+/*    color: #000000;*/
+/*    font-family: 'Leaves and Ground', serif;*/
+/*    font-size: 50px;*/
+/*    margin-bottom: 10px;*/
+/*    text-align: start;*/
+/*}*/
+/*h3 {*/
+/*    color: #000000;*/
+/*    font-family: 'PlayFair Display','sans-serif';*/
+/*    font-size: 20px;*/
+/*}*/
 
-.upload-container .upload-icon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 24px;
-    cursor: pointer;
-}
+/*label {*/
+/*    margin-top: 10px;*/
+/*    font-weight: bold;*/
+/*    font-family: 'PlayFair Display','sans-serif';*/
+/*    color: #000000;*/
+/*}*/
 
-button {
-    padding: 10px 15px;
-    background-color: #2a9d8f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 20px;
-}
+/*div#step-3{*/
+/*    height: auto;*/
+/*}*/
 
-button:hover {
-    background-color: #e76f51;
-}
+/*p{*/
+/*    color: #605f5f;*/
+/*    font-family: Arial, Helvetica, sans-serif;*/
+/*    font-size: 15px;*/
+/*    text-align: left;*/
+/*}*/
 
-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
+/*input,*/
+/*select,*/
+/*textarea {*/
+/*    width: 100%;*/
+/*    padding: 8px;*/
+/*    margin-top: 5px;*/
+/*    margin-bottom: 10px;*/
+/*    box-sizing: border-box;*/
+/*    border: 1px solid #ccc;*/
+/*    border-radius: 4px;*/
+/*    background-color: #f5f5f5;*/
+/*    color: #000000;*/
+/*}*/
 
-textarea {
-    resize: vertical;
-    height: auto;
-}
+/*input#recipeTitle{*/
+/*    border-radius: 10px;*/
+/*    height: 40px;*/
+/*    border-color: #494747;*/
+/*}*/
 
-@media (max-width: 768px) {
-    .container {
-        max-width: 90%;
-    }
-}
+/*select#recipeQuantityType{*/
+/*    width: fit-content;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    margin-right: 20px;*/
+/*}*/
 
-.add{
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 10px;
-    margin-top: 0;
-    margin-bottom: 50px;
-    width: auto;
-    height: auto;
-}
-.camera {
-    background-color: #ffeec3;
-    height: auto;
-    width: auto;
-    margin-right: 25px;
-    border-radius: 20px;
-    align-items: center;
-    box-sizing: border-box;
-    border: 2px dotted #333; /* Updated border property */
-    font-size: 15px;
-    text-align: center;
-    justify-content: center; /* Added justify-content property */
-    object-fit: cover;
-}
-#ingredientList {
-    margin-top: 20px;
-}
+/*input#recipeQuantityNumber{*/
+/*    width: 110px;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    margin-right: 20px;*/
+/*}*/
 
-.ingredient-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.camera i{
-    cursor: pointer;
-    margin-left: 5px;
-    font-size: 70px;
-    margin-top: 40px;
-    font-weight: 600;
-    color: rgb(128, 128, 128);
-}
+/*input#preparationTimeHours{*/
+/*    width: 80px;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    margin-right: 10px;*/
+/*}*/
+/*input#preparationTimeMinutes{*/
+/*    width: 80px;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    margin-right: 10px;*/
+/*}*/
+/*select#categoryType{*/
+/*    width: 160px;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    margin-right: 10px;*/
 
-.icon {
-    cursor: pointer;
-    margin-left:5px;
-    font-size: 30px;
-}
+/*}*/
 
-/* Missing CSS for Step 3 */
-#step-3 {
-    height: auto;
-}
+/*input#ingredientQuantity{*/
+/*    width: 90px;*/
+/*    border-radius: 10px;*/
+/*    border-color: #494747;*/
+/*    display: inline-block;*/
+/*    !*margin-left: 10px;*!*/
+/*    margin-right: 10px;*/
+/*}*/
+/*select#ingredientFraction{*/
+/*    width: 80px;*/
+/*    border-radius: 10px;*/
+/*    border-color: rgb(72, 71, 71);*/
+/*    display: inline-block;*/
+/*    margin-right: 10px;*/
+/*}*/
+/*select#ingredientUnit,#ingredientName{*/
+/*    border-radius: 10px;*/
+/*    border-color: rgb(72, 71, 71);*/
+/*}*/
 
-/* Additional styling for form buttons */
-button[type="button"] {
-    background-color: #2a9d8f;
-    color: #fff;
-    margin-top: 20px;
-    margin-right: 10px;
-    cursor: pointer;
-}
+/*.quantity-input {*/
+/*    display: flex;*/
+/*}*/
 
-button[type="button"]:hover {
-    background-color: #e76f51;
-}
+/*.ingredient-item {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
-button[type="button1"] {
-    background-color: #2a9d8f;
-    color: #fff;
-    cursor: pointer;
-}
+/*.ingredient-details {*/
+/*    flex-grow: 1;*/
+/*    margin-right: 10px;*/
+/*}*/
 
-button[type="button1"]:hover {
-    background-color: #e76f51;
-}
+/*.icon {*/
+/*    cursor: pointer;*/
+/*    margin-left: 5px;*/
+/*}*/
 
-/* Styling for ingredient list buttons */
-button[type="button1"],
-button[type="button2"],
-button[type="button3"] {
-    background-color: #2a9d8f;
-    color: #fff;
-    cursor: pointer;
-    margin-top: 10px;
-}
 
-button[type="button1"]:hover,
-button[type="button2"]:hover,
-button[type="button3"]:hover {
-    background-color: #e76f51;
-}
+/*.upload-container {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    margin-bottom: 10px;*/
+/*}*/
 
-/* Additional styling for upload button */
-.upload-container button {
-    margin-top: 10px;
-    background-color: #2a9d8f;
+/*.upload-container input[type="file"] {*/
+/*    font-size: 100px;*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    top: 0;*/
+/*    opacity: 0;*/
+/*}*/
 
-}
+/*.upload-container .upload-icon {*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    top: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    font-size: 24px;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.upload-container button:hover {
-    background-color: #e76f51;
-}
+/*button {*/
+/*    padding: 10px 15px;*/
+/*    background-color: #2a9d8f;*/
+/*    color: #fff;*/
+/*    border: none;*/
+/*    border-radius: 4px;*/
+/*    cursor: pointer;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*button:hover {*/
+/*    background-color: #e76f51;*/
+/*}*/
+
+/*button:disabled {*/
+/*    background-color: #ccc;*/
+/*    cursor: not-allowed;*/
+/*}*/
+
+/*textarea {*/
+/*    resize: vertical;*/
+/*    height: auto;*/
+/*}*/
+
+/*@media (max-width: 768px) {*/
+/*    .container {*/
+/*        max-width: 90%;*/
+/*    }*/
+/*}*/
+
+/*.add{*/
+/*    background-color: #ffffff;*/
+/*    border-radius: 20px;*/
+/*    padding: 10px;*/
+/*    margin-top: 0;*/
+/*    margin-bottom: 50px;*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*}*/
+/*.camera {*/
+/*    background-color: #ffeec3;*/
+/*    height: auto;*/
+/*    width: auto;*/
+/*    margin-right: 25px;*/
+/*    border-radius: 20px;*/
+/*    align-items: center;*/
+/*    box-sizing: border-box;*/
+/*    border: 2px dotted #333; !* Updated border property *!*/
+/*    font-size: 15px;*/
+/*    text-align: center;*/
+/*    justify-content: center; !* Added justify-content property *!*/
+/*    object-fit: cover;*/
+/*}*/
+/*#ingredientList {*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.ingredient-item {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+/*.camera i{*/
+/*    cursor: pointer;*/
+/*    margin-left: 5px;*/
+/*    font-size: 70px;*/
+/*    margin-top: 40px;*/
+/*    font-weight: 600;*/
+/*    color: rgb(128, 128, 128);*/
+/*}*/
+
+/*.icon {*/
+/*    cursor: pointer;*/
+/*    margin-left:5px;*/
+/*    font-size: 30px;*/
+/*}*/
+
+/*!* Missing CSS for Step 3 *!*/
+/*#step-3 {*/
+/*    height: auto;*/
+/*}*/
+
+/*!* Additional styling for form buttons *!*/
+/*button[type="button"] {*/
+/*    background-color: #2a9d8f;*/
+/*    color: #fff;*/
+/*    margin-top: 20px;*/
+/*    margin-right: 10px;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button[type="button"]:hover {*/
+/*    background-color: #e76f51;*/
+/*}*/
+
+/*button[type="button1"] {*/
+/*    background-color: #2a9d8f;*/
+/*    color: #fff;*/
+/*    cursor: pointer;*/
+/*}*/
+
+/*button[type="button1"]:hover {*/
+/*    background-color: #e76f51;*/
+/*}*/
+
+/*!* Styling for ingredient list buttons *!*/
+/*button[type="button1"],*/
+/*button[type="button2"],*/
+/*button[type="button3"] {*/
+/*    background-color: #2a9d8f;*/
+/*    color: #fff;*/
+/*    cursor: pointer;*/
+/*    margin-top: 10px;*/
+/*}*/
+
+/*button[type="button1"]:hover,*/
+/*button[type="button2"]:hover,*/
+/*button[type="button3"]:hover {*/
+/*    background-color: #e76f51;*/
+/*}*/
+
+/*!* Additional styling for upload button *!*/
+/*.upload-container button {*/
+/*    margin-top: 10px;*/
+/*    background-color: #2a9d8f;*/
+
+/*}*/
+
+/*.upload-container button:hover {*/
+/*    background-color: #e76f51;*/
+/*}*/
