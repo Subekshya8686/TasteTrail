@@ -44,7 +44,7 @@ const UserProfile: React.FC = () => {
     return (
         <>
             <Header />
-            <Profiler id={123}/>
+            <Profiler/>
 
                 <div className="favorites-section">
                     <h3>Your Favorites</h3>

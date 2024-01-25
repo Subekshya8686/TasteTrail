@@ -1,80 +1,72 @@
-import React, {useEffect, useState} from 'react';
-import './css/header.css'
-import {IoFilterSharp, IoSearchSharp} from "react-icons/io5";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
+import { IoFilterSharp, IoSearchSharp } from "react-icons/io5";
+import { FaUserPlus } from "react-icons/fa6";
+import './css/header.css';
+import '../pages1/css/darkmode.css';
 import {IoIosArrowDown} from "react-icons/io";
-import {useNavigate} from "react-router-dom";
-import '../pages1/css/darkmode.css'
-import {FaUserPlus} from "react-icons/fa6";
+import {TbChefHat} from "react-icons/tb";
 
+interface UserData {
+    firstName: string;
+    lastName: string;
+    email: string;
+}
 
-// function Header(){
 const Header: React.FC = () => {
-
     const navigate = useNavigate();
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
+    const [user, setUser] = useState<UserData | null>(null);
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    const [isDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
-    const [isLoggedIn] = useState<boolean>(false);
+    const toggleDropdown = () => {
+        setDropdownOpen(!dropdownOpen);
+    };
 
     useEffect(() => {
+        const userId = localStorage.getItem('userId');
+        if (userId) {
+            const userData: UserData = JSON.parse(localStorage.getItem('userData') || '{}');
+            setUser(userData);
+        }
+
         const body = document.body;
+        body.classList.toggle('dark', isDarkMode);
 
         const handleScroll = () => {
-            if (!body.classList.contains('no-scroll')) {
-                body.classList.add('no-scroll');
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        const mainNav = document.querySelector('.mainnav') as HTMLElement;
-
-        if (mainNav) {
-            window.addEventListener('scroll', () => {
+            const mainNav = document.querySelector('.mainnav') as HTMLElement;
+            if (mainNav) {
                 if (document.documentElement.scrollTop > 2) {
                     mainNav.classList.add('sticky');
                 } else {
                     mainNav.classList.remove('sticky');
                 }
-            });
-        }
+            }
+        };
 
-        const darkModeToggle = document.querySelector('#checkbox') as HTMLInputElement;
-
-        if (darkModeToggle) {
-            darkModeToggle.addEventListener('change', () => {
-                if (darkModeToggle.checked) {
-                    body.classList.add('dark');
-                    localStorage.setItem('darkMode', 'true');
-                } else {
-                    body.classList.remove('dark');
-                    localStorage.setItem('darkMode', 'false');
-                }
-            });
-        }
-
-        const navToggle = document.querySelector('#checkbox2') as HTMLInputElement;
-        const navList = document.querySelector('.navlist') as HTMLElement;
-
-        if (navToggle && navList) {
-            navToggle.addEventListener('change', () => {
-                navList.style.right = navToggle.checked ? '-150px' : '-400px';
-            });
-        }
-
-        const loginLogo = document.querySelector('.navlist li:nth-child(3) a') as HTMLElement;
-        const registerLogo = document.querySelector('.navlist li:nth-child(4) a') as HTMLElement;
-
-        if (isLoggedIn) {
-            loginLogo.style.display = 'none';
-            registerLogo.style.display = 'none';
-        } else {
-            // Optionally handle the case when the user is not logged in
-        }
+        window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [isDarkMode, isLoggedIn]);
+    }, [isDarkMode]);
+
+    useEffect(() => {
+        const body = document.body;
+        body.classList.toggle('dark', isDarkMode);
+    }, [isDarkMode]);
+
+    // const getProfilePictureInitials = (firstName: string, lastName: string): string => {
+    //     if (!firstName || !lastName) {
+    //         return ""; // Return an empty string or some default initials
+    //     }
+    //     return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
+    // };
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+        localStorage.setItem('darkMode', (!isDarkMode).toString());
+    };
+
 
     return (
         <header>
@@ -82,8 +74,7 @@ const Header: React.FC = () => {
                 <div className="container2 flex sticky">
                     <div className="logo">
                         <h1>
-                            <a onClick={() => {
-                            navigate("/") }}>Taste<span>Trail</span></a>
+                            <a onClick={() => navigate("/")}>Taste<span>Trail</span></a>
                         </h1>
                     </div>
                     <div id="collection">
@@ -117,12 +108,39 @@ const Header: React.FC = () => {
                         </i>
                     </div>
 
+
+
+
+                    //LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA
+                    //SUBEKSHYAA KO KAAM HOOO
+                    //ARU HARU DON'T TOUCH
+
+
+
                     <button id="registrationButton" type="button" onClick={() => {
-                        navigate("/loginregister") }}>
-                        <i className="fas fa-user-plus"><FaUserPlus size="1.3rem"/></i> Register
+                        navigate(user ? "/user-profile" : "/loginregister");
+                    }}>
+                        {user ? (
+                            <div className="dropdown-container">
+                                <div onClick={toggleDropdown} className="dropdown-trigger">
+                                    <i><TbChefHat size={"2.3rem"}/> </i>
+                                </div>
+                                {dropdownOpen && (
+                                    <ul className="dropdown-menu">
+                                        <li><a href="#">Change Password</a></li>
+                                        <li><a href="#">Update Profile</a></li>
+                                        <li><a href="#">Log Out</a></li>
+                                    </ul>
+                                )}
+                            </div>
+                        ) : (
+                            <>
+                                <i><FaUserPlus size="1.3rem"/></i> Register
+                            </>
+                        )}
                     </button>
 
-                    <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden />
+                    <input type="checkbox" name="checkbox_toggle" id="checkbox" hidden checked={isDarkMode} onChange={toggleDarkMode} />
                     <label htmlFor="checkbox" className="toggle">
                         <div className="toggle__circle"></div>
                     </label>

@@ -48,38 +48,21 @@ const LoginRegister: React.FC = () => {
         }
     });
 
-<<<<<<< HEAD
-        if (formType === 'login') {
-            // Perform login logic based on formState
-            console.log('Login Form submitted:', formState);
-            // Redirect to another page if needed
-            navigate('/dashboard');
-        } else if (formType === 'register') {
-            // Perform registration logic based on formState
-            console.log('Register Form submitted:', formState);
-            // Redirect to another page if needed
-            // navigate('/dashboard');
-=======
 
     const onSubmit=(values:any)=>{
         // saveData.mutate(values)
         if (formType === 'register') {
             saveData.mutate(values);
         } else {
-<<<<<<< HEAD
-            loginUser.mutate(values);
->>>>>>> 3f96920e8ea431769dc30d3c37d66d3aefbc0e3e
-=======
             loginUser.mutate(values,{
                 onSuccess(data){
                     console.log(data?.data?.data)
                     localStorage.setItem("accessToken",data?.data?.data?.token);
                     localStorage.setItem("userId",data?.data?.data?.userId);
 
-                    navigate("/homepage")
+                    // navigate("/homepa")
                 }
             });
->>>>>>> f3bc636a2d928110bdaa2fb438ce9e3cf045a00e
         }
     }
 
