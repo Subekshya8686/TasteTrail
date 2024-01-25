@@ -18,15 +18,15 @@ interface Recipe {
 
 const Category_lunch: React.FC = () => {
 
-    const {data:snacksLunch}=useQuery({
-        queryKey:["SNACKS_LUNCH"],
+    const {data: lunchCat}=useQuery({
+        queryKey:["LUNCH_CAT"],
         queryFn:()=>{
             return axios.get("http://localhost:8080/content/byCategory/lunch")
         }
     })
 
     // Mapping data from the table structure to Recipe structure
-    const recipes: Recipe[] = snacksLunch?.data?.map((item: any) => ({
+    const recipes: Recipe[] = lunchCat?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
         categoryType: item.categoryType,

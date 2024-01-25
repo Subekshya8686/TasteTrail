@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 :root {
     --main-color: #e76f51;
     --sec-color: #2a9d8f;
@@ -82,7 +87,7 @@ button#registrationButton{
     background-color: var(--btnhover-color);
 }
 
-.sticky {
+.sticky1 {
     position: fixed;
     top: 0;
     left: 0;

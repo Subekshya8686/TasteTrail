@@ -8,8 +8,8 @@ function Footer() {
 
     return (
         <footer>
-            <div className="container flex">
-                <div className="footer flex">
+            <div className="footer-container flex">
+                <div className="footer flex ">
                     <div className="footerlogo">
                         <h2>Taste Trail</h2>
                         <p>

@@ -1,17 +1,16 @@
-/*body {*/
-/*    width: 100%;*/
-/*    height: auto;*/
-/*    background-color: #ffffff;*/
-/*    transition: 0.4s ease;*/
-/*    scroll-behavior: smooth;*/
-/*    color: #000000;*/
-/*    align-items: center;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    !*background-image: url('bg.png');  !* Adjusted path *!*!*/
-/*    overflow: auto;*/
-/*}*/
-
+body {
+    width: 100%;
+    height: auto;
+    background-color: #ffffff;
+    transition: 0.4s ease;
+    scroll-behavior: smooth;
+    color: #000000;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    /*background-image: url('bg.png');  !* Adjusted path *!*/
+    /*overflow: auto;*/
+}
 /*.form-container {*/
 /*    width: 800px;*/
 /*    margin: 50px auto;*/

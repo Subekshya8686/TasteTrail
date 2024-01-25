@@ -92,18 +92,6 @@
     font-family: var(--font-family);
 }
 
-.star-rating {
-    display: flex;
-}
-
-.bxs-star {
-    color: orange;
-}
-
-.checked {
-    color: orange;
-}
-
 .tcardinfo p {
     font-size: 14px;
     line-height: 22px;
@@ -146,4 +134,5 @@
 .tcardbtn:hover {
     background-color: #318077;
     color: #fff;
+    cursor: pointer;
 }

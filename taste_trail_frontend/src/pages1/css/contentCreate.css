@@ -9,7 +9,7 @@ body {
     display: flex;
     justify-content: center;
     /*background-image: url('bg.png');  !* Adjusted path *!*/
-    overflow: auto;
+    /*overflow: auto;*/
 }
 
 .form-container {

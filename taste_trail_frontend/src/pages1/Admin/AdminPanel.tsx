@@ -29,9 +29,6 @@ function AdminPanel() {
                         <a onClick={() => {
                             navigate("/") }}>Taste<span>Trail</span></a>
                     </h1>
-                    <h2>
-                        <a href="/">TASTE<span>TRAIL</span></a>
-                    </h2>
                 </div>
                 <nav className="navigation flex">
                     <a href="#">Dashboard</a>
