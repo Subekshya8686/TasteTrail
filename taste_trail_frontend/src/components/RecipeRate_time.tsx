@@ -5,7 +5,8 @@ import '../pages1/css/Recipes.css'
 interface RecipeRatingsProps {
     recipe: {
         ratings: number;
-        totalTime: string;
+        preparationTimeMinutes: string;
+        preparationTimeHours: string;
         recipeOwner: string;
     };
 }
@@ -32,6 +33,18 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe }) => {
         return stars;
     };
 
+    const displayPreparationTime = () => {
+        if (recipe.preparationTimeHours && recipe.preparationTimeMinutes) {
+            return `${recipe.preparationTimeHours} hr ${recipe.preparationTimeMinutes} mins`;
+        } else if (recipe.preparationTimeHours) {
+            return `${recipe.preparationTimeHours} hr`;
+        } else if (recipe.preparationTimeMinutes) {
+            return `${recipe.preparationTimeMinutes} mins`;
+        } else {
+            return 'N/A'; // or any default value if both are not present
+        }
+    };
+
     return (
         <section className="rating-time flex">
             <table>
@@ -43,7 +56,7 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe }) => {
                 </tr>
                 <tr>
                     <td>{renderStars()}</td>
-                    <td>{recipe.totalTime}</td>
+                    <td>{displayPreparationTime()}</td>
                     <td>{recipe.recipeOwner}</td>
                 </tr>
                 </tbody>

@@ -21,11 +21,6 @@ import RecipeList from "./pages1/Admin/RecipeList.tsx";
 const router = createBrowserRouter(
     [
         {
-            path: "/recipes",
-            element: <Recipes/>
-        },
-
-        {
             path:"/homepage",
             element:<Homepage/>
 
@@ -50,10 +45,6 @@ const router = createBrowserRouter(
             path: "/admin/contentedit/:id",
             element: <ContentCreate/>
         },
-        // {
-        //     path: "/admin/contentlist",
-        //     element: <ContentList/>
-        // },
 
         {
             path: "/admin/recipelist",
@@ -93,6 +84,16 @@ const router = createBrowserRouter(
         {
             path: "/category_holiday",
             element: <Category_Holiday/>
+        },
+
+        {
+            path: "/recipes",
+            element: <Recipes/>
+        },
+
+        {
+            path: "/recipeview/:id",
+            element: <Recipes/>
         },
 
         {

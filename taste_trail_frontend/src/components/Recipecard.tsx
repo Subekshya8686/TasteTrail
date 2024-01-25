@@ -2,7 +2,7 @@ import { FC } from 'react';
 import './css/Recipecard.css'
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
-import { Link } from 'react-router-dom';
+import {useNavigate} from "react-router-dom";
 
 interface RecipeCardProps {
     recipe: {
@@ -18,6 +18,7 @@ interface RecipeCardProps {
 }
 
 const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
+    const navigate = useNavigate();
 
     const displayPreparationTime = () => {
         if (recipe.preparationTimeHours && recipe.preparationTimeMinutes) {
@@ -29,6 +30,10 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
         } else {
             return 'N/A'; // or any default value if both are not present
         }
+    };
+
+    const handleNavigate = (id: number) => {
+        navigate(`/recipeview/${id}`);
     };
 
     return (
@@ -49,9 +54,9 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
                     </li>
                 </ul>
                 {/*can keep recipetitle or id*/}
-                <Link to={`/recipes/${recipe.recipeTitle}/${recipe.id}`} className="tcardbtn">
+                <a className="tcardbtn" onClick={() => handleNavigate(recipe.id)}>
                     Read More
-                </Link>
+                </a>
             </div>
         </div>
     );

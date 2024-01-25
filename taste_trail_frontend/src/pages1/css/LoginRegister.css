@@ -1,15 +1,7 @@
-<<<<<<< HEAD
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
-
-/*!*!*!* Variables *!*!*!*/
-=======
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
 /*!*!* Variables *!*!*/
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 :root {
     --grey: #F4F2FF;
     --dark-grey: #B7B7B7;
@@ -25,8 +17,6 @@
     --btnhover-color: #1a1a1a;
 }
 
-<<<<<<< HEAD
-=======
 /*!* Reset Styles *!*/
 /** {*/
 /*    margin: 2px;*/
@@ -46,7 +36,6 @@
 /*    !*overflow: hidden;*!*/
 /*}*/
 
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 /*!*!* Reset Styles *!*!*/
 * {
     margin: 2px;
@@ -74,15 +63,11 @@ body {
     margin: 0;
     justify-content: space-between;
 
-<<<<<<< HEAD
-=======
-
 /*#container1 img {*/
 /*    max-width: 100%; !* Set maximum width for the image *!*/
 /*    !*height: auto; !* Maintain aspect ratio *!*!*/
 /*}*/
 }
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 
 /*!*!* Container Styles *!*!*/
 #container1 {
@@ -110,9 +95,6 @@ body {
     align-items: center;
 }
 
-<<<<<<< HEAD
-=======
-
 /*!*!* Typography *!*!*/
 /*.title {*/
 /*    font-size: 30px;*/
@@ -132,7 +114,6 @@ body {
 /*    text-align: center;*/
 /*}*/
 
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 /*!*!*!* Typography *!*!*!*/
 .title {
     font-size: 30px;
@@ -179,9 +160,6 @@ body {
     text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
-
 /*!* Form Styles *!*/
 /*.form-group {*/
 /*    margin-bottom: 2px;*/
@@ -192,7 +170,6 @@ body {
 /*    margin-bottom: 10px;*/
 /*}*/
 
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 /*!*!* Form Styles *!*!*/
 .form-group {
     margin-bottom: 2px;
@@ -209,19 +186,12 @@ body {
     margin-bottom: 6px;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
-
 .form-group label {
     color: #1a1a1a;
     display: inline-block;
     margin-bottom: 6px;
 }
 
-<<<<<<< HEAD
-=======
 
 /*.input-group {*/
 /*    width: 100%;*/
@@ -240,17 +210,11 @@ body {
 /*    text-align: left; !* Align input fields to the left *!*/
 /*}*/
 
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 .input-group {
     width: 100%;
     position: relative;
     text-align: left; /* Align input fields to the left */
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
-
 
 
 .input-group input {
@@ -290,8 +254,6 @@ body {
 }
 
 
-<<<<<<< HEAD
-=======
 /*.input-group input:focus,*/
 /*.input-group input:not(:placeholder-shown) {*/
 /*    border-color: var(--blue);*/
@@ -407,7 +369,6 @@ body {
 /*    }*/
 /*}*/
 
->>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 .input-group input:focus:valid {
     box-shadow: 0 0 0 4px var(--light-green);
 }
@@ -541,4 +502,4 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}}
+}

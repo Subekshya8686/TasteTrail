@@ -1,92 +1,64 @@
-
-.container1 {
-    width: 100%;
-    margin: auto;
-    color: #162938;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-li {
-    list-style: none;
-}
+/* Footer CSS */
 
 footer {
-    width: 100%;
     background-color: #162938;
-    color: #fff;
-    padding: 1rem 0;
-    /* padding-top: 10%; */
+    color: white;
+    padding: 20px 0;
+}
+
+.footer-container {
+    width: 1500px;
+    /*margin: 0 auto;*/
 }
 
 .footer {
-    padding: 1rem 0;
-    gap: 30px;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.footer .container {
-    height: 10%;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 
 .footerlogo {
-    width: 50%;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.footernav {
-    width: 30%;
-}
-
-.footernav:last-child {
-    margin-right: 0;
+    width: 40%;
 }
 
 .footerlogo h2 {
-    font-family: 'Leaves and Ground', sans-serif;
-    letter-spacing: 2px;
-    margin-left: 18vh;
-    margin-top: 15px;
-    font-size: 50px;
     color: white;
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
-.footerlogo p {
-    font-size: 14px;
-    color: #ffffff;
+.footernav {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
 .footernav h3 {
-    font-size: 40px;
-    font-family: 'Leaves and Ground', sans-serif;
-    margin-bottom: 30px;
     color: white;
-
+    font-size: 1.7rem;
+    margin-bottom: 10px;
 }
 
 .footernav ul {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Change to column */
 }
 
-.footernav ul li a {
-    font-size: 17px;
-    font-weight: 500;
-    transition: 0.3s ease;
-    color: white;
+.footernav li {
+    margin-bottom: 5px;
 }
 
-.footernav ul li a:hover {
+.footernav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.footernav a:hover {
+    color: #e76f51;
     cursor: pointer;
-    color: orange;
 }

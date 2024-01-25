@@ -77,8 +77,8 @@ const Header: React.FC = () => {
 
     return (
         <header>
-            <div className="mainnav sticky">
-                <div className="container2 flex sticky">
+            <div className="mainnav sticky1">
+                <div className="container2 flex sticky1">
                     <div className="logo">
                         <h1>
                             <a onClick={() => {
