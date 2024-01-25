@@ -1,6 +1,9 @@
 import './css/footer.css'
+<<<<<<< HEAD
+=======
 import {useNavigate} from "react-router-dom";
 
+>>>>>>> 2e4d3ba95c87b2c4345da919dc97446dedb5475d
 
 function Footer() {
 
