@@ -1,9 +1,9 @@
-import { FC } from 'react';
-import './css/Recipecard.css'
+import { FC, useState } from 'react';
+import './css/Recipecard.css';
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
-import {useNavigate} from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 interface RecipeCardProps {
     recipe: {
@@ -14,12 +14,13 @@ interface RecipeCardProps {
         recipeDescription: string;
         preparationTimeMinutes: string;
         preparationTimeHours: string;
-        // Add other properties based on your actual data structure
+        isLiked?: boolean;
     };
 }
 
 const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
     const navigate = useNavigate();
+    const [isLiked, setIsLiked] = useState<boolean>(recipe.isLiked || false);
 
     const displayPreparationTime = () => {
         if (recipe.preparationTimeHours && recipe.preparationTimeMinutes) {
@@ -37,12 +38,32 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
         navigate(`/recipeview/${id}`);
     };
 
-    return (
+    const handleFavoriteToggle = async () => {
+        // Toggle the liked state locally
+        setIsLiked(!isLiked);
 
+
+        try {
+            await axios.post('http://localhost:8080/favourite', {
+                userId: 123,
+                contentId: recipe.id,
+                isLike: !isLiked,
+            });
+        } catch (error) {
+            console.error('Error saving favorite status:', error);
+        }
+    };
+
+    return (
         <div className="tcard">
             <div className="tcardimg">
                 <img src={recipe.recipePhoto} alt={recipe.recipeTitle} />
-                <span><i><FaHeart size={'2rem'}/></i></span>
+
+                <span onClick={handleFavoriteToggle}>
+                    <i>
+                        <FaHeart size={'2rem'} color={isLiked ? 'red' : 'gray'} />
+                    </i>
+                </span>
             </div>
             <div className="tcardinfo flex">
                 <label className="tlabel">{recipe.recipeTitle}</label>

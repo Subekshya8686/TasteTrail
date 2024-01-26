@@ -4,7 +4,7 @@ import Header from '../components/header.tsx';
 import Footer from '../components/footer.tsx';
 import RecipeViewImg from '../components/RecipeViewImg.tsx';
 import RecipeRateTime from '../components/RecipeRate_time.tsx';
-import { FaHeart, FaPrint } from 'react-icons/fa';
+import { FaPrint } from 'react-icons/fa';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -45,9 +45,9 @@ const Recipes: React.FC = () => {
         // Logic for printing
     };
 
-    const handleSave = () => {
-        // Logic for saving to favorites
-    };
+    // const handleSave = () => {
+    //     // Logic for saving to favorites
+    // };
 
     return (
         <>
@@ -67,12 +67,12 @@ const Recipes: React.FC = () => {
                             </i>
                             Print
                         </button>
-                        <button className="fav" onClick={handleSave}>
-                            <i>
-                                <FaHeart size={'2rem'} />
-                            </i>
-                            Save
-                        </button>
+                        {/*<button className="fav" onClick={handleSave}>*/}
+                        {/*    <i>*/}
+                        {/*        <FaHeart size={'2rem'} />*/}
+                        {/*    </i>*/}
+                        {/*    Save*/}
+                        {/*</button>*/}
                     </div>
                 </section>
             </main>

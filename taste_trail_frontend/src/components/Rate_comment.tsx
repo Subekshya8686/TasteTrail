@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import '../pages1/css/Recipes.css';
-import { MdDelete } from 'react-icons/md';
 import { FaCircleUser } from 'react-icons/fa6';
 import '../pages1/css/AdminPanel.css'
 
@@ -87,11 +86,6 @@ const Rate_comment: React.FC<RecipeRateCommentProps & { contentId: number }> = (
                         <div className="commentlist-info">
                             <label className="user-name">{comment.username}</label>
                             <p>{comment.description}</p>
-                        </div>
-                        <div className="edit-delete">
-                            <button>
-                                <MdDelete size="2rem" />
-                            </button>
                         </div>
                     </div>
                 ))}

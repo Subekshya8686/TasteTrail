@@ -111,9 +111,7 @@ const Header: React.FC = () => {
 
 
 
-                    //LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA
-                    //SUBEKSHYAA KO KAAM HOOO
-                    //ARU HARU DON'T TOUCH
+                    //LOGOUT KO KAAM
 
 
 
