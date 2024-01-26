@@ -44,11 +44,20 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
 
 
         try {
-            await axios.post('http://localhost:8080/favourite', {
-                userId: 123,
+            const userId = localStorage.getItem('userId');
+            if (!userId) {
+                console.error('User ID not found in local storage');
+                return;
+            }
+
+            const response = await axios.post('http://localhost:8080/favourite', {
+                userId: userId,
                 contentId: recipe.id,
                 isLike: !isLiked,
             });
+
+            console.log('Favorite status updated successfully:', response.data);
+
         } catch (error) {
             console.error('Error saving favorite status:', error);
         }

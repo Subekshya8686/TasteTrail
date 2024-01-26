@@ -19,7 +19,9 @@ const Profiler: React.FC = () => {
                     return;
                 }
 
-                const response = await fetch(`http://localhost:8080/users/${userId}`);
+                const response = await fetch(`http://localhost:8080/users/${userId}`,{
+                    headers:{authorization:"Bearer "+ localStorage.getItem("accessToken")}
+                });
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
