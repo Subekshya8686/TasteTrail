@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
     const [user, setUser] = useState<UserData | null>(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-
+const [searchData,setSearchData]=useState("");
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
@@ -101,7 +101,12 @@ const Header: React.FC = () => {
                     {/*SEARCH SECTION */}
                     <div id="search">
                         <i className="icon search"><IoSearchSharp size="2rem"/></i>
-                        <input type="text" id="input" name="searchBox" placeholder="Search here..." />
+                        <input onKeyUp={(event:any)=>{
+                            console.log(event.keyCode)
+                            if (event.keyCode===13) {
+                                window.location.href="/searchBy/" + event.target.value;
+                            }
+                        }} type="text" id="input" name="searchBox" placeholder="Search here..." />
                         <i><a><IoFilterSharp size="2rem" color="black"/></a>
                             <li><a>Veg</a></li>
                             <li><a>Non Veg</a></li>
@@ -111,14 +116,14 @@ const Header: React.FC = () => {
 
 
 
-                    //LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA
-                    //SUBEKSHYAA KO KAAM HOOO
-                    //ARU HARU DON'T TOUCH
+                    {/*//LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA*/}
+                    {/*//SUBEKSHYAA KO KAAM HOOO*/}
+                    {/*//ARU HARU DON'T TOUCH*/}
 
 
 
                     <button id="registrationButton" type="button" onClick={() => {
-                        navigate(user ? "/user-profile" : "/loginregister");
+                        navigate(user ? "/user-profile" : "/login");
                     }}>
                         {user ? (
                             <div className="dropdown-container">
@@ -127,9 +132,12 @@ const Header: React.FC = () => {
                                 </div>
                                 {dropdownOpen && (
                                     <ul className="dropdown-menu">
-                                        <li><a href="#">Change Password</a></li>
-                                        <li><a href="#">Update Profile</a></li>
-                                        <li><a href="#">Log Out</a></li>
+                                        <li><a href="/ChangePassword">Change Password</a></li>
+                                        <li><a href="/EditProfile">Update Profile</a></li>
+                                        <li onClick={()=>{
+                                            localStorage.clear();
+                                            window.location.href="/"
+                                        }}><a href="#">Log Out</a></li>
                                     </ul>
                                 )}
                             </div>

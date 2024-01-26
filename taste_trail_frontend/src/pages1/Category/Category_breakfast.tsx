@@ -21,11 +21,13 @@ const Category_breakfast: React.FC = () => {
     const {data:snacksBreakfast}=useQuery({
         queryKey:["SNACKS_BREAKFAST"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/breakfast")
+            return axios.get("http://localhost:8080/content/byCategory/breakfast",{
+                headers:{authorization:"Bearer "+ localStorage.getItem("accessToken")}
+            })
         }
     })
 
-    // Mapping data from the table structure to Recipe structure
+    // Mapping data from the table structure to Recipe userstructure
     const recipes: Recipe[] = snacksBreakfast?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
