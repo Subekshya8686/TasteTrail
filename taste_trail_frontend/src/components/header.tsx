@@ -68,6 +68,14 @@ const Header: React.FC = () => {
     };
 
 
+    const handleLogout = () => {
+        // Clear all items from local storage
+        localStorage.clear();
+        // Redirect to the login page
+        // navigate("/");
+    };
+
+
     return (
         <header>
             <div className="mainnav sticky1">
@@ -118,7 +126,7 @@ const Header: React.FC = () => {
 
 
                     <button id="registrationButton" type="button" onClick={() => {
-                        navigate(user ? "/user-profile" : "/loginregister");
+                        navigate(user ? "/user-profile" : "/");
                     }}>
                         {user ? (
                             <div className="dropdown-container">
@@ -129,7 +137,8 @@ const Header: React.FC = () => {
                                     <ul className="dropdown-menu">
                                         <li><a href="#">Change Password</a></li>
                                         <li><a href="#">Update Profile</a></li>
-                                        <li><a href="#">Log Out</a></li>
+                                        {/*<li><a href="#" onClick={handleLogout}>Log Out</a></li>*/}
+                                        <a href={"/"} onClick={handleLogout}><button >Log Out</button></a>
                                     </ul>
                                 )}
                             </div>

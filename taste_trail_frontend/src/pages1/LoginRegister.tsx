@@ -56,11 +56,12 @@ const LoginRegister: React.FC = () => {
         } else {
             loginUser.mutate(values,{
                 onSuccess(data){
-                    console.log(data?.data?.data)
-                    localStorage.setItem("accessToken",data?.data?.data?.token);
-                    localStorage.setItem("userId",data?.data?.data?.userId);
-
-                    // navigate("/homepa")
+                    if (rememberMe) {
+                        console.log(data?.data?.data)
+                        localStorage.setItem("accessToken", data?.data?.data?.token);
+                        localStorage.setItem("userId", data?.data?.data?.userId);
+                    }
+                    navigate("/homepage");
                 }
             });
         }
