@@ -1,27 +1,26 @@
-import {useQuery} from 'react-query';
+import { useQuery } from 'react-query';
 import axios from "axios";
-import {useState} from "react";
+import { useState } from "react";
 import '../pages1/css/ServingCalculator.css';
 import Fraction from "fraction.js";
-
 
 const ServingCalculator = () => {
   interface Ingredient {
     id: number;
     ingredientName: string;
-    ingredientQuantity: number;
-    ingredientFraction: number;
+    ingredientQuantity: string;
+    ingredientFraction: string;
     ingredientUnit: string;
   }
 
-  const {data} = useQuery({
+  const { data } = useQuery({
     queryKey: "GET_DATA",
     queryFn() {
       return axios.get("http://localhost:8080/ingredients/getAll")
     }
-  })
+  });
 
-  const [servings, setServings] = useState(1); // Initialize servings state with 1
+  const [servings, setServings] = useState(1);
 
   const updateServings = (action: string) => {
     if (action === '+' && servings < 20) {
@@ -31,21 +30,20 @@ const ServingCalculator = () => {
     }
   };
 
-  // Function to format quantity based on its type
-  // const formatQuantity = (quantity: number) => {
-  //   return Number.isInteger(quantity)
-  //       ? quantity * servings
-  //       : (quantity * servings).toFixed(2); // Adjust decimal places as needed
-  // };
-  //
-  // Function to format quantity based on its type
-  const formatQuantity = (quantity: number, isFraction: boolean = false) => {
-     // Adjust decimal places as needed
-    return isFraction
-        ? new Fraction(quantity * servings).toFraction(true)  // Use fraction.js to convert to fraction
-        : Number.isInteger(quantity)
-            ? quantity * servings
-            : (quantity * servings).toFixed(2);
+  const formatQuantity = (quantity: string, fraction: string) => {
+    const numericQuantity = parseInt(quantity, 10) || 0;
+    const parsedFraction = new Fraction(fraction);
+
+    // Calculate the total quantity based on servings
+    let totalQuantity = numericQuantity + parsedFraction.valueOf() * servings;
+
+    // If fraction is zero, only consider the numeric quantity
+    if (parsedFraction.valueOf() === 0) {
+      totalQuantity = numericQuantity * servings;
+    }
+
+    // Display the total quantity as a mixed fraction
+    return new Fraction(totalQuantity).toFraction(true);
   };
 
 
@@ -53,26 +51,25 @@ const ServingCalculator = () => {
       <div className="serving-calculator">
         <h1>Ingredient Table</h1>
         <div className="class-serving">
-          <button onClick={() => updateServings('-')}>  -  </button>
+          <button onClick={() => updateServings('-')}> - </button>
           <span>Servings: {servings}</span>
-          <button onClick={() => updateServings('+')}>  +  </button>
+          <button onClick={() => updateServings('+')}> + </button>
         </div>
         <table className="ingredient-list">
           <thead>
           <tr>
-            <th>Name</th>
             <th>Quantity</th>
-            <th>Fraction</th>
-            <th>Unit</th>
+            <th>Name</th>
           </tr>
           </thead>
           <tbody>
           {data?.data?.map((ingredient: Ingredient) => (
               <tr key={ingredient.id}>
-                <td>{ingredient.ingredientName}</td>
-                <td>{formatQuantity(ingredient.ingredientQuantity)}</td>
-                <td>{formatQuantity(ingredient.ingredientFraction)}</td>
+                <td>
+                <td>{formatQuantity(ingredient.ingredientQuantity, ingredient.ingredientFraction)}</td>
                 <td>{ingredient.ingredientUnit}</td>
+                </td>
+                <td>{ingredient.ingredientName}</td>
               </tr>
           ))}
           </tbody>
@@ -82,5 +79,4 @@ const ServingCalculator = () => {
 };
 
 export default ServingCalculator;
-
 

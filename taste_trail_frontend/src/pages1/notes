@@ -1,0 +1,121 @@
+FUNCTION FOR PRINT BUTTON
+DO NOT TOUCH
+
+const recipeNameElement = document.querySelector('.recipe_description h1');
+        const descriptionElement = document.querySelector('.recipe_description p');
+        const ingredientsListElements = document.querySelectorAll('.ingredients table tr td');
+        const recipeInstructionsElement = document.querySelector('.recipe h3 + pre');
+
+        if (!recipeNameElement || !descriptionElement || !recipeInstructionsElement) {
+            return;
+        }
+
+        const recipeName = recipeNameElement.textContent || '';
+        const description = descriptionElement.textContent || '';
+        const ingredientsList = Array.from(ingredientsListElements).map(ingredient => ingredient.textContent || '');
+        const recipeInstructions = recipeInstructionsElement.textContent || '';
+
+        // Generate HTML content for printing
+        const recipePageContent = `
+          <h1>${recipeName}</h1>
+          <p style="font-size: 20px;">${description}</p>
+          <h2>Ingredients:</h2>
+          <ul style="font-size: 20px;">
+              ${ingredientsList.map(ingredient => `<li>${ingredient}</li>`).join('')}
+          </ul>
+          <h2>Instructions:</h2>
+          <pre style="font-size: 20px; font-family: 'Playfair', 'sans-serif'; white-space: pre-wrap;">${recipeInstructions}</pre>
+          `;
+
+        // Create a new window with the generated HTML content
+        const recipePage = window.open('', '_blank');
+        recipePage?.document.write(recipePageContent);
+        recipePage?.document.close();
+    };
+
+
+import React, { useState } from 'react';
+import { FaCircleUser } from 'react-icons/fa6';
+import '../pages1/css/Recipes.css';
+
+interface CommentProps {
+    onComment: (comment: {description: string }) => void;
+}
+
+interface Comment {
+    id: number;
+    username: string;
+    description: string;
+}
+
+const Comment: React.FC<CommentProps & { contentId: number }> = ({ onComment, contentId }) => {
+    const [comment, setComment] = useState<string>('');
+    const [comments, setComments] = useState<Comment[]>([]);
+
+    const handleCommentChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setComment(event.target.value);
+    };
+
+    const handleCommentSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+        onComment({
+            userId: 123, // Replace with the actual userId
+            username: 'User', // Replace with the actual username
+            contentId: 456, // Replace with the actual contentId
+            description: comment,
+        });
+
+        // Simulate a unique id for the comment (replace with actual logic)
+        const newComment: Comment = {
+            id: comments.length + 1,
+            username: 'User', // You might get the username from authentication
+            description: comment,
+        };
+
+        setComments([...comments, newComment]);
+        setComment('');
+        window.alert('Your rate and review have been submitted successfully!');
+    };
+
+    return (
+        <div className="comment-section">
+            <p>Leave a comment:</p>
+            <form onSubmit={handleCommentSubmit}>
+                <textarea
+                    rows={4}
+                    placeholder="Type your comment here..."
+                    value={comment}
+                    onChange={handleCommentChange}
+                />
+                <button type="submit">Submit</button>
+            </form>
+
+            {/* Display Comments */}
+            <div className="comments-section">
+                <h3>Comments:</h3>
+                {comments.map((comment) => (
+                    <div key={comment.id} className="commentlist-card flex">
+                        <span>
+                            <FaCircleUser />
+                        </span>
+                        <div className="commentlist-info">
+                            <label className="user-name">{comment.username}</label>
+                            <p>{comment.description}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+};
+
+export default Comment;
+
+
+
+{
+                userId: userId,
+                contentId: id,
+                username: username,
+                description: comment,
+            });

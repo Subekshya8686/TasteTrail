@@ -33,8 +33,7 @@ console.log(title)
 
 
                 <div className="quickrecipe-title flex">
-                    <h2>Quick Fixes, Endless Flavor:</h2>
-                    <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
+                    <h2>Searched Item:</h2>
                 </div>
                 <div className={'main-cards'}>
                     <section className="explorerecipe container flex">

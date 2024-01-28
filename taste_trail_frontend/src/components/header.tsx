@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
     const [user, setUser] = useState<UserData | null>(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-const [searchData,setSearchData]=useState("");
+    const [searchData,setSearchData]=useState("");
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
@@ -65,6 +65,14 @@ const [searchData,setSearchData]=useState("");
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
         localStorage.setItem('darkMode', (!isDarkMode).toString());
+    };
+
+
+    const handleLogout = () => {
+        // Clear all items from local storage
+        localStorage.clear();
+        // Redirect to the login page
+        // navigate("/");
     };
 
 
@@ -115,10 +123,10 @@ const [searchData,setSearchData]=useState("");
 
 
 
-
                     {/*//LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA*/}
                     {/*//SUBEKSHYAA KO KAAM HOOO*/}
                     {/*//ARU HARU DON'T TOUCH*/}
+
 
 
 
