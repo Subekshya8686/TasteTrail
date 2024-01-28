@@ -14,6 +14,7 @@ interface Recipe {
     recipeDescription: string;
     preparationTimeMinutes: string;
     preparationTimeHours: string;
+    isLiked?: boolean;
 }
 
 const Category_snacks: React.FC = () => {

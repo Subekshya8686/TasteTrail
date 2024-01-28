@@ -12,16 +12,16 @@ interface RecipeImgProps {
 
 const RecipeViewImg: React.FC<RecipeImgProps> = ({ recipe }) => {
     return (
-        <>
+        <div className="img-container">
         <div className="recipeimg">
             <img src={recipe.recipePhoto} alt="" />
         </div>
         <div className="recipe_description">
-            <h3>Recipe Title:<h1>{recipe.recipeTitle}</h1></h3>
-            <h2>Description:</h2>
+            <h3>{recipe.recipeTitle}</h3>
+            <h5>Description:</h5>
             <p>{recipe.recipeDescription}</p>
         </div>
-            </>
+            </div>
     );
 };
 

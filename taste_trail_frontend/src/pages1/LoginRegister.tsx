@@ -23,7 +23,7 @@ const LoginRegister: React.FC = () => {
 
         if (storedToken) {
             // Token found, navigate to homepage
-            navigate('/homepage');
+            // navigate('/homepage');
         }
     }, []);
 
@@ -76,7 +76,7 @@ const LoginRegister: React.FC = () => {
             <div className="container">
                 <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit(onSubmit)}>
                     <h1>
-                        <a href="/homepage"><label>Taste</label><span>Trail</span></a>
+                        <a href="/"><label>Taste</label><span>Trail</span></a>
                     </h1>
                     {formType === 'login' && <h2 className="title">Login</h2>}
                     {formType === 'register' && <h2 className="title">Register</h2>}
@@ -177,7 +177,7 @@ const LoginRegister: React.FC = () => {
                                     onChange={() => setRememberMe(!rememberMe)}
                                 />Remember me
                             </label>
-                            <a href="#">Forgot Password?</a>
+                            <a href="/ForgetPassword">Forgot Password?</a>
                         </div>
                     )}
 

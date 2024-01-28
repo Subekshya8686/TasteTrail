@@ -4,9 +4,10 @@ import Header from '../components/header.tsx';
 import Footer from '../components/footer.tsx';
 import RecipeViewImg from '../components/RecipeViewImg.tsx';
 import RecipeRateTime from '../components/RecipeRate_time.tsx';
-import { FaHeart, FaPrint } from 'react-icons/fa';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import Rate from "../components/Rate.tsx";
+import Comment from "../components/Comment.tsx";
 
 interface Recipe {
     id: number;
@@ -16,37 +17,84 @@ interface Recipe {
     ratings: number;
     preparationTimeMinutes: string;
     preparationTimeHours: string;
-    recipeOwner: string;
+    rating: number;
+    description: string;
 }
 
 const Recipes: React.FC = () => {
-    // const [servings, setServings] = useState<number>(10);
     const [recipeData, setRecipeData] = useState<Recipe | null>(null);
+    const [comments, setComments] = useState<Comment[]>([]);
+    const [username, setUsername] = useState<string | null>(null); // Added username state
+
     const { id } = useParams();
 
     useEffect(() => {
-        // Fetch recipe data from your API
-        const fetchRecipeData = async () => {
+        const fetchData = async () => {
             try {
-                const response = await axios.get<Recipe>(`http://localhost:8080/content/${id}`);
-                setRecipeData(response.data);
+                // Fetch recipe data
+                const recipeResponse = await axios.get<Recipe>(`http://localhost:8080/content/${id}`);
+                setRecipeData(recipeResponse.data);
+
+                // Fetch user data for the username
+                const userId = localStorage.getItem('userId');
+                const userResponse = await axios.get(`http://localhost:8080/users/${userId}`, {
+                    headers: { authorization: "Bearer " + localStorage.getItem("accessToken") }
+                });
+                setUsername(userResponse.data.username);
             } catch (error) {
-                console.error('Error fetching recipe data:', error);
+                console.error('Error fetching data:', error);
+
             }
         };
 
         if (id) {
-            fetchRecipeData();
+            fetchData();
         }
     }, [id]);
 
+    const handleRate = async (rating: number) => {
+        const userId = localStorage.getItem('userId');
+        if (!userId) {
+            console.error('User ID not found in local storage');
+            return;
+        }
 
-    const handlePrint = () => {
-        // Logic for printing
+        try {
+            await axios.post('http://localhost:8080/review', {
+                userId: userId,
+                contentId: id,
+                rate: rating,
+            });
+            console.log('Rating sent successfully!');
+        } catch (error) {
+            console.error('Error sending rating:', error);
+        }
     };
 
-    const handleSave = () => {
-        // Logic for saving to favorites
+    const handleCommentSubmit = async (comment: string) => {
+        const userId = localStorage.getItem('userId');
+
+        if (!userId || !username) {
+            console.error('User ID or username not found in local storage');
+            return;
+        }
+
+        try {
+            await axios.post(`http://localhost:8080/comment`, {
+                userId: userId,
+                contentId: id,
+                username: username,
+                description: comment,
+            });
+
+            console.log('Comment submitted successfully!');
+
+            // Refetch comments after submitting
+            const commentsResponse = await axios.get<Comment[]>(`http://localhost:8080/comments/${id}`);
+            setComments(commentsResponse.data);
+        } catch (error) {
+            console.error('Error submitting comment:', error);
+        }
     };
 
     return (
@@ -59,21 +107,9 @@ const Recipes: React.FC = () => {
                 <section className="rating-time flex">
                     {recipeData && <RecipeRateTime recipe={recipeData} />}
                 </section>
-                <section className="print-fav">
-                    <div className="print-fav-btn flex">
-                        <button className="print" onClick={handlePrint}>
-                            <i>
-                                <FaPrint size={'2rem'} />
-                            </i>
-                            Print
-                        </button>
-                        <button className="fav" onClick={handleSave}>
-                            <i>
-                                <FaHeart size={'2rem'} />
-                            </i>
-                            Save
-                        </button>
-                    </div>
+                <section className="rate-recipe">
+                    {recipeData && <Rate onRate={handleRate} />}
+                    {recipeData && <Comment comments={comments} onCommentSubmit={handleCommentSubmit} />}
                 </section>
             </main>
             <Footer />
