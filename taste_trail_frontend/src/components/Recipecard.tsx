@@ -42,6 +42,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
         // Toggle the liked state locally
         setIsLiked(!isLiked);
 
+
         try {
             const userId = localStorage.getItem('userId');
             if (!userId) {
@@ -56,6 +57,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
             });
 
             console.log('Favorite status updated successfully:', response.data);
+
         } catch (error) {
             console.error('Error saving favorite status:', error);
         }

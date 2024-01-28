@@ -26,77 +26,83 @@ main {
     padding: 5vh;
 }
 
-section {
-    margin-bottom: 5vh;
+.img-container {
+    display: flex;
+    width: 90%;
+    overflow: hidden;
+    margin-left: 10vh;
+    margin-top: 13vh;
 }
 
 .recipeimg {
-    position: relative;
-    background-color: #646cff;
-    width: 60%;
-    max-height: 500px;
+    flex: 2;
     overflow: hidden;
-    margin: 12vh auto;
+    border: 2px solid #9b9b9b;
+    border-radius: 10px;
+}
+
+.recipe_description {
+    flex: 3;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .recipeimg img {
     width: 100%;
-    height: auto;
-    /*object-fit: cover;*/
-    border-radius: 5px;
-    background-position: center;
+    height: 400px;
+    object-fit: cover;
 }
 
-.recipe_description {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 700px;
-    text-align: center;
-    margin: 0 auto;
-    background-color: #646cff;
+
+.recipe_description h3 {
+    margin-top: 30px;
+    color: #000000;
+    font-size: 40px;
+    margin-bottom: 30px;
 }
 
-.recipe_description h1 {
-    font-size: 50px;
-    margin-right: 63vh;
+
+.recipe_description h5 {
+    color: #2f2e2e;
+    font-size: 25px;
     text-decoration: underline;
-    font-weight: 600;
 }
 
-.recipe_description h2 {
-    margin-top: 5vh;
-    text-align: left;
-    font-family: "Playfair Display",'sans-serif';
-    text-decoration: none;
-    color: black;
-    font-size: 30px;
-    font-weight: 550;
-    margin-bottom: 0;
-}
-
-p {
-    margin-top: 1px;
+.recipe_description p {
+    color: #363636;
     font-size: 20px;
-    font-family: "Playfair Display",'sans-serif';
-    color: black;
+    margin-bottom: 20px;
 }
 
-/* Add the rest of your existing CSS */
 
 
+/*raing, time and print section*/
 .rating-time {
-    margin-top: 10vh;
+    margin-top: 5vh;
     color: black;
     justify-content: center;
     margin-bottom: 5vh;
 }
 
-.rating-time table span i {
-    font-size: 25px;
-    color: orange;
+.rating-time .time {
+    font-size: 17px;
+    font-weight: 700;
+    color: #3d3d3d;
 }
 
+.rating-time .print-btn i{
+    color: #3d3d3d;
+}
+
+.rating-time .print-btn i:hover {
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+
+
+/*ingredients and serving calculator*/
 .ingredients-recipe {
     display: flex;
     justify-content: space-between;
@@ -127,47 +133,6 @@ th, td {
 
 .ingredients td {
     background-color: #dbdbdb;
-}
-
-.print-fav-btn {
-    margin-top: 8vh;
-    margin-bottom: 8vh;
-}
-
-.print-fav {
-    display: flex;
-    justify-content: center;
-}
-
-.print, .fav {
-    border: 2px solid #2a9d8f;
-    background-color: #ffffff;
-    color: #2a9d8f;
-    padding: 10px 20px;
-    margin: 0 25px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    transition: color 0.3s, border-color 0.3s;
-    width: 250px;
-    height: 63px;
-}
-
-.print:hover, .fav:hover {
-    border: 2px solid #e76f51;
-    background-color: #ffffff;
-    color: #e76f51;
-}
-
-.print i:hover, .fav i:hover {
-    color: #e76f51;
-}
-
-.print i, .fav i {
-    font-size: 30px;
-    margin-right: 10px;
 }
 
 .ingredients-recipe {
@@ -250,11 +215,12 @@ pre {
 
 .rating-section p {
     margin-right: 10px;
+    margin-bottom: 15px;
 }
 
 .rating-section span {
     cursor: pointer;
-    font-size: 2rem;
+    font-size: 2.4rem;
     margin-right: 5px;
     color: grey;
 }
