@@ -68,6 +68,14 @@ const Header: React.FC = () => {
     };
 
 
+    const handleLogout = () => {
+        // Clear all items from local storage
+        localStorage.clear();
+        // Redirect to the login page
+        // navigate("/");
+    };
+
+
     return (
         <header>
             <div className="mainnav sticky1">
