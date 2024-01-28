@@ -1,7 +1,7 @@
 import '../css/AdminPanel.css';
 import RecipeList from "./RecipeList.tsx";
 import UserList from "./UserList.tsx";
-import CommentList from "../Admin/CommentList.tsx";
+// import CommentList from "../Admin/CommentList.tsx";
 import {useEffect, useState} from "react";
 import {FaCircleUser} from "react-icons/fa6";
 import {useNavigate} from "react-router-dom";
