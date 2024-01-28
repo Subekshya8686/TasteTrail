@@ -66,8 +66,9 @@ const ServingCalculator = () => {
           {data?.data?.map((ingredient: Ingredient) => (
               <tr key={ingredient.id}>
                 <td>
-                <td>{formatQuantity(ingredient.ingredientQuantity, ingredient.ingredientFraction)}</td>
-                <td>{ingredient.ingredientUnit}</td>
+                {formatQuantity(ingredient.ingredientQuantity, ingredient.ingredientFraction)}
+                  &nbsp;
+                {ingredient.ingredientUnit}
                 </td>
                 <td>{ingredient.ingredientName}</td>
               </tr>
