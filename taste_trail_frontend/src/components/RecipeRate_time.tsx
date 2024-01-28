@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import {FaStar, FaStarHalfAlt, FaRegStar, FaPrint} from 'react-icons/fa';
 import '../pages1/css/Recipes.css'
 
 interface RecipeRatingsProps {
@@ -7,7 +7,6 @@ interface RecipeRatingsProps {
         ratings: number;
         preparationTimeMinutes: string;
         preparationTimeHours: string;
-        recipeOwner: string;
     };
 }
 
@@ -18,11 +17,11 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe }) => {
 
         const stars = [];
         for (let i = 0; i < fullStars; i++) {
-            stars.push(<i key={i}><FaStar /></i>);
+            stars.push(<i key={i}><FaStar size="1.6rem" color="#3d3d3d"/></i>);
         }
 
         if (hasHalfStar) {
-            stars.push(<i key={fullStars}><FaStarHalfAlt /></i>);
+            stars.push(<i key={fullStars}><FaStarHalfAlt size="1.6rem" color="#3d3d3d"/></i>);
         }
 
         const remainingStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -45,6 +44,10 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe }) => {
         }
     };
 
+    const handlePrint = () => {
+        // Logic for printing
+    };
+
     return (
         <section className="rating-time flex">
             <table>
@@ -52,12 +55,22 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe }) => {
                 <tr>
                     <th>Rating</th>
                     <th>Total Time</th>
-                    <th>Recipe Owner</th>
+                    <th>Print Recipe</th>
                 </tr>
                 <tr>
-                    <td>{renderStars()}</td>
-                    <td>{displayPreparationTime()}</td>
-                    <td>{recipe.recipeOwner}</td>
+                    <td className="rate">
+                        {renderStars()}
+                    </td>
+
+                    <td className="time">
+                        {displayPreparationTime()}
+                    </td>
+
+                    <td className="print-btn">
+                            <i className="print" onClick={handlePrint}>
+                                <FaPrint size={'2rem'} />
+                            </i>
+                    </td>
                 </tr>
                 </tbody>
             </table>

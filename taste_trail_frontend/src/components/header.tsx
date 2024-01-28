@@ -18,7 +18,7 @@ const Header: React.FC = () => {
     const [isDarkMode, setIsDarkMode] = useState<boolean>(localStorage.getItem('darkMode') === 'true');
     const [user, setUser] = useState<UserData | null>(null);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-const [searchData,setSearchData]=useState("");
+    const [searchData,setSearchData]=useState("");
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
@@ -115,14 +115,10 @@ const [searchData,setSearchData]=useState("");
 
 
 
-
-<<<<<<< HEAD
-                    //LOGOUT KO KAAM
-=======
                     {/*//LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA*/}
                     {/*//SUBEKSHYAA KO KAAM HOOO*/}
                     {/*//ARU HARU DON'T TOUCH*/}
->>>>>>> 1e485c95d052e5e94defd5abd32262e418f4c4c4
+
 
 
 
