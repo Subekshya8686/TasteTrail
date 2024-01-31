@@ -42,7 +42,7 @@ const UserProfile: React.FC = () => {
                 <h2>Favorite Recipes</h2>
                 <div className="recipes-container">
                     {favoriteRecipes.map(recipe => (
-                        <RecipeCard key={recipe.contentId} recipe={recipe} />
+                        <RecipeCard key={recipe.id} recipe={recipe} />
                     ))}
                 </div>
             </div>
