@@ -7,7 +7,11 @@
 body {
     overflow-x: hidden;
     overflow-y: auto;
+<<<<<<< HEAD
     display: flex;
+=======
+    display: flex; /* Center align the body content */
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
@@ -36,7 +40,11 @@ body {
     width: 100%; /* Span full width */
     font-family: 'PlayFair Display', 'sans-serif';
     display: flex;
+<<<<<<< HEAD
     justify-content: space-evenly;
+=======
+    justify-content: center;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
 }
 
@@ -64,6 +72,10 @@ h2 {
     position: relative;
     width: 100%;
     display: flex;
+<<<<<<< HEAD
+=======
+    justify-content: center;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
     gap: 5px;
 }
@@ -81,7 +93,11 @@ h2 {
 }
 
 button#registrationButton {
+<<<<<<< HEAD
     margin-right: 20px;
+=======
+    margin-right: 50px;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 10px;
 }
 
@@ -103,9 +119,17 @@ button#registrationButton {
 }
 
 .logo {
+<<<<<<< HEAD
     margin-left: 30px;
     display: flex;
     align-items: center;
+=======
+    /*gap: 5px;*/
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 60px;
     font-family: 'Leaves and Ground', serif;
 }
@@ -224,6 +248,7 @@ button#registrationButton {
 #Category:hover {
     cursor: pointer;
 }
+
 
 .toggle{
     --bg-toggle: hsl(0, 0%, 96%);
@@ -395,6 +420,10 @@ button#registrationButton {
     position: absolute;
     right: 50px;
 }
+.dropdown-menu{
+    width: 20px;
+}
+
 
 
 /* Media query for medium-sized screens (768 x 1024) */

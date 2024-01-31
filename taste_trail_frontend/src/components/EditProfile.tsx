@@ -48,8 +48,10 @@ const EditProfile: React.FC = () => {
     };
 
     return (
+
         <div className="edit-user-profile">
             <h2>Edit User Profile</h2>
+            <div className="container1">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="firstName">First Name</label>
@@ -69,6 +71,8 @@ const EditProfile: React.FC = () => {
                 </div>
                 <button type="submit">Save Changes</button>
             </form>
+                <div/>
+        </div>
         </div>
     );
 };
