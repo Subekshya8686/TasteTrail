@@ -15,13 +15,17 @@ import Category_dinner from "./pages1/Category/Category_dinner.tsx";
 import Category_lunch from "./pages1/Category/Category_lunch.tsx";
 import ContentCreate from "./pages1/Admin/ContentCreate.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
-import ServingCalculator from "./components/ServingCalculator.tsx";
+// import ServingCalculator from "./components/ServingCalculator.tsx";
 import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";
 import SearchByTitle from "./pages1/searchByTitle.tsx";
+<<<<<<< HEAD
+import IngredientCalculator from "./components/ServingCalculator.tsx";
+=======
 import SubmitOtpForm from "./components/SubmitOtpForm.tsx";
 import UpdateOtpPasswordForm from "./components/UpdateOtpPasswordForm.tsx";
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
 
 
 const router = createBrowserRouter(
@@ -119,7 +123,7 @@ const router = createBrowserRouter(
 
         {
             path: "/serving",
-            element: <ServingCalculator/>
+            element: <IngredientCalculator/>
         },
         {
             path: "/EditProfile",
@@ -155,11 +159,10 @@ function App() {
     return (
         <>
             <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+                <RouterProvider router={router} />
             </QueryClientProvider>
         </>
     )
 }
 
 export default App
-

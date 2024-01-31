@@ -52,5 +52,28 @@
     margin: 0;
     color: white; /* Adjust text color as needed */
     font-size: 1.2em; /* Adjust font size as needed */
+
+}
+
+/* Card Hover Effect */
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Content */
+.info_wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.info_content h3 {
+    margin: 0;
+    color: white; /* Adjust text color as needed */
+    font-size: 1.2em; /* Adjust font size as needed */
 }
 

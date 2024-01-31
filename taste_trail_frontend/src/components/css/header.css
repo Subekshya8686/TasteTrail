@@ -7,7 +7,11 @@
 body {
     overflow-x: hidden;
     overflow-y: auto;
+<<<<<<< HEAD
+    display: flex;
+=======
     display: flex; /* Center align the body content */
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
@@ -36,7 +40,11 @@ body {
     width: 100%; /* Span full width */
     font-family: 'PlayFair Display', 'sans-serif';
     display: flex;
+<<<<<<< HEAD
+    justify-content: space-evenly;
+=======
     justify-content: center;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
 }
 
@@ -64,7 +72,10 @@ h2 {
     position: relative;
     width: 100%;
     display: flex;
+<<<<<<< HEAD
+=======
     justify-content: center;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
     gap: 5px;
 }
@@ -82,7 +93,11 @@ h2 {
 }
 
 button#registrationButton {
+<<<<<<< HEAD
+    margin-right: 20px;
+=======
     margin-right: 50px;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 10px;
 }
 
@@ -104,11 +119,17 @@ button#registrationButton {
 }
 
 .logo {
+<<<<<<< HEAD
+    margin-left: 30px;
+    display: flex;
+    align-items: center;
+=======
     /*gap: 5px;*/
     margin-left: 10px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 60px;
     font-family: 'Leaves and Ground', serif;
 }
@@ -403,3 +424,64 @@ button#registrationButton {
     width: 20px;
 }
 
+
+
+/* Media query for medium-sized screens (768 x 1024) */
+@media only screen and (max-width: 768px) {
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .mainnav {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 70px;
+    }
+
+    .logo h1 a {
+        font-size: 30px;
+    }
+
+    .logo h1 span {
+        font-size: 30px;
+    }
+
+    .container2 {
+        max-width: 786px;
+    }
+
+    .navlist {
+        margin: 0;
+    }
+
+    .navlist li a {
+        font-size: 15px;
+    }
+
+    #collection a{
+        font-size: 15px;
+        margin-top: 20px;
+    }
+
+    #Category {
+        /*margin-left: 20px;*/
+    }
+
+    #search {
+        /*margin-right: 20px;*/
+    }
+
+    .toggle {
+        /*overflow: hidden;*/
+    }
+
+    #input {
+        width: 200px;
+        padding: 2px 35px;
+    }
+}

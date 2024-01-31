@@ -64,7 +64,7 @@ const Category_breakfast: React.FC = () => {
 
             <main>
                 <section className="headerimg">
-                    <div className="container">
+                    <div className="category-container">
                         <div className="headerinfo flex">
                             <h2 className="headertitle">BreakFast</h2>
                             <p className="headerpera">Elevate your morning experience with our tasty and easy-to-make snacks.
@@ -75,7 +75,7 @@ const Category_breakfast: React.FC = () => {
                 </section>
 
                 {/*featured recipes*/}
-                <div className="featuredrecipe container flex">
+                <div className="featuredrecipe category-container flex">
                     <div className="featuredtitles flex">
                         <div className="titleicon">
                             <img src="snacks_ico.png" alt="snack_ico"/>
@@ -88,7 +88,7 @@ const Category_breakfast: React.FC = () => {
 
                 {/* Section 1: All recipes for 'snacks' category */}
                 <div className={'main-cards'}>
-                    <section className="threecards container flex">
+                    <section className="threecards category-container flex">
                         {section1Recipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))}
@@ -101,7 +101,7 @@ const Category_breakfast: React.FC = () => {
                     <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
                 </div>
                 <div className={'main-cards'}>
-                    <section className="explorerecipe container flex">
+                    <section className="explorerecipe category-container flex">
                         {section2Recipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))}

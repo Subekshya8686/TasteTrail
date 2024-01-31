@@ -32,7 +32,7 @@ function AdminPanel() {
                     </h1>
                 </div>
                 <nav className="navigation flex">
-                    <a href="#">Dashboard</a>
+
                     <a href="#" onClick={() => handleListChange('recipes')}>Recipes</a>
                     <a href="#" onClick={() => handleListChange('users')}>Users</a>
                     <a href="#" onClick={() => handleListChange('comments')}>Comments</a>
@@ -47,7 +47,7 @@ function AdminPanel() {
                     {activeList === 'recipes' && <RecipeList />}
                     {activeList === 'users' && <UserList />}
                     {activeList === 'comments' && <CommentList />}
-                    {/*<BarChart data={mockData} />*/}
+
                 </div>
             </main>
         </>
