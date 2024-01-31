@@ -1,8 +1,8 @@
 import '../css/AdminPanel.css';
 import RecipeList from "./RecipeList.tsx";
 import UserList from "./UserList.tsx";
-import CommentList from "../Admin/CommentList.tsx";
-import {useEffect, useState} from "react";
+// import CommentList from "../Admin/CommentList.tsx";
+import {SetStateAction, useEffect, useState} from "react";
 import {FaCircleUser} from "react-icons/fa6";
 import {useNavigate} from "react-router-dom";
 // import BarChart from "../components/BarChart.tsx";
@@ -13,7 +13,7 @@ function AdminPanel() {
 
     const [activeList, setActiveList] = useState('recipes');
 
-    const handleListChange = (listType) => {
+    const handleListChange = (listType: SetStateAction<string>) => {
         setActiveList(listType);
     };
 
