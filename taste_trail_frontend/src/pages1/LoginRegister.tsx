@@ -20,12 +20,11 @@ const LoginRegister: React.FC = () => {
     useEffect(() => {
         // Check for token in local storage when component mounts
         const storedToken = localStorage.getItem('accessToken');
-
         if (storedToken) {
             // Token found, navigate to homepage
-            // navigate('/homepage');
+            navigate('/homepage');
         }
-    }, []);
+    }, [navigate]);
 
     const saveData = useMutation({
         mutationKey:"SAVEDATA",
@@ -49,6 +48,7 @@ const LoginRegister: React.FC = () => {
     });
 
 
+
     const onSubmit=(values:any)=>{
         // saveData.mutate(values)
         if (formType === 'register') {
@@ -56,16 +56,24 @@ const LoginRegister: React.FC = () => {
         } else {
             loginUser.mutate(values,{
                 onSuccess(data){
-                    if (rememberMe) {
-                        console.log(data?.data?.data)
-                        localStorage.setItem("accessToken", data?.data?.data?.token);
-                        localStorage.setItem("userId", data?.data?.data?.userId);
+                    console.log(data?.data?.data)
+                    localStorage.setItem("accessToken",data?.data?.data?.token);
+                    localStorage.setItem("userId",data?.data?.data?.userId);
+
+                    if(data.data.data.role==="admin"){
+                        window.location.href="/admin"
+                    }else{
+                        window.location.href="/homepage"
+
                     }
-                    navigate("/homepage");
                 }
             });
         }
     }
+
+
+
+
 
     return (
         <>
@@ -184,7 +192,6 @@ const LoginRegister: React.FC = () => {
                     <button type={"submit"} className="btn-submit">
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
-
 
                     <p>
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
