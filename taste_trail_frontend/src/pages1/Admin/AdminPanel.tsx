@@ -5,8 +5,6 @@ import UserList from "./UserList.tsx";
 import {SetStateAction, useEffect, useState} from "react";
 import {FaCircleUser} from "react-icons/fa6";
 import {useNavigate} from "react-router-dom";
-import CommentList from "./CommentList.tsx";
-
 // import BarChart from "../components/BarChart.tsx";
 
 function AdminPanel() {

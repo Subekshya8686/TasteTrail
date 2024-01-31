@@ -11,12 +11,6 @@ const ForgetPassword: React.FC = () => {
         <div>
             <h1>Forget Password</h1>
             <ForgetPasswordForm />
-
-            <h2>Submit OTP</h2>
-            <SubmitOtpForm />
-
-            <h2>Update Password</h2>
-            <UpdatePasswordForm />
         </div>
     );
 };

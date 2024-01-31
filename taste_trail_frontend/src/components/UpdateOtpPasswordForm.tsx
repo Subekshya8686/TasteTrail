@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 
 const UpdatePasswordForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmnewPassword, setCNewPassword] = useState('');
+    const navigate = useNavigate();
+
+
+    const navigateTo = (path: string) => {
+        navigate(path);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -31,7 +38,7 @@ const UpdatePasswordForm: React.FC = () => {
             <label>New Password:</label>
             <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
             <input type="password" value={confirmnewPassword} onChange={(e) => setCNewPassword(e.target.value)} required />
-            <button type="submit">Update Password</button>
+            <button type="submit" onClick={() => navigateTo('/user-profile')}>Update Password</button>
         </form>
     );
 };
