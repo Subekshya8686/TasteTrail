@@ -7,6 +7,7 @@ import RecipeCard from "../components/Recipecard.tsx";
 import Header from '../components/header.tsx';
 import Footer from '../components/footer.tsx';
 import Profiler from "./Profiler.tsx";
+import recipes from "./Recipes.tsx";
 
 const UserProfile: React.FC = () => {
     const [favoriteRecipes, setFavoriteRecipes] = useState([]);
@@ -41,7 +42,7 @@ const UserProfile: React.FC = () => {
                 <h2>Favorite Recipes</h2>
                 <div className="recipes-container">
                     {favoriteRecipes.map(recipe => (
-                        <RecipeCard key={recipe.id} recipe={recipe} />
+                        <RecipeCard key={recipe.contentId} recipe={recipe} />
                     ))}
                 </div>
             </div>

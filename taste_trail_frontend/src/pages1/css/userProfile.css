@@ -9,6 +9,7 @@
 }
 
 .profile-part {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,20 +18,17 @@
 
 .profile-picture {
     font-size: 24px;
-    width: 150px;
-    height: 150px;
-    width: 100px;
-    height: 100px;
+    width: 100px; /* Updated width */
+    height: 100px; /* Updated height */
     background-color: #ddd;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     margin-bottom: 10px; /* Adjusted margin to separate profile picture from profile info */
-
 }
 
-.profile-info p{
+.profile-info p {
     justify-content: start;
 }
 
@@ -41,9 +39,5 @@
 .favorites-section {
     margin-top: 30px;
     width: 100%; /* Ensure the section takes up the full width */
+    text-align: center; /* Moved from a duplicate entry */
 }
-.favorites-section{
-    text-align: center;
-}
-
-

@@ -187,7 +187,7 @@ function ContentCreate() {
                 </div>
 
                 <label htmlFor="stepDescription">Step Description *</label>
-                <textarea id="stepDescription" rows={5} maxLength={500} placeholder="Describe the cooking steps..."
+                <input type="list" id="stepDescription" maxLength={500} placeholder="Describe the cooking steps..."
                           required {...register("stepDescription")}/>
 
                 <button>Submit</button>

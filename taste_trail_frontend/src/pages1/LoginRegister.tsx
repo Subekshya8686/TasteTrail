@@ -1,207 +1,119 @@
-import React, {useEffect, useState} from 'react';
-import {useNavigate} from 'react-router-dom';
-import './css/LoginRegister.css';
-import './homepage.tsx';
-import {useMutation} from "react-query";
-import axios from "axios";
-import {useForm} from "react-hook-form";
+import React, { useState, useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { useMutation } from 'react-query';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import './css/LoginRegister.css'; // Ensure to create this new CSS file for styling
 
-
-const LoginRegister: React.FC = () => {
+const LoginRegister = () => {
     const navigate = useNavigate();
-    const [formType, setFormType] = useState<'login' | 'register' | ''>('login');
-    const [rememberMe, setRememberMe] = useState<boolean>(false); // Declare rememberMe as a boolean
-
-    const {register,
-        handleSubmit,
-        // formState
-    }= useForm();
+    const [formType, setFormType] = useState('login');
+    const [rememberMe, setRememberMe] = useState(false);
+    const { register, handleSubmit } = useForm();
 
     useEffect(() => {
-        // Check for token in local storage when component mounts
         const storedToken = localStorage.getItem('accessToken');
-
         if (storedToken) {
-            // Token found, navigate to homepage
-            // navigate('/homepage');
+            navigate('/homepage');
         }
-    }, []);
+    }, [navigate]);
 
     const saveData = useMutation({
-        mutationKey:"SAVEDATA",
-        mutationFn:(requestData: any)=>{
-            console.log(requestData)
-            return axios.post("http://localhost:8080/users/save",
-                requestData, {withCredentials: true})
-    },
+        mutationKey: 'SAVEDATA',
+        mutationFn: (requestData) => {
+            return axios.post("http://localhost:8080/users/save", requestData, { withCredentials: true });
+        },
         onSuccess: () => {
-            // Redirect to the login form after successful registration
-            setFormType('login');},
+            setFormType('login');
+        },
     });
 
-
     const loginUser = useMutation({
-        mutationKey:"LOGINUSER",
-        mutationFn: (LoginData: any) => {
-            return  axios.post("http://localhost:8080/authenticate",
-                LoginData)
+        mutationKey: 'LOGINUSER',
+        mutationFn: (LoginData) => {
+            return axios.post("http://localhost:8080/authenticate", LoginData);
         }
     });
 
-
-    const onSubmit=(values:any)=>{
-        // saveData.mutate(values)
+    const onSubmit = (values) => {
         if (formType === 'register') {
             saveData.mutate(values);
         } else {
-            loginUser.mutate(values,{
-                onSuccess(data){
+            loginUser.mutate(values, {
+                onSuccess: (data) => {
                     if (rememberMe) {
-                        console.log(data?.data?.data)
-                        localStorage.setItem("accessToken", data?.data?.data?.token);
-                        localStorage.setItem("userId", data?.data?.data?.userId);
+                        localStorage.setItem('accessToken', data?.data?.data?.token);
+                        localStorage.setItem('userId', data?.data?.data?.userId);
                     }
-                    navigate("/homepage");
-                }
+                    navigate('/homepage');
+                },
             });
         }
-    }
+    };
 
     return (
-        <>
-        <div className="flex-container">
-            <div className="container-wrapper" id="container1">
-                <img src={"Food.jpg"} height="80%" width="100%" alt="Description of the image" />
-            </div>
-            <div className="container">
-                <form className={`form ${formType === 'register' ? 'active' : ''}`} onSubmit={handleSubmit(onSubmit)}>
-                    <h1>
-                        <a href="/"><label>Taste</label><span>Trail</span></a>
-                    </h1>
-                    {formType === 'login' && <h2 className="title">Login</h2>}
-                    {formType === 'register' && <h2 className="title">Register</h2>}
+        <div className="new-login-register">
+            <div className="form-container">
+                <div className="switcher">
+                    <button onClick={() => setFormType('login')} className={formType === 'login' ? 'active' : ''}>Login</button>
+                    <button onClick={() => setFormType('register')} className={formType === 'register' ? 'active' : ''}>Register</button>
+                </div>
 
+                <form onSubmit={handleSubmit(onSubmit)}>
                     {formType === 'register' && (
                         <>
                             <div className="form-group">
-                                <div className="input-group">
-                                    <label htmlFor="firstName">First Name</label>
-                                    <input
-                                        type="text"
-                                        placeholder="First Name"
-                                        required{...register("firstName")}
-                                    />
-                                </div>
-                                <div className="input-group">
-                                    <label htmlFor="lastName">Last Name</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Last Name"
-                                        required{...register("lastName")}
-                                    />
-                                </div>
-                                <div className="input-group">
-                                    <label htmlFor="email">Email</label>
-                                    <input
-                                        type="email"
-                                        placeholder="Email address"
-                                        required{...register("email")}
-                                    />
-                                </div>
-                                <div className="input-group">
-                                    <label htmlFor="username">Username</label>
-                                    <input
-                                        type="text"
-                                        placeholder="Username"
-                                        required{...register("username")}
-                                    />
-                                </div>
-                                <div className="input-group">
-                                    <label htmlFor="password">Password</label>
-                                    <input
-                                        type="password"
-                                        pattern=".{6,}"
-                                        placeholder="Password"
-                                        required{...register("password")}
-                                    />
-                                </div>
-                                <span className="help-text">At least 6 characters</span>
-                                <br/>
-                                <div className="input-group">
-                                    <label htmlFor="confirm-password">Confirm Password</label>
-                                    <input
-                                        type="password"
-                                        pattern=".{6,}"
-                                        placeholder="Confirm Password"
-                                        required{...register("confirmPassword")}
-                                    />
-                                </div>
-                                <span className="help-text">Both passwords must match</span>
+                                <label htmlFor="firstName">First Name</label>
+                                <input type="text" id="firstName" {...register("firstName")} required />
                             </div>
-
-
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last Name</label>
+                                <input type="text" id="lastName" {...register("lastName")} required />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input type="email" id="email" {...register("email")} required />
+                            </div>
+                            {/* Other registration fields... */}
                         </>
                     )}
 
-
                     {formType !== 'register' && (
-                        <div className="form-group">
-                            <div className="input-group">
+                        <>
+                            <div className="form-group">
                                 <label htmlFor="username">Username</label>
-                                <input
-                                    type="text"
-                                    id="username"
-                                    placeholder="Username"
-                                    required{...register("username")}
-                                />
+                                <input type="text" id="username" {...register("username")} required />
                             </div>
-                            <div className="input-group">
+                            <div className="form-group">
                                 <label htmlFor="password">Password</label>
-                                <input
-                                    type="password"
-                                    pattern=".{6,}"
-                                    id="password"
-                                    placeholder="Password"
-                                    required{...register("password")}
-                                />
+                                <input type="password" id="password" {...register("password")} required />
                             </div>
-                            <span className="help-text">At least 6 characters</span>
-                        </div>
-                    )}
-                    {formType === 'login' && (
-                        <div className="remember-forgot">
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    checked={rememberMe}
-                                    onChange={() => setRememberMe(!rememberMe)}
-                                />Remember me
-                            </label>
-                            <a href="/ForgetPassword">Forgot Password?</a>
-                        </div>
+                            {formType === 'login' && (
+                                <div className="remember-forgot">
+                                    <label>
+                                        <input type="checkbox" checked={rememberMe} onChange={() => setRememberMe(!rememberMe)} />
+                                        Remember me
+                                    </label>
+                                    <a href="/ForgetPassword">Forgot Password?</a>
+                                </div>
+                            )}
+                        </>
                     )}
 
-                    <button type={"submit"} className="btn-submit">
+                    <button type="submit" className="submit-button">
                         {formType === 'login' ? 'Login' : 'Register'}
                     </button>
 
-
-                    <p>
+                    <p className="toggle-form">
                         {formType === 'login' ? "Don't have an account?" : 'Already have an account?'}
                         <span onClick={() => setFormType(formType === 'login' ? 'register' : 'login')}>
                             {formType === 'login' ? ' Sign Up' : ' Sign In'}
                         </span>
                     </p>
-
-
                 </form>
-
-
             </div>
         </div>
-        </>
     );
 };
 
 export default LoginRegister;
-
