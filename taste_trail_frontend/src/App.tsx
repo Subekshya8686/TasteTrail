@@ -20,6 +20,8 @@ import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";
 import SearchByTitle from "./pages1/searchByTitle.tsx";
+import SubmitOtpForm from "./components/SubmitOtpForm.tsx";
+import UpdateOtpPasswordForm from "./components/UpdateOtpPasswordForm.tsx";
 
 
 const router = createBrowserRouter(
@@ -61,7 +63,7 @@ const router = createBrowserRouter(
         },
 
         {
-            path: "/login",
+            path: "/Login",
             element: <LoginRegister/>
         },
 
@@ -135,6 +137,14 @@ const router = createBrowserRouter(
             path: "/searchBy/:title",
             element: <SearchByTitle/>
         },
+        {
+            path: "/SubmitOTP",
+            element: <SubmitOtpForm/>
+        },
+        {
+            path: "/UpdateOtp",
+            element: <UpdateOtpPasswordForm/>
+        },
     ]
 )
 
@@ -145,11 +155,10 @@ function App() {
     return (
         <>
             <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+                <RouterProvider router={router} />
             </QueryClientProvider>
         </>
     )
 }
 
 export default App
-

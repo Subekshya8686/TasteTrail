@@ -49,14 +49,20 @@
     box-shadow: 0 0 15px #999;
 }
 
-.dark .featuredtitles h1 {
+.dark .featuredtitles h2 {
     color: #fff;
 }
 
 .dark .featuredtitles p {
-    color: #666;
+    color: #ffffff;
+}
+.dark .quickrecipe-title h2 {
+    color: #fff;
 }
 
+.dark .quickrecipe-title p {
+    color: #ffffff;
+}
 /* Dark Mode Login and Register Button Styles */
 .dark .mainnav button {
     background-color: #2a9d8f;
@@ -68,4 +74,29 @@
 .dark .taste-trail p {
     color: #fff;
     /* White color for text in dark mode */
+}
+
+.dark p{
+    color: white;
+}
+.dark h2{
+    color: white;
+}
+.dark .sticky1{
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark header{
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .mainnav a{
+    color: white;
+}
+.dark .titleicon{
+    color: white;
+}
+.dark .main-cards{
+    color: white;
+    background-color: var(--bg-dark);
 }

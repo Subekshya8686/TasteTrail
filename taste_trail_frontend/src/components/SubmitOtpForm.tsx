@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import {useNavigate} from "react-router-dom";
 
 const SubmitOtpForm: React.FC = () => {
     const [email, setEmail] = useState('');
     const [otp, setOtp] = useState('');
+    const navigate = useNavigate();
+
+
+    const navigateTo = (path: string) => {
+        navigate(path);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,7 +36,7 @@ const SubmitOtpForm: React.FC = () => {
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
             <label>OTP:</label>
             <input type="text" value={otp} onChange={(e) => setOtp(e.target.value)} required />
-            <button type="submit">Submit OTP</button>
+            <button type="submit" onClick={() => navigateTo('/UpdateOtp')}>Submit OTP</button>
         </form>
     );
 };

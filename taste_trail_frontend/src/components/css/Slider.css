@@ -1,19 +1,55 @@
-.container.category-section {
-    position: relative;
-    overflow: hidden;
-}
+/*!* Slider Container *!*/
+/*.slider-container {*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*    width: 100%; !* Adjust to fit your layout *!*/
+/*    margin: auto; !* Center the slider if needed *!*/
+/*    padding: 20px 0; !* Optional spacing around the slider *!*/
+/*}*/
 
-.content.flex {
+/* Slider */
+.slider {
     display: flex;
     transition: transform 0.5s ease-in-out;
 }
 
+/* Individual Slide */
 .slide {
-    flex: 0 0 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
+    flex: 0 0 auto; /* Don't grow or shrink, but allow for automatic base size */
+    margin-right: 20px; /* Space between slides */
 }
 
-.slide.active {
-    opacity: 1;
+/* Category Card */
+.category {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 250px; /* Width of the card */
+    height: 300px; /* Height of the card */
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0; /* Adjust margin as per layout */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Card Hover Effect */
+.category:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Card Content */
+.info_wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+}
+
+.info_content h3 {
+    margin: 0;
+    color: white; /* Adjust text color as needed */
+    font-size: 1.2em; /* Adjust font size as needed */
 }

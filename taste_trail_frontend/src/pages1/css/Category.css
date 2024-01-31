@@ -15,8 +15,8 @@
     --font-family: "Playfair Display", sans-serif;
 }
 
-.container {
-    max-width: 2100px;
+.category-container {
+    width: 100%;
     margin: auto;
 }
 
@@ -192,7 +192,7 @@ header {
 /* explore quick recipes */
 .quickrecipe-title {
     flex-direction: column;
-    margin-top: 30px;
+    margin-top: 7vh;
 }
 
 .quickrecipe-title p {
@@ -214,3 +214,64 @@ header {
 
 /*footer*/
 
+
+/* Medium-sized screens (up to 768px) */
+@media (max-width: 768px) {
+
+    .category-container {
+        width: 786px;
+    }
+
+    .headerimg {
+        height: 400px;
+        margin-bottom: 50px; /* Adjust margin as needed */
+        margin-top: 60px; /* Adjust margin as needed */
+    }
+
+    .headerinfo {
+        padding-top: 5rem;
+        padding-bottom: 8rem;
+    }
+
+    .headertitle {
+        font-size: 80px;
+        margin-left: 5vh; /* Adjust margin as needed */
+    }
+
+    .headerpera {
+        font-size: 20px;
+        padding-right: 10rem; /* Adjust padding as needed */
+        margin-left: 5vh; /* Adjust margin as needed */
+    }
+
+    .featuredtitles h1 {
+        font-size: 35px;
+    }
+
+    .featuredtitles p {
+        max-width: 400px; /* Adjust max-width as needed */
+        font-size: 15px;
+    }
+
+    .quickrecipe-title h2 {
+        font-size: 35px;
+    }
+
+    .quickrecipe-title p {
+        font-size: 15px;
+    }
+
+    .threecards {
+        flex-direction: column;
+    }
+
+    .main-cards {
+        /*width: 786px;*/
+        margin-bottom: 20px; /* Adjust margin as needed */
+    }
+
+    .explorerecipe {
+        margin-top: 5rem; /* Adjust margin as needed */
+        margin-bottom: 5rem; /* Adjust margin as needed */
+    }
+}

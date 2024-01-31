@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import { IoFilterSharp, IoSearchSharp } from "react-icons/io5";
+import {  IoSearchSharp } from "react-icons/io5";
 import { FaUserPlus } from "react-icons/fa6";
 import './css/header.css';
 import '../pages1/css/darkmode.css';
 import {IoIosArrowDown} from "react-icons/io";
 import {TbChefHat} from "react-icons/tb";
+import '../pages1/css/darkmode.css';
 
 interface UserData {
     firstName: string;
@@ -56,12 +57,7 @@ const Header: React.FC = () => {
         body.classList.toggle('dark', isDarkMode);
     }, [isDarkMode]);
 
-    // const getProfilePictureInitials = (firstName: string, lastName: string): string => {
-    //     if (!firstName || !lastName) {
-    //         return ""; // Return an empty string or some default initials
-    //     }
-    //     return `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
-    // };
+
     const toggleDarkMode = () => {
         setIsDarkMode(!isDarkMode);
         localStorage.setItem('darkMode', (!isDarkMode).toString());
@@ -107,19 +103,8 @@ const Header: React.FC = () => {
                                 window.location.href="/searchBy/" + event.target.value;
                             }
                         }} type="text" id="input" name="searchBox" placeholder="Search here..." />
-                        <i><a><IoFilterSharp size="2rem" color="black"/></a>
-                            <li><a>Veg</a></li>
-                            <li><a>Non Veg</a></li>
-                        </i>
+
                     </div>
-
-
-
-                    {/*//LOGOUT KO BUTTON YAA XAAA LOGIC WALA CODE YESMA RAKHAAA*/}
-                    {/*//SUBEKSHYAA KO KAAM HOOO*/}
-                    {/*//ARU HARU DON'T TOUCH*/}
-
-
 
 
                     <button id="registrationButton" type="button" onClick={() => {
