@@ -22,7 +22,9 @@ function Homepage(){
             </div>
         </div>
 
+
             <div className="content-flex-one">
+                <h1>Categories</h1>
                 <Slider/>
             </div>
 

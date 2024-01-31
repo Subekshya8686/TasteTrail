@@ -20,7 +20,12 @@ import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";
 import SearchByTitle from "./pages1/searchByTitle.tsx";
+<<<<<<< HEAD
 import IngredientCalculator from "./components/ServingCalculator.tsx";
+=======
+import SubmitOtpForm from "./components/SubmitOtpForm.tsx";
+import UpdateOtpPasswordForm from "./components/UpdateOtpPasswordForm.tsx";
+>>>>>>> 32616de18aa186c078460c8198793031a656d093
 
 
 const router = createBrowserRouter(
@@ -31,7 +36,7 @@ const router = createBrowserRouter(
         },
 
         {
-            path:"/homepage",
+            path:"/",
             element:<Homepage/>
 
         },
@@ -62,7 +67,7 @@ const router = createBrowserRouter(
         },
 
         {
-            path: "/",
+            path: "/Login",
             element: <LoginRegister/>
         },
 
@@ -135,6 +140,14 @@ const router = createBrowserRouter(
         {
             path: "/searchBy/:title",
             element: <SearchByTitle/>
+        },
+        {
+            path: "/SubmitOTP",
+            element: <SubmitOtpForm/>
+        },
+        {
+            path: "/UpdateOtp",
+            element: <UpdateOtpPasswordForm/>
         },
     ]
 )
