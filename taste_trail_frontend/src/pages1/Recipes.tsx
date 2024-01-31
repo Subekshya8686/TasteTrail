@@ -8,6 +8,8 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Rate from "../components/Rate.tsx";
 import Comment from "../components/Comment.tsx";
+import IngredientRecipe from "../components/IngredientRecipe.tsx";
+import {FaPrint} from "react-icons/fa";
 
 interface Recipe {
     id: number;
@@ -17,14 +19,31 @@ interface Recipe {
     ratings: number;
     preparationTimeMinutes: string;
     preparationTimeHours: string;
-    rating: number;
     description: string;
+    stepDescription: string;
+    recipeQuantityNumber: number;
+    recipeQuantityType: string;
+    incredientList: string;
+}
+
+interface CommentData {
+    id: number;
+    userId: {
+        id: number;
+        username?: string;
+    };
+    content: {
+        id: number;
+    };
+    description: string;
+    username?: string;
 }
 
 const Recipes: React.FC = () => {
     const [recipeData, setRecipeData] = useState<Recipe | null>(null);
-    const [comments, setComments] = useState<Comment[]>([]);
-    const [username, setUsername] = useState<string | null>(null); // Added username state
+    const [rating, setRating] = useState<number | null>(null);
+    const [comments, setComments] = useState<CommentData[]>([]);
+    const [username, setUsername] = useState<string | null>(null);
 
     const { id } = useParams();
 
@@ -35,6 +54,23 @@ const Recipes: React.FC = () => {
                 const recipeResponse = await axios.get<Recipe>(`http://localhost:8080/content/${id}`);
                 setRecipeData(recipeResponse.data);
 
+                // Fetch rating data
+                const ratingResponse = await axios.get<number>(`http://localhost:8080/review/${id}`);
+                setRating(ratingResponse.data);
+
+                // Fetch comment data
+                const commentsResponse = await axios.get<CommentData[]>(`http://localhost:8080/comment/${id}`);
+
+                // Map user IDs to usernames
+                const commentsWithUsernames = commentsResponse.data.map(comment => {
+                    return {
+                        ...comment,
+                        username: comment.userId?.username || 'Unknown User',
+                    };
+                });
+
+                setComments(commentsWithUsernames);
+
                 // Fetch user data for the username
                 const userId = localStorage.getItem('userId');
                 const userResponse = await axios.get(`http://localhost:8080/users/${userId}`, {
@@ -43,7 +79,6 @@ const Recipes: React.FC = () => {
                 setUsername(userResponse.data.username);
             } catch (error) {
                 console.error('Error fetching data:', error);
-
             }
         };
 
@@ -51,6 +86,7 @@ const Recipes: React.FC = () => {
             fetchData();
         }
     }, [id]);
+
 
     const handleRate = async (rating: number) => {
         const userId = localStorage.getItem('userId');
@@ -74,13 +110,19 @@ const Recipes: React.FC = () => {
     const handleCommentSubmit = async (comment: string) => {
         const userId = localStorage.getItem('userId');
 
-        if (!userId || !username) {
-            console.error('User ID or username not found in local storage');
+        if (!userId) {
+            console.error('User ID not found in local storage');
             return;
         }
 
         try {
-            await axios.post(`http://localhost:8080/comment`, {
+            const userResponse = await axios.get(`http://localhost:8080/users/${userId}`, {
+                headers: { authorization: "Bearer " + localStorage.getItem("accessToken") }
+            });
+
+            const username = userResponse.data.username;
+
+            await axios.post(`http://localhost:8080/comment/save`, {
                 userId: userId,
                 contentId: id,
                 username: username,
@@ -88,14 +130,82 @@ const Recipes: React.FC = () => {
             });
 
             console.log('Comment submitted successfully!');
-
-            // Refetch comments after submitting
-            const commentsResponse = await axios.get<Comment[]>(`http://localhost:8080/comments/${id}`);
-            setComments(commentsResponse.data);
         } catch (error) {
             console.error('Error submitting comment:', error);
         }
     };
+
+
+    const handlePrint = () => {
+        const printWindow = window.open('', '_blank');
+
+        if (printWindow && recipeData) {
+            printWindow.document.write(`
+                <html>
+                <head>
+                    <title>${recipeData.recipeTitle}</title>
+                    <style>
+                    body {
+                        /*font-family: 'Arial', sans-serif;*/
+                        background-color: #f5f5f5;
+                        text-align: center;
+                        padding: 30px 50px;
+                    }
+                    h1 {
+                        color: #cc3d3d;
+                        margin-bottom: 10px;
+                    }
+                    img {
+                        max-width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                        margin-bottom: 20px;
+                    }
+                    p {
+                        color: #333;
+                        line-height: 1.6;
+                        margin-bottom: 15px;
+                    }
+                    h2 {
+                        color: #2a9d8f;
+                        margin-top: 20px;
+                    }
+                    button {
+                        background-color: #cc3d3d;
+                        color: #fff;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                        width: 150px;
+                        border-radius: 12px;
+                    }
+                    .print-form {
+                    border: 2px #ababab solid;
+                    border-radius: 20px;
+                    padding: 10px 20px;
+                    align-items: center;
+                    }
+                </style>
+                </head>
+                <body>
+                <div class="print-form">
+                    <h1>${recipeData.recipeTitle}</h1>
+                    <img src="${recipeData.recipePhoto}" alt="${recipeData.recipeTitle}">
+                    <p>${recipeData.recipeDescription}</p>
+                    <h2>Ingredients</h2>
+                    <p>${recipeData.incredientList}</p>
+                    <h2>Instructions</h2>
+                    <p>${recipeData.stepDescription}</p>
+                    <button onclick="window.print()">Print</button>
+                </div>
+                </body>
+                </html>
+            `);
+        } else {
+            alert('Popup blocked. Please allow popups for this site.');
+        }
+    };
+
 
     return (
         <>
@@ -104,8 +214,25 @@ const Recipes: React.FC = () => {
                 <section className="img_description">
                     {recipeData && <RecipeViewImg recipe={recipeData} />}
                 </section>
-                <section className="rating-time flex">
-                    {recipeData && <RecipeRateTime recipe={recipeData} />}
+                <section className="rating-time">
+                    {recipeData && <RecipeRateTime recipe={recipeData} rating={rating} />}
+                    <div className="recipe-time">
+                    <table>
+                        <tbody>
+                        <tr>
+                            <th>Print Recipe</th>
+                        </tr>
+                        </tbody>
+                    <td className="print-btn" >
+                        <i className="print" onClick={handlePrint}>
+                            <FaPrint size={'2rem'} />
+                        </i>
+                    </td>
+                    </table>
+                    </div>
+                </section>
+                <section className="ingredients-recipe">
+                    {recipeData && <IngredientRecipe recipe={recipeData} />}
                 </section>
                 <section className="rate-recipe">
                     {recipeData && <Rate onRate={handleRate} />}

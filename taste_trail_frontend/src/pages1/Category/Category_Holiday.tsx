@@ -22,7 +22,9 @@ const Category_Holiday: React.FC = () => {
     const {data:holidayCat}=useQuery({
         queryKey:["HOLIDAY_CAT"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/holiday&festives")
+            return axios.get("http://localhost:8080/content/byCategory/holiday&festives", {
+                headers:{authorization:"Bearer "+ localStorage.getItem("accessToken")}
+            })
         }
     })
 
@@ -62,7 +64,7 @@ const Category_Holiday: React.FC = () => {
 
             <main>
                 <section className="headerimg">
-                    <div className="container">
+                    <div className="category-container">
                         <div className="headerinfo flex">
                             <h2 className="headertitle">Holiday and Festives</h2>
                             <p className="headerpera">Elevate your holiday experience with our tasty and easy-to-make snacks.
@@ -73,7 +75,7 @@ const Category_Holiday: React.FC = () => {
                 </section>
 
                 {/*featured recipes*/}
-                <div className="featuredrecipe container flex">
+                <div className="featuredrecipe category-container flex">
                     <div className="featuredtitles flex">
                         <div className="titleicon">
                             <img src="snacks_ico.png" alt="snack_ico"/>
@@ -86,7 +88,7 @@ const Category_Holiday: React.FC = () => {
 
                 {/* Section 1: All recipes for 'snacks' category */}
                 <div className={'main-cards'}>
-                    <section className="threecards container flex">
+                    <section className="threecards category-container flex">
                         {section1Recipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))}
@@ -99,7 +101,7 @@ const Category_Holiday: React.FC = () => {
                     <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
                 </div>
                 <div className={'main-cards'}>
-                    <section className="explorerecipe container flex">
+                    <section className="explorerecipe category-container flex">
                         {section2Recipes.map((recipe) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))}

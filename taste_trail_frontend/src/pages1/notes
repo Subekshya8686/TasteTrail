@@ -1,38 +1,3 @@
-FUNCTION FOR PRINT BUTTON
-DO NOT TOUCH
-
-const recipeNameElement = document.querySelector('.recipe_description h1');
-        const descriptionElement = document.querySelector('.recipe_description p');
-        const ingredientsListElements = document.querySelectorAll('.ingredients table tr td');
-        const recipeInstructionsElement = document.querySelector('.recipe h3 + pre');
-
-        if (!recipeNameElement || !descriptionElement || !recipeInstructionsElement) {
-            return;
-        }
-
-        const recipeName = recipeNameElement.textContent || '';
-        const description = descriptionElement.textContent || '';
-        const ingredientsList = Array.from(ingredientsListElements).map(ingredient => ingredient.textContent || '');
-        const recipeInstructions = recipeInstructionsElement.textContent || '';
-
-        // Generate HTML content for printing
-        const recipePageContent = `
-          <h1>${recipeName}</h1>
-          <p style="font-size: 20px;">${description}</p>
-          <h2>Ingredients:</h2>
-          <ul style="font-size: 20px;">
-              ${ingredientsList.map(ingredient => `<li>${ingredient}</li>`).join('')}
-          </ul>
-          <h2>Instructions:</h2>
-          <pre style="font-size: 20px; font-family: 'Playfair', 'sans-serif'; white-space: pre-wrap;">${recipeInstructions}</pre>
-          `;
-
-        // Create a new window with the generated HTML content
-        const recipePage = window.open('', '_blank');
-        recipePage?.document.write(recipePageContent);
-        recipePage?.document.close();
-    };
-
 
 import React, { useState } from 'react';
 import { FaCircleUser } from 'react-icons/fa6';

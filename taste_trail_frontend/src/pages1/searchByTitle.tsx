@@ -30,8 +30,6 @@ console.log(title)
 
             <main>
 
-
-
                 <div className="quickrecipe-title flex">
                     <h2>Searched Item:</h2>
                 </div>

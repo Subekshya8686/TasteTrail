@@ -155,11 +155,10 @@ function App() {
     return (
         <>
             <QueryClientProvider client={queryClient}>
-            <RouterProvider router={router} />
+                <RouterProvider router={router} />
             </QueryClientProvider>
         </>
     )
 }
 
 export default App
-

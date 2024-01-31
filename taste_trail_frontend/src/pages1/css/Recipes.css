@@ -83,12 +83,24 @@ main {
     color: black;
     justify-content: center;
     margin-bottom: 5vh;
+    align-items: center;
+}
+
+.rating-time table {
+    width: 500px;
+    height: 50px;
+    border-collapse: collapse;
 }
 
 .rating-time .time {
     font-size: 17px;
     font-weight: 700;
     color: #3d3d3d;
+}
+
+.recipe-time table {
+    margin-left: 61vh;
+    margin-top: 10vh;
 }
 
 .rating-time .print-btn i{
@@ -100,29 +112,6 @@ main {
     cursor: pointer;
 }
 
-
-
-/*ingredients and serving calculator*/
-.ingredients-recipe {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    color: black;
-}
-
-.ingredients {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 40%;
-    box-sizing: border-box;
-}
-
-table {
-    width: 1000px;
-    height: 50px;
-    border-collapse: collapse;
-}
-
 th, td {
     border: 3px solid #ffffff;
     padding: 12px;
@@ -131,74 +120,78 @@ th, td {
     border-radius: 15px;
 }
 
-.ingredients td {
-    background-color: #dbdbdb;
-}
 
+
+/*ingredients and serving calculator*/
 .ingredients-recipe {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    color: black;
 }
 
-.ingredients {
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 45%; /* Adjust the width as needed */
-    align-items: flex-start;
+.instruction-container {
+    margin-bottom: 15vh;
+    margin-top: 7vh;
+    justify-content: space-evenly;
 }
 
-.ingredients table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.ingredients td {
-    border-bottom: 1px solid #ccc;
-    padding: 8px;
-    text-align: left;
-}
-
-.ingredients th {
-    border: 2px solid #ffffff;
-    padding: 20px;
-    text-align: left;
-}
-
-.ingredients button {
-    background-color: black;
-    width: 57px;
-    height: 40px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.recipe {
+.recipe-instruction {
     border: 2px solid #ddd;
     padding: 20px;
     border-radius: 10px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 685px;
-    width: 60%;
+    /*max-width: 685px;*/
+    width: 50%;
     box-sizing: border-box;
 }
 
-h2 {
-    /* border-bottom: 2px solid #ccc; */
-    padding-bottom: 10px;
-    font-family: "Playfair Display",'sans-serif';
+.recipe-instruction h5 {
+    color: #2f2e2e;
+    font-size: 25px;
+    text-decoration: underline;
 }
 
-pre {
+.recipe-instruction p {
     white-space: pre-wrap;
     font-family: 'Playfair Display', 'sans-serif';
+    font-size: 20px;
 }
 
-.recipe-content {
-    padding: 10px;
-    border: 1px solid #ccc;
+.ingredient-serving table {
+    width: 100%;
+    border-collapse: collapse;
 }
+
+.ingredient-serving th,
+.ingredient-serving td {
+    border: 1px solid #b7b7b7;
+    padding: 8px;
+    text-align: center;
+    border-radius: 1px;
+    /*font-size: 19px;*/
+}
+
+.ingredient-serving th {
+    background-color: #f2f2f2;
+
+}
+
+.ingredient-serving tbody tr {
+    margin-bottom: 10px;
+}
+
+.quantity-button {
+    font-size: 18px;
+    padding: 3px 8px;
+    text-align: center;
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    margin-right: 40px;
+}
+
+
 
 /*rate-comment*/
 
@@ -230,26 +223,41 @@ pre {
 }
 
 
+/* Comments Section */
 .comment-section {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
-.comment-section p {
+.comment-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.comment-card {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-card span {
+    margin-right: 10px;
+}
+
+.comment-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 600;
     margin-bottom: 5px;
 }
 
-.comment-section textarea {
-    width: 100%;
-    resize: vertical;
-}
-
-.comment-section button {
-    margin-top: 10px;
-    padding: 8px 16px;
-    background-color: #2a9d8f;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+.comment-info p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
 }
 
 /*footer*/

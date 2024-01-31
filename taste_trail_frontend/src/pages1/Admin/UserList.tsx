@@ -9,6 +9,7 @@ interface User {
     firstName: string;
     lastName: string;
     email: string;
+    username: string;
 }
 
 const UserList: React.FC = () => {
@@ -43,8 +44,8 @@ const UserList: React.FC = () => {
                     <div key={user.id} className="userlist-card flex">
                         <span><FaCircleUser /></span>
                         <div className="userlist-info flex">
-                            <label className="user-name">{user.firstName} {user.lastName}</label>
-                            <h2>{user.email}</h2>
+                            <label className="user-name"> Full Name: {user.firstName} {user.lastName}</label>
+                            <h2>username: {user.username}, email: {user.email}</h2>
                         </div>
                         <div className="edit-delete">
                             <button onClick={() => deleteUser.mutate(user.id)}>

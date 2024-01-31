@@ -9,6 +9,7 @@ interface CommentProps {
 
 interface Comment {
     id: number;
+    userId: number;
     username: string;
     description: string;
 }
@@ -46,14 +47,14 @@ const Comment: React.FC<CommentProps> = ({ onCommentSubmit, comments }) => {
             </form>
 
             {/* Display Comments */}
-            <div className="comments-section">
+            <div className="comment-section">
                 <h3>Comments:</h3>
                 {comments.map((comment) => (
-                    <div key={comment.id} className="commentlist-card flex">
+                    <div key={comment.id} className="comment-card flex">
                         <span>
                             <FaCircleUser />
                         </span>
-                        <div className="commentlist-info">
+                        <div className="comment-info">
                             <label className="user-name">{comment.username}</label>
                             <p>{comment.description}</p>
                         </div>
