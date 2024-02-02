@@ -100,3 +100,67 @@
     color: white;
     background-color: var(--bg-dark);
 }
+.dark .userProfileContainer{
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .profile-picture{
+    color: black;
+    background-color: white;
+}
+.dark .recipe_description h5 {
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .recipe_description p {
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .recipe_description h3 {
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark th{
+    border: 3px solid var(--bg-dark);
+}
+.dark td{
+    border: 3px solid var(--bg-dark);
+}
+.dark .recipe-instruction{
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .recipe-instruction h5{
+    color: white;
+    background-color: var(--bg-dark);
+}
+.dark .ingredient-serving th{
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark textarea{
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark .comment-card{
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark .comment-card .user-name{
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark .comment-card p{
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark .comment-section h3 {
+    background-color: var(--bg-dark);
+    color: white;
+}
+.dark .password-t label{
+    color: white;
+}
+.dark #Category a{
+    color: white;
+}

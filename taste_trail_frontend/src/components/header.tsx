@@ -119,7 +119,7 @@ const Header: React.FC = () => {
 
 
                     <button id="registrationButton" type="button" onClick={() => {
-                        navigate(user ? "/user-profile" : "/login");
+                        navigate(user ? "/user-profile" : "/Login");
                     }}>
                         {user ? (
                             <div className="dropdown-container">

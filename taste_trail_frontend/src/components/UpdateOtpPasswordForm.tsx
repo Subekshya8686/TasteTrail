@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
+import Header from "./header.tsx";
 
 const UpdatePasswordForm: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -32,6 +33,8 @@ const UpdatePasswordForm: React.FC = () => {
     };
 
     return (
+        <>
+            <Header/>
         <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -40,6 +43,7 @@ const UpdatePasswordForm: React.FC = () => {
             <input type="password" value={confirmnewPassword} onChange={(e) => setCNewPassword(e.target.value)} required />
             <button type="submit" onClick={() => navigateTo('/user-profile')}>Update Password</button>
         </form>
+        </>
     );
 };
 

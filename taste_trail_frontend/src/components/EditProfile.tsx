@@ -51,7 +51,6 @@ const EditProfile: React.FC = () => {
 
         <div className="edit-user-profile">
             <h2>Edit User Profile</h2>
-            <div className="container1">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <label htmlFor="firstName">First Name</label>
@@ -70,9 +69,8 @@ const EditProfile: React.FC = () => {
                     <input type="email" id="email" {...register("email", { required: true })} />
                 </div>
                 <button type="submit">Save Changes</button>
+                <button className="btn" onClick={() => navigate(`/user-profile`)}> Back</button>
             </form>
-                <div/>
-        </div>
         </div>
     );
 };
