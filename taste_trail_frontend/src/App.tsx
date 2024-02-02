@@ -14,7 +14,6 @@ import Category_dinner from "./pages1/Category/Category_dinner.tsx";
 import Category_lunch from "./pages1/Category/Category_lunch.tsx";
 import ContentCreate from "./pages1/Admin/ContentCreate.tsx";
 import RecipeList from "./pages1/Admin/RecipeList.tsx";
-// import ServingCalculator from "./components/ServingCalculator.tsx";
 import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";

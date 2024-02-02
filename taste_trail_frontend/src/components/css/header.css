@@ -108,12 +108,10 @@ button#registrationButton:focus {
 }
 
 .logo {
-    /*gap: 5px;*/
-    margin-left: 10px;
+    margin-left: 25px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /*margin-bottom: 5px;*/
     font-family: 'Leaves and Ground', serif;
 }
 
