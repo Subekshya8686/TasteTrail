@@ -248,6 +248,10 @@ th, td {
     margin-bottom: 10px;
 }
 
+.comment-section button {
+    background-color: #3b3b3b;
+}
+
 .comment-card {
     background-color: #f8f8f8;
     border-radius: 8px;

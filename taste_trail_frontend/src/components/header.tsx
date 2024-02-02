@@ -63,6 +63,17 @@ const Header: React.FC = () => {
         localStorage.setItem('darkMode', (!isDarkMode).toString());
     };
 
+    const handleLogout = () => {
+        localStorage.clear();
+        window.location.href = "/";
+    };
+
+    const handleDropdownClick = () => {
+        setDropdownOpen(true);
+        setTimeout(() => {
+            setDropdownOpen(false);
+        }, 10000); // Adjust the delay time in milliseconds
+    };
 
     return (
         <header>
@@ -112,17 +123,14 @@ const Header: React.FC = () => {
                     }}>
                         {user ? (
                             <div className="dropdown-container">
-                                <div onClick={toggleDropdown} className="dropdown-trigger">
+                                <div onClick={handleDropdownClick} className="dropdown-trigger">
                                     <i><TbChefHat size={"2.3rem"}/> </i>
                                 </div>
                                 {dropdownOpen && (
                                     <ul className="dropdown-menu">
                                         <li><a href="/ChangePassword">Change Password</a></li>
                                         <li><a href="/EditProfile">Update Profile</a></li>
-                                        <li onClick={()=>{
-                                            localStorage.clear();
-                                            window.location.href="/"
-                                        }}><a href="#">Log Out</a></li>
+                                        <li onClick={handleLogout}><a href="#">Log Out</a></li>
                                     </ul>
                                 )}
                             </div>

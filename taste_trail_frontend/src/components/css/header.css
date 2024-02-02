@@ -7,7 +7,7 @@
 body {
     overflow-x: hidden;
     overflow-y: auto;
-    display: flex; /* Center align the body content */
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
@@ -399,9 +399,53 @@ button#registrationButton {
     position: absolute;
     right: 50px;
 }
-.dropdown-menu{
-    width: 20px;
+
+
+/* Dropdown container for profile*/
+.dropdown-container {
+    position: relative;
+    display: inline-block;
 }
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    background-color: #fff; /* Background color of the dropdown */
+    border: 1px solid #ccc; /* Border color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+    width: 150px; /* Set the width of the dropdown menu */
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    width: 100%; /* Set the width of each dropdown item */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    display: block;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5; /* Hover background color */
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
 
 
 
