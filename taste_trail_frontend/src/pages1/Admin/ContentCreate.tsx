@@ -54,7 +54,7 @@ function ContentCreate() {
             const formData = {...data, ingredientsList: ingredientsList?.join(",")};
             saveData.mutate(formData, {
                 onSuccess() {
-                    navigate("/admin/recipelist")
+                    navigate("/admin")
                 }
             });
         } catch (error) {
@@ -75,7 +75,7 @@ function ContentCreate() {
         <>
             <button onClick={() => {
                 navigate("/admin")
-            }}>Back To Content List
+            }}>Back
             </button>
 
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -87,7 +87,7 @@ function ContentCreate() {
                 <input type="url" id="recipePhoto" accept="image/*" required{...register("recipePhoto")}/>
 
                 <label htmlFor="recipeDescription">Recipe Description *</label>
-                <textarea id="recipeDescription" rows={5} maxLength={1000} placeholder="Describe your recipe..."
+                <textarea id="recipeDescription" rows={5} maxLength={200} placeholder="Describe your recipe..."
                           required{...register("recipeDescription")}/>
 
                 <label htmlFor="recipeQuantity">Recipe Quantity *</label>
@@ -187,8 +187,9 @@ function ContentCreate() {
                 </div>
 
                 <label htmlFor="stepDescription">Step Description *</label>
-                <input type="list" id="stepDescription" maxLength={500} placeholder="Describe the cooking steps..."
-                          required {...register("stepDescription")}/>
+                <textarea id="stepDescription" rows={5} maxLength={5000} placeholder="Describe your recipe..."
+                          required{...register("stepDescription")}/>
+
 
                 <button>Submit</button>
             </form>

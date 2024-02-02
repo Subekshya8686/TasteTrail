@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
-import {useNavigate} from "react-router-dom";
 
 const ForgetPasswordForm: React.FC = () => {
     const [email, setEmail] = useState('');
-    const navigate = useNavigate();
-
-
-    const navigateTo = (path: string) => {
-        navigate(path);
-    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -33,7 +26,7 @@ const ForgetPasswordForm: React.FC = () => {
         <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <button type="submit" onClick={() => navigateTo('/SubmitOTP')}>Verify Email</button>
+            <button type="submit">Initiate Forget Password</button>
         </form>
     );
 };
