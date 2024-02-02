@@ -22,9 +22,7 @@ const Category_lunch: React.FC = () => {
     const {data: lunchCat}=useQuery({
         queryKey:["LUNCH_CAT"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/lunch", {
-                headers:{authorization:"Bearer "+ localStorage.getItem("accessToken")}
-            })
+            return axios.get("http://localhost:8080/content/byCategory/lunch")
         }
     })
 
@@ -87,16 +85,16 @@ const Category_lunch: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Section 1: All recipes for 'snacks' category */}
+                {/* Section 1: All recipes */}
                 <div className={'main-cards'}>
                     <section className="threecards category-container flex">
                         {section1Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <RecipeCard key={recipe.id} recipe={recipe} onUnlike={() => {}} />
                         ))}
                     </section>
                 </div>
 
-                {/* Section 2: Recipes with duration <= 15 minutes for 'snacks' category */}
+                {/* Section 2: Recipes with duration <= 15 minutes for category */}
                 <div className="quickrecipe-title flex">
                     <h2>Quick Fixes, Endless Flavor:</h2>
                     <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
@@ -104,7 +102,7 @@ const Category_lunch: React.FC = () => {
                 <div className={'main-cards'}>
                     <section className="explorerecipe category-container flex">
                         {section2Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <RecipeCard key={recipe.id} recipe={recipe} onUnlike={() => {}} />
                         ))}
                     </section>
                 </div>

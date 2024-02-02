@@ -81,7 +81,7 @@
 .tlabel {
     color: brown;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 20px;
 }
 
 .tcardinfo h2 {
@@ -129,6 +129,7 @@
     transition: 0.3s ease;
     overflow: hidden;
     z-index: 1;
+    margin-right: 40px;
 }
 
 .tcardbtn:hover {
