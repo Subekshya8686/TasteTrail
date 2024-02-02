@@ -26,7 +26,7 @@ const ForgetPasswordForm: React.FC = () => {
         <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <button type="submit">Initiate Forget Password</button>
+            <button type="submit">Verify</button>
         </form>
     );
 };

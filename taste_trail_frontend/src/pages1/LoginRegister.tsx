@@ -4,6 +4,7 @@ import {useMutation} from 'react-query';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
 import './css/LoginRegister.css';
+import Header from "../components/header.tsx";
 
 const LoginRegister: React.FC = () => {
     const navigate = useNavigate();
@@ -69,18 +70,17 @@ const LoginRegister: React.FC = () => {
 
     return (
         <>
+
+            <Header/>
+
             <div className="flex-container">
-                <div className="container-wrapper" id="container1">
-                    <img src={"Food.jpg"} height="80%" width="100%" alt="Description of the image"/>
-                </div>
                 <div className="container">
                     <form className={`form ${formType === 'register' ? 'active' : ''}`}
                           onSubmit={handleSubmit(onSubmit)}>
-                        <h1>
-                            <a href="/homepage"><label>Taste</label><span>Trail</span></a>
-                        </h1>
+                        <div className="title">
                         {formType === 'login' && <h2 className="title">Login</h2>}
                         {formType === 'register' && <h2 className="title">Register</h2>}
+                        </div>
 
                         {formType === 'register' && (
                             <>
@@ -138,6 +138,14 @@ const LoginRegister: React.FC = () => {
                                         />
                                     </div>
                                     <span className="help-text">Both passwords must match</span>
+                                    <div className="remember-forgot">
+                                        <label>
+                                            <input
+                                                type="checkbox"
+                                                checked={rememberMe}
+                                            />Terms & Conditions
+                                        </label>
+                                    </div>
                                 </div>
 
 
@@ -178,7 +186,7 @@ const LoginRegister: React.FC = () => {
                                         onChange={() => setRememberMe(!rememberMe)}
                                     />Remember me
                                 </label>
-                                <a href="#">Forgot Password?</a>
+                                <a href="/ForgetPassword">Forgot Password?</a>
                             </div>
                         )}
 
