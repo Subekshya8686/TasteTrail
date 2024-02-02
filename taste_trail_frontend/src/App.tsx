@@ -19,7 +19,6 @@ import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";
 import SearchByTitle from "./pages1/searchByTitle.tsx";
-import IngredientCalculator from "./components/ServingCalculator.tsx";
 import SubmitOtpForm from "./components/SubmitOtpForm.tsx";
 import UpdateOtpPasswordForm from "./components/UpdateOtpPasswordForm.tsx";
 import LoginRegister from "./pages1/LoginRegister.tsx";
@@ -116,11 +115,6 @@ const router = createBrowserRouter(
         {
             path :"/admin",
             element: <AdminPanel/>
-        },
-
-        {
-            path: "/serving",
-            element: <IngredientCalculator/>
         },
         {
             path: "/EditProfile",
