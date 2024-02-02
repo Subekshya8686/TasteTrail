@@ -2,7 +2,6 @@ import Homepage from "./pages1/homepage.tsx";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Header from "./components/header.tsx";
 import Footer from "./components/footer.tsx";
-import LoginRegister from "./pages1/LoginRegister.tsx";
 import Category_snacks from "./pages1/Category/Category_snacks.tsx";
 import Recipes from "./pages1/Recipes.tsx";
 import {QueryClient, QueryClientProvider} from "react-query";
@@ -20,12 +19,10 @@ import EditProfile from "./components/EditProfile.tsx";
 import ForgetPassword from "./pages1/ForgetPassword.tsx";
 import ChangePassword from "./pages1/ChangePassword.tsx";
 import SearchByTitle from "./pages1/searchByTitle.tsx";
-<<<<<<< HEAD
 import IngredientCalculator from "./components/ServingCalculator.tsx";
-=======
 import SubmitOtpForm from "./components/SubmitOtpForm.tsx";
 import UpdateOtpPasswordForm from "./components/UpdateOtpPasswordForm.tsx";
->>>>>>> 32616de18aa186c078460c8198793031a656d093
+import LoginRegister from "./pages1/LoginRegister.tsx";
 
 
 const router = createBrowserRouter(
@@ -67,8 +64,8 @@ const router = createBrowserRouter(
         },
 
         {
-            path: "/Login",
-            element: <LoginRegister/>
+            path:"/login",
+            element:<LoginRegister/>
         },
 
         {

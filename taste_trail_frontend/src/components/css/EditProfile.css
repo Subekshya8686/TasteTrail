@@ -1,5 +1,5 @@
 .edit-user-profile {
-    max-width: 800px;
+    width: 800px;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #e0e0e0;
@@ -13,7 +13,7 @@
     text-align: center;
     color: #333333;
     margin-bottom: 20px;
-    font-size: 1.5em;
+    font-size: 50px;
 }
 
 .edit-user-profile form {
@@ -56,6 +56,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
     font-size: 0.9em;
+    width: fit-content;
 }
 
 .edit-user-profile button:hover {

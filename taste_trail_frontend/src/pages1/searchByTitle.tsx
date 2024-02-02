@@ -34,7 +34,7 @@ console.log(title)
                     <h2>Searched Item:</h2>
                 </div>
                 <div className={'main-cards'}>
-                    <section className="explorerecipe container flex">
+                    <section className="explorerecipe  flex">
                         {searchData?.data?.map((recipe:any) => (
                             <RecipeCard key={recipe.id} recipe={recipe} />
                         ))}

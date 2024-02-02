@@ -155,7 +155,7 @@ th, td {
 .recipe-instruction p {
     white-space: pre-wrap;
     font-family: 'Playfair Display', 'sans-serif';
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .ingredient-serving table {

@@ -1,5 +1,6 @@
+// RecipeCard.tsx
 import { FC, useState } from 'react';
-import './css/Recipecard.css';
+import './css/Recipecard.css'; // Make sure the path matches your project structure
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -14,35 +15,26 @@ interface RecipeCardProps {
         recipeDescription: string;
         preparationTimeMinutes: string;
         preparationTimeHours: string;
-        isLiked?: boolean;
+        isLiked?: boolean; // This prop indicates if the recipe is liked
     };
+    onUnlike: () => void; // Function to call when unliking a recipe
 }
 
-const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
+const RecipeCard: FC<RecipeCardProps> = ({ recipe, onUnlike }) => {
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState<boolean>(recipe.isLiked || false);
 
-    const displayPreparationTime = () => {
-        if (recipe.preparationTimeHours && recipe.preparationTimeMinutes) {
-            return `${recipe.preparationTimeHours} hr ${recipe.preparationTimeMinutes} mins`;
-        } else if (recipe.preparationTimeHours) {
-            return `${recipe.preparationTimeHours} hr`;
-        } else if (recipe.preparationTimeMinutes) {
-            return `${recipe.preparationTimeMinutes} mins`;
-        } else {
-            return 'N/A'; // or any default value if both are not present
-        }
-    };
-
-    const handleNavigate = (id: number) => {
-        navigate(`/recipeview/${id}`);
-    };
-
+    // Toggle favorite status and call onUnlike if unliking
     const handleFavoriteToggle = async () => {
-        // Toggle the liked state locally
-        setIsLiked(!isLiked);
+        const newIsLiked = !isLiked;
+        setIsLiked(newIsLiked);
 
+        // If toggling off the like, call the parent's onUnlike
+        if (!newIsLiked) {
+            onUnlike();
+        }
 
+        // Perform the axios request to update the backend
         try {
             const userId = localStorage.getItem('userId');
             if (!userId) {
@@ -50,16 +42,17 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
                 return;
             }
 
-            const response = await axios.post('http://localhost:8080/favourite', {
+            await axios.post('http://localhost:8080/favourite', {
                 userId: userId,
                 contentId: recipe.id,
-                isLike: !isLiked,
+                isLike: newIsLiked,
             });
 
-            console.log('Favorite status updated successfully:', response.data);
-
+            // Optionally log or handle the successful update
         } catch (error) {
             console.error('Error saving favorite status:', error);
+            // Optionally revert the like status in case of error
+            setIsLiked(!newIsLiked);
         }
     };
 
@@ -67,27 +60,21 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe }) => {
         <div className="tcard">
             <div className="tcardimg">
                 <img src={recipe.recipePhoto} alt={recipe.recipeTitle} />
-
                 <span onClick={handleFavoriteToggle}>
-                    <i>
-                        <FaHeart size={'2rem'} color={isLiked ? 'red' : 'gray'} />
-                    </i>
+                    <FaHeart size={'2rem'} color={isLiked ? 'red' : 'gray'} />
                 </span>
             </div>
             <div className="tcardinfo flex">
                 <label className="tlabel">{recipe.recipeTitle}</label>
-                {/*<h3>{recipe.name}</h3>*/}
                 <p>{recipe.recipeDescription}</p>
-                {/* Other recipe details */}
                 <ul className="flex">
                     <li>
-                        <i><MdOutlineTimer size={'1.2rem'} />{displayPreparationTime()}</i>
+                        <MdOutlineTimer size={'1.2rem'} />{recipe.preparationTimeHours} hr {recipe.preparationTimeMinutes} mins
                     </li>
                 </ul>
-                {/*can keep recipetitle or id*/}
-                <a className="tcardbtn" onClick={() => handleNavigate(recipe.id)}>
+                <button className="tcardbtn" onClick={() => navigate(`/recipeview/${recipe.id}`)}>
                     Read More
-                </a>
+                </button>
             </div>
         </div>
     );

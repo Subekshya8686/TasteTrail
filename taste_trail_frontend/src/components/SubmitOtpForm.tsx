@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {useNavigate} from "react-router-dom";
+import Header from "./header.tsx";
 
 const SubmitOtpForm: React.FC = () => {
     const [email, setEmail] = useState('');
@@ -31,6 +32,8 @@ const SubmitOtpForm: React.FC = () => {
     };
 
     return (
+        <>
+            <Header/>
         <form onSubmit={handleSubmit}>
             <label>Email:</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
@@ -38,6 +41,7 @@ const SubmitOtpForm: React.FC = () => {
             <input type="text" value={otp} onChange={(e) => setOtp(e.target.value)} required />
             <button type="submit" onClick={() => navigateTo('/UpdateOtp')}>Submit OTP</button>
         </form>
+        </>
     );
 };
 
