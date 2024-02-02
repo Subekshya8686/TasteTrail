@@ -36,7 +36,7 @@ console.log(title)
                 <div className={'main-cards'}>
                     <section className="explorerecipe  flex">
                         {searchData?.data?.map((recipe:any) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <RecipeCard key={recipe.id} recipe={recipe}  onUnlike={recipe}/>
                         ))}
                     </section>
                 </div>
