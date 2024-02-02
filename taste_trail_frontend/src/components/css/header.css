@@ -7,11 +7,7 @@
 body {
     overflow-x: hidden;
     overflow-y: auto;
-<<<<<<< HEAD
     display: flex;
-=======
-    display: flex; /* Center align the body content */
->>>>>>> 32616de18aa186c078460c8198793031a656d093
     justify-content: center;
     align-items: center;
     min-height: 100vh; /* Full viewport height */
@@ -40,11 +36,7 @@ body {
     width: 100%; /* Span full width */
     font-family: 'PlayFair Display', 'sans-serif';
     display: flex;
-<<<<<<< HEAD
     justify-content: space-evenly;
-=======
-    justify-content: center;
->>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
 }
 
@@ -72,10 +64,7 @@ h2 {
     position: relative;
     width: 100%;
     display: flex;
-<<<<<<< HEAD
-=======
     justify-content: center;
->>>>>>> 32616de18aa186c078460c8198793031a656d093
     align-items: center;
     gap: 5px;
 }
@@ -93,11 +82,7 @@ h2 {
 }
 
 button#registrationButton {
-<<<<<<< HEAD
     margin-right: 20px;
-=======
-    margin-right: 50px;
->>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 10px;
 }
 
@@ -119,17 +104,10 @@ button#registrationButton {
 }
 
 .logo {
-<<<<<<< HEAD
     margin-left: 30px;
     display: flex;
     align-items: center;
-=======
-    /*gap: 5px;*/
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
     justify-content: flex-start;
->>>>>>> 32616de18aa186c078460c8198793031a656d093
     margin-bottom: 60px;
     font-family: 'Leaves and Ground', serif;
 }
@@ -420,9 +398,53 @@ button#registrationButton {
     position: absolute;
     right: 50px;
 }
-.dropdown-menu{
-    width: 20px;
+
+
+/* Dropdown container for profile*/
+.dropdown-container {
+    position: relative;
+    display: inline-block;
 }
+
+.dropdown-trigger {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -50px;
+    margin-top: 5px;
+    list-style: none;
+    padding: 0;
+    background-color: #fff; /* Background color of the dropdown */
+    border: 1px solid #ccc; /* Border color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+    width: 150px; /* Set the width of the dropdown menu */
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    width: 100%; /* Set the width of each dropdown item */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #333; /* Link color */
+    display: block;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f5f5f5; /* Hover background color */
+}
+
+.dropdown-container:hover .dropdown-menu {
+    display: block;
+}
+
 
 
 

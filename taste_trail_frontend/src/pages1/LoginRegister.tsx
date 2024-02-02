@@ -14,7 +14,7 @@ const LoginRegister = () => {
     useEffect(() => {
         const storedToken = localStorage.getItem('accessToken');
         if (storedToken) {
-            navigate('/homepage');
+            navigate('/');
         }
     }, [navigate]);
 

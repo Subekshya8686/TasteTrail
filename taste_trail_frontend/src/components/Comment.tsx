@@ -31,6 +31,9 @@ const Comment: React.FC<CommentProps> = ({ onCommentSubmit, comments }) => {
 
         onCommentSubmit(comment);
         setComment('');
+
+        // Reload the page after submitting the comment
+        window.location.reload();
     };
 
     return (
@@ -43,7 +46,7 @@ const Comment: React.FC<CommentProps> = ({ onCommentSubmit, comments }) => {
                     value={comment}
                     onChange={handleCommentChange}
                 />
-                <button type="submit">Submit</button>
+                <button type="submit">Post</button>
             </form>
 
             {/* Display Comments */}
