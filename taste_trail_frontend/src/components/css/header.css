@@ -86,6 +86,10 @@ button#registrationButton {
     margin-bottom: 10px;
 }
 
+button#registrationButton:focus {
+    outline: none;
+}
+
 .mainnav button:hover {
     background-color: var(--btnhover-color);
 }
@@ -419,27 +423,27 @@ button#registrationButton {
     margin-top: 5px;
     list-style: none;
     padding: 0;
-    background-color: #fff; /* Background color of the dropdown */
-    border: 1px solid #ccc; /* Border color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
-    width: 150px; /* Set the width of the dropdown menu */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 150px;
 }
 
 .dropdown-menu li {
     padding: 10px;
-    width: 100%; /* Set the width of each dropdown item */
-    box-sizing: border-box; /* Include padding and border in the width */
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
 .dropdown-menu a {
     text-decoration: none;
-    color: #333; /* Link color */
+    color: #333;
     display: block;
 }
 
 .dropdown-menu li:hover {
-    background-color: #f5f5f5; /* Hover background color */
+    background-color: #f5f5f5;
 }
 
 .dropdown-container:hover .dropdown-menu {

@@ -42,7 +42,7 @@ const RecipeRatings: React.FC<RecipeRatingsProps> = ({ recipe, rating }) => {
         } else if (recipe.preparationTimeMinutes) {
             return `${recipe.preparationTimeMinutes} mins`;
         } else {
-            return 'N/A'; // or any default value if both are not present
+            return 'N/A';
         }
     };
 

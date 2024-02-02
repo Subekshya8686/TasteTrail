@@ -1,6 +1,5 @@
-// RecipeCard.tsx
 import { FC, useState } from 'react';
-import './css/Recipecard.css'; // Make sure the path matches your project structure
+import './css/Recipecard.css';
 import { FaHeart } from "react-icons/fa";
 import { MdOutlineTimer } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +22,18 @@ interface RecipeCardProps {
 const RecipeCard: FC<RecipeCardProps> = ({ recipe, onUnlike }) => {
     const navigate = useNavigate();
     const [isLiked, setIsLiked] = useState<boolean>(recipe.isLiked || false);
+
+    const displayPreparationTime = () => {
+        if (recipe.preparationTimeHours && recipe.preparationTimeMinutes) {
+            return `${recipe.preparationTimeHours} hr ${recipe.preparationTimeMinutes} mins`;
+        } else if (recipe.preparationTimeHours) {
+            return `${recipe.preparationTimeHours} hr`;
+        } else if (recipe.preparationTimeMinutes) {
+            return `${recipe.preparationTimeMinutes} mins`;
+        } else {
+            return 'N/A';
+        }
+    };
 
     // Toggle favorite status and call onUnlike if unliking
     const handleFavoriteToggle = async () => {
@@ -69,7 +80,7 @@ const RecipeCard: FC<RecipeCardProps> = ({ recipe, onUnlike }) => {
                 <p>{recipe.recipeDescription}</p>
                 <ul className="flex">
                     <li>
-                        <MdOutlineTimer size={'1.2rem'} />{recipe.preparationTimeHours} hr {recipe.preparationTimeMinutes} mins
+                        <i><MdOutlineTimer size={'1.2rem'} />{displayPreparationTime()}</i>
                     </li>
                 </ul>
                 <button className="tcardbtn" onClick={() => navigate(`/recipeview/${recipe.id}`)}>

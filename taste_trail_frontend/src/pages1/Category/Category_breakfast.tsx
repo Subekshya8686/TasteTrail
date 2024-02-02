@@ -22,13 +22,11 @@ const Category_breakfast: React.FC = () => {
     const {data:snacksBreakfast}=useQuery({
         queryKey:["SNACKS_BREAKFAST"],
         queryFn:()=>{
-            return axios.get("http://localhost:8080/content/byCategory/breakfast",{
-                headers:{authorization:"Bearer "+ localStorage.getItem("accessToken")}
-            })
+            return axios.get("http://localhost:8080/content/byCategory/breakfast")
         }
     })
 
-    // Mapping data from the table structure to Recipe userstructure
+    // Mapping data from the table structure to Recipe structure
     const recipes: Recipe[] = snacksBreakfast?.data?.map((item: any) => ({
         id: item.id,
         recipeTitle: item.recipeTitle,
@@ -86,16 +84,16 @@ const Category_breakfast: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Section 1: All recipes for 'snacks' category */}
+                {/* Section 1: All recipes for category */}
                 <div className={'main-cards'}>
                     <section className="threecards category-container flex">
                         {section1Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <RecipeCard key={recipe.id} recipe={recipe} onUnlike={() => {}} />
                         ))}
                     </section>
                 </div>
 
-                {/* Section 2: Recipes with duration <= 15 minutes for 'snacks' category */}
+                {/* Section 2: Recipes with duration <= 15 minutes for category */}
                 <div className="quickrecipe-title flex">
                     <h2>Quick Fixes, Endless Flavor:</h2>
                     <p>Elevate Your Everyday Meals with Our Handpicked Quick Recipe Collection.</p>
@@ -103,7 +101,7 @@ const Category_breakfast: React.FC = () => {
                 <div className={'main-cards'}>
                     <section className="explorerecipe category-container flex">
                         {section2Recipes.map((recipe) => (
-                            <RecipeCard key={recipe.id} recipe={recipe} />
+                            <RecipeCard key={recipe.id} recipe={recipe} onUnlike={() => {}} />
                         ))}
                     </section>
                 </div>
